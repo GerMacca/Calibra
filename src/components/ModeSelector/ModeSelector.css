@@ -14,7 +14,7 @@
 .mode-selector__title {
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  letter-spacing: -1.5px;
+  letter-spacing: -2px;
   background: linear-gradient(135deg, #A78BFA 0%, #06B6D4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -26,7 +26,7 @@
 .mode-selector__subtitle {
   font-size: var(--font-size-md);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
 }
 
@@ -43,46 +43,40 @@
   width: 100%;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-6);
+  padding: var(--space-5) var(--space-5) var(--space-5) var(--space-5);
   text-align: left;
   cursor: pointer;
   transition:
     background var(--transition-fast),
     border-color var(--transition-fast),
-    transform var(--transition-fast),
     box-shadow var(--transition-fast);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
+/* Per-mode left border + subtle gradient wash (always visible) */
+.mode-card {
+  border-left-color: var(--mode-color);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mode-color) 5%, transparent) 0%, var(--color-surface) 50%);
+}
+
+/* Hover states */
 .mode-card:hover {
-  background: var(--color-surface-alt);
-  transform: translateY(-1px);
-}
-
-.mode-card--dueto:hover {
-  border-color: var(--color-dueto);
-  box-shadow: 0 0 0 1px var(--color-dueto), 0 8px 24px rgba(6, 182, 212, 0.15);
-}
-
-.mode-card--calibra:hover {
-  border-color: var(--color-calibra);
-  box-shadow: 0 0 0 1px var(--color-calibra), 0 8px 24px rgba(139, 92, 246, 0.15);
-}
-
-.mode-card--recalibra:hover {
-  border-color: var(--color-recalibra);
-  box-shadow: 0 0 0 1px var(--color-recalibra), 0 8px 24px rgba(249, 115, 22, 0.15);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--mode-color) 10%, transparent) 0%, var(--color-surface-alt) 60%);
+  border-color: color-mix(in srgb, var(--mode-color) 35%, transparent);
+  border-left-color: var(--mode-color);
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--mode-color) 10%, transparent);
 }
 
 .mode-card--done {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .mode-card:active {
-  transform: translateY(0);
+  opacity: 0.85;
 }
 
 .mode-card__top {
@@ -92,10 +86,11 @@
   gap: var(--space-2);
 }
 
+/* Label uses the mode color */
 .mode-card__label {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
+  color: var(--mode-color);
 }
 
 .mode-card__done-badge {
@@ -135,21 +130,8 @@
   font-weight: var(--font-weight-semibold);
   padding: 2px var(--space-2);
   border-radius: var(--radius-full);
-}
-
-.mode-card__difficulty--dueto {
-  color: var(--color-dueto);
-  background: var(--color-dueto-dim);
-}
-
-.mode-card__difficulty--calibra {
-  color: var(--color-calibra);
-  background: var(--color-calibra-dim);
-}
-
-.mode-card__difficulty--recalibra {
-  color: var(--color-recalibra);
-  background: var(--color-recalibra-dim);
+  color: var(--mode-color);
+  background: color-mix(in srgb, var(--mode-color) 12%, transparent);
 }
 
 .mode-selector__hint {

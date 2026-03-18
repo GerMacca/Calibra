@@ -3,7 +3,7 @@
   align-items: center;
   gap: var(--space-3);
   background: var(--color-surface);
-  border: 1.5px solid var(--color-border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-4) var(--space-5);
   cursor: grab;
@@ -12,10 +12,9 @@
   transition:
     background var(--transition-fast),
     border-color var(--transition-fast),
-    box-shadow var(--transition-fast),
-    transform var(--transition-fast);
+    box-shadow var(--transition-fast);
   position: relative;
-  min-height: 64px;
+  min-height: 62px;
 }
 
 .sortable-item:hover:not(.sortable-item--disabled) {
@@ -25,11 +24,11 @@
 
 .sortable-item--dragging {
   cursor: grabbing;
-  background: var(--color-surface-alt);
+  background: var(--color-surface-hover);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-glow-primary), var(--shadow-md);
   z-index: 100;
-  transform: scale(1.02);
+  scale: 1.02;
 }
 
 .sortable-item--disabled {
@@ -78,13 +77,13 @@
 }
 
 .sortable-item:hover .sortable-item__drag-handle {
-  color: var(--color-text-secondary);
+  color: var(--color-border-hover);
 }
 
 /* Result dot shown during WRONG state */
 .sortable-item__result-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   border-radius: var(--radius-full);
   flex-shrink: 0;
 }
@@ -99,7 +98,7 @@
   box-shadow: 0 0 6px var(--color-error-glow);
 }
 
-/* Confirmed correct badge (persists across rounds in IDLE) */
+/* Confirmed correct badge */
 .sortable-item__confirmed-badge {
   display: flex;
   align-items: center;
@@ -131,13 +130,12 @@
 }
 
 .sortable-item--confirmed {
-  border-color: rgba(16, 185, 129, 0.4);
+  border-color: rgba(16, 185, 129, 0.35);
 }
 
 .sortable-item--locked {
   cursor: default;
   z-index: 2;
-  /* Ensure opaque background so sliding items don't show through */
   background: var(--color-surface-alt) !important;
 }
 

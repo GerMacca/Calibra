@@ -1,4 +1,5 @@
 import type { GameMode } from '../../types/game';
+import { modeStyle } from '../../utils/modes';
 import './Header.css';
 
 interface HeaderProps {
@@ -29,7 +30,7 @@ export function Header({ mode, onBack }: HeaderProps) {
         <div className="header__title">
           <span className="header__logo">Calibra</span>
           {mode && (
-            <span className={`header__mode header__mode--${mode}`}>
+            <span className="header__mode" style={modeStyle(mode)}>
               {MODE_LABELS[mode]}
             </span>
           )}

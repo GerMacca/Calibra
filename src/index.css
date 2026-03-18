@@ -16,6 +16,7 @@ html {
 body {
   font-family: var(--font);
   background-color: var(--color-bg);
+  background-image: radial-gradient(ellipse at 50% 0%, rgba(100, 60, 200, 0.07) 0%, transparent 55%);
   color: var(--color-text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;

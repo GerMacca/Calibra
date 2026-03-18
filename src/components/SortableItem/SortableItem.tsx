@@ -1,4 +1,5 @@
 import { useSortable } from '@dnd-kit/sortable';
+import { useDndContext } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 import type { GameState } from '../../types/game';
 import './SortableItem.css';
@@ -24,6 +25,8 @@ export function SortableItem({
 }: SortableItemProps) {
   const isLocked = isConfirmedCorrect === true;
 
+  const { active: dndActive } = useDndContext();
+
   const {
     attributes,
     listeners,
@@ -35,7 +38,10 @@ export function SortableItem({
 
   const style = {
     transform: isLocked ? undefined : CSS.Transform.toString(transform),
-    transition: isLocked ? undefined : transition,
+    // Apply transition only while a drag is in progress (smooth displacement and return).
+    // When the drag ends, dndActive becomes null at the same time transforms are cleared,
+    // so no snap-back animation fires before React re-orders the DOM.
+    transition: !isLocked && dndActive ? transition : undefined,
   };
 
   const isWin = gameState === 'WIN';

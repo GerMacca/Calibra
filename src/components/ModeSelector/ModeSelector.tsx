@@ -1,4 +1,5 @@
 import type { GameMode } from '../../types/game';
+import { modeStyle } from '../../utils/modes';
 import './ModeSelector.css';
 
 interface ModeConfig {
@@ -60,7 +61,8 @@ export function ModeSelector({ onSelect, completedModes }: ModeSelectorProps) {
           return (
             <button
               key={mode}
-              className={`mode-card mode-card--${mode} ${done ? 'mode-card--done' : ''}`}
+              className={`mode-card ${done ? 'mode-card--done' : ''}`}
+              style={modeStyle(mode)}
               onClick={() => onSelect(mode)}
             >
               <div className="mode-card__top">
@@ -77,7 +79,7 @@ export function ModeSelector({ onSelect, completedModes }: ModeSelectorProps) {
               <p className="mode-card__desc">{description}</p>
               <div className="mode-card__meta">
                 <span className="mode-card__items">{items} itens</span>
-                <span className={`mode-card__difficulty mode-card__difficulty--${mode}`}>
+                <span className="mode-card__difficulty">
                   {difficulty}
                 </span>
               </div>

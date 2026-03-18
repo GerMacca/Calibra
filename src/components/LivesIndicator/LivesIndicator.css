@@ -5,18 +5,18 @@
 }
 
 .lives__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: var(--radius-full);
-  transition: background var(--transition-normal), transform var(--transition-normal);
+  width: 16px;
+  height: 16px;
+  transition: color var(--transition-normal), transform var(--transition-normal), opacity var(--transition-normal);
 }
 
 .lives__dot--active {
-  background: var(--color-primary);
-  box-shadow: 0 0 6px var(--color-primary-glow);
+  color: var(--color-error);
+  filter: drop-shadow(0 0 4px var(--color-error-glow));
 }
 
 .lives__dot--lost {
-  background: var(--color-border);
-  transform: scale(0.8);
+  color: var(--color-border);
+  transform: scale(0.75);
+  opacity: 0.5;
 }

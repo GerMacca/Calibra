@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Puzzle, AttemptGrid, GameMode } from '../../types/game';
 import { buildShareText } from '../../utils/share';
+import { modeStyle } from '../../utils/modes';
 import './ResultScreen.css';
 
 interface ResultScreenProps {
@@ -39,7 +40,7 @@ export function ResultScreen({
   }
 
   return (
-    <div className={`result result--${mode}`}>
+    <div className="result" style={modeStyle(mode)}>
       <div className="result__header">
         <div className={`result__outcome ${solved ? 'result__outcome--win' : 'result__outcome--lose'}`}>
           <span className="result__outcome-icon">{solved ? '🎉' : '😔'}</span>
@@ -94,7 +95,7 @@ export function ResultScreen({
       {/* Actions */}
       <div className="result__actions">
         <button
-          className={`result__share result__share--${mode}`}
+          className="result__share"
           onClick={handleShare}
         >
           {copied ? (

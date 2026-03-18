@@ -22,6 +22,7 @@ import {
 } from '@dnd-kit/modifiers';
 
 import type { GameMode, GameState, AttemptGrid } from '../../types/game';
+import { modeStyle } from '../../utils/modes';
 import { LivesIndicator } from '../LivesIndicator/LivesIndicator';
 import { SortableItem } from '../SortableItem/SortableItem';
 import './GameBoard.css';
@@ -40,11 +41,46 @@ interface GameBoardProps {
 
 const MAX_LIVES = 3;
 
-const STATE_LABELS: Partial<Record<GameState, { text: string; className: string }>> = {
-  WIN: { text: '🎉 Acertou!', className: 'gameboard__feedback--win' },
-  WRONG: { text: 'Não foi dessa vez... tente de novo', className: 'gameboard__feedback--wrong' },
-  GAME_OVER: { text: 'Sem mais tentativas', className: 'gameboard__feedback--gameover' },
+const WIN_MESSAGES: Record<1 | 2 | 3, string[]> = {
+  1: [
+    '🤯 UAU! Acertou de primeira!',
+    '🔥 INCRÍVEL! Na primeira tentativa!',
+    '🎯 PERFEITO! Direto na primeira!',
+    '⚡ QUE MONSTRO! Nem precisou errar!',
+    '🏆 ABSURDO! Acertou sem hesitar!',
+  ],
+  2: [
+    '🎉 BOA! Acertou na segunda!',
+    '👏 CONSEGUIU! Muito bem!',
+    '✨ SHOW! Quase perfeito!',
+    '💪 ÓTIMO! Na segunda tentativa!',
+    '🌟 MUITO BOM! Só precisou de duas!',
+  ],
+  3: [
+    '😅 UFA! Por pouco!',
+    '😤 NA ÚLTIMA! Que sufoco!',
+    '😰 SOBREVIVEU! Por um fio!',
+    '🫠 QUASE NÃO DÁ! Mas deu!',
+    '🎲 NO LIMITE! Na última tentativa!',
+  ],
 };
+
+function pickWinMessage(attempt: number): string {
+  const pool = WIN_MESSAGES[(Math.min(attempt, 3) as 1 | 2 | 3)] ?? WIN_MESSAGES[3];
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+const WRONG_MESSAGES = [
+  'Não foi dessa vez... tente de novo',
+  'Quase! Reorganize e tente de novo',
+  'Hmm, não exatamente... tente outra vez',
+  'Não está certo, mas você chega lá!',
+  'Errou! Pense melhor e tente de novo',
+];
+
+function pickWrongMessage(): string {
+  return WRONG_MESSAGES[Math.floor(Math.random() * WRONG_MESSAGES.length)];
+}
 
 /**
  * Collision detection that skips locked (confirmed-correct) items entirely.
@@ -82,10 +118,12 @@ function makeStrategy(lockedIds: Set<string>, allItems: string[]): SortingStrate
     if (activeFree === -1 || overFree === -1) return null;
 
     const newFreeOrder = arrayMove(freeIdx, activeFree, overFree);
-    const itemFree     = freeIdx.indexOf(index);
-    if (itemFree === -1) return null;
 
-    const newFullIdx = newFreeOrder[itemFree];
+    // Find which free slot this item occupies in the new order, then map back to full-array index
+    const newFreePos = newFreeOrder.indexOf(index);
+    if (newFreePos === -1) return null;
+
+    const newFullIdx = freeIdx[newFreePos];
     if (newFullIdx === index) return null;
 
     // Use actual DOM rects so the target position is always a real free slot
@@ -152,7 +190,14 @@ export function GameBoard({
     onReorder(result);
   }, [items, confirmedCorrect, onReorder]);
 
-  const feedback      = STATE_LABELS[gameState];
+  const feedback = useMemo((): { text: string; className: string } | null => {
+    if (gameState === 'WIN')       return { text: pickWinMessage(attemptGrid.length), className: 'gameboard__feedback--win' };
+    if (gameState === 'WRONG')     return { text: pickWrongMessage(), className: 'gameboard__feedback--wrong' };
+    if (gameState === 'GAME_OVER') return { text: '💀 Sem mais tentativas', className: 'gameboard__feedback--gameover' };
+    return null;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameState]); // re-pick message only when state changes, not on every render
+
   const isConfirmable = gameState === 'IDLE';
   const isDraggable   = gameState === 'IDLE';
 
@@ -161,7 +206,7 @@ export function GameBoard({
   const wrongStateResult = gameState === 'WRONG' ? lastRow : null;
 
   return (
-    <div className={`gameboard gameboard--${mode}`}>
+    <div className="gameboard" style={modeStyle(mode)}>
       <div className="gameboard__topbar">
         <p className="gameboard__instruction">
           Ordene do <strong>menor</strong> para o <strong>maior</strong>
@@ -201,7 +246,7 @@ export function GameBoard({
 
       <div className="gameboard__footer">
         <button
-          className={`gameboard__confirm gameboard__confirm--${mode}`}
+          className="gameboard__confirm"
           onClick={onConfirm}
           disabled={!isConfirmable}
         >
