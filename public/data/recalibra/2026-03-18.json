@@ -1,0 +1,14 @@
+{
+  "date": "2026-03-18",
+  "mode": "recalibra",
+  "criteria": "ano de fundação da empresa",
+  "criteria_source": "Wikipedia — histórico de fundação",
+  "items": [
+    { "label": "Microsoft", "value": 1975 },
+    { "label": "Apple",     "value": 1976 },
+    { "label": "Amazon",    "value": 1994 },
+    { "label": "Netflix",   "value": 1997 },
+    { "label": "Google",    "value": 1998 },
+    { "label": "Meta",      "value": 2004 }
+  ]
+}

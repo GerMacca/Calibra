@@ -1,0 +1,99 @@
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import type { GameState } from '../../types/game';
+import './SortableItem.css';
+
+interface SortableItemProps {
+  id: string;
+  label: string;
+  index: number;
+  gameState: GameState;
+  isShaking: boolean;
+  wasCorrect?: boolean;       // defined only during WRONG state: green or red
+  isConfirmedCorrect?: boolean; // persists in IDLE after being confirmed correct once
+}
+
+export function SortableItem({
+  id,
+  label,
+  index,
+  gameState,
+  isShaking,
+  wasCorrect,
+  isConfirmedCorrect,
+}: SortableItemProps) {
+  const isLocked = isConfirmedCorrect === true;
+
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id, disabled: isLocked });
+
+  const style = {
+    transform: isLocked ? undefined : CSS.Transform.toString(transform),
+    transition: isLocked ? undefined : transition,
+  };
+
+  const isWin = gameState === 'WIN';
+  const isWrong = gameState === 'WRONG';
+  const isGameOver = gameState === 'GAME_OVER';
+  const isDisabled = gameState !== 'IDLE';
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={[
+        'sortable-item',
+        isDragging ? 'sortable-item--dragging' : '',
+        isShaking && isWrong && wasCorrect !== true ? 'sortable-item--shake' : '',
+        isWin ? 'sortable-item--win' : '',
+        isGameOver ? 'sortable-item--gameover' : '',
+        isWrong && wasCorrect === true ? 'sortable-item--result-correct' : '',
+        isWrong && wasCorrect === false ? 'sortable-item--result-wrong' : '',
+        isConfirmedCorrect ? 'sortable-item--confirmed' : '',
+        isLocked ? 'sortable-item--locked' : '',
+        isDisabled ? 'sortable-item--disabled' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+      {...attributes}
+      {...listeners}
+    >
+      <span className="sortable-item__index">{index + 1}</span>
+      <span className="sortable-item__label">{label}</span>
+
+      <span className="sortable-item__right">
+        {isConfirmedCorrect && (
+          <span className="sortable-item__confirmed-badge" aria-label="Posição confirmada">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          </span>
+        )}
+        {isWrong && wasCorrect !== undefined && (
+          <span
+            className={`sortable-item__result-dot ${wasCorrect ? 'sortable-item__result-dot--correct' : 'sortable-item__result-dot--wrong'}`}
+            aria-hidden
+          />
+        )}
+        {!isConfirmedCorrect && !(isWrong && wasCorrect !== undefined) && (
+          <span className="sortable-item__drag-handle" aria-hidden>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="8" y1="6" x2="21" y2="6" />
+              <line x1="8" y1="12" x2="21" y2="12" />
+              <line x1="8" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="6" x2="3.01" y2="6" />
+              <line x1="3" y1="12" x2="3.01" y2="12" />
+              <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+          </span>
+        )}
+      </span>
+    </div>
+  );
+}

@@ -1,0 +1,22 @@
+.lives {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.lives__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-normal), transform var(--transition-normal);
+}
+
+.lives__dot--active {
+  background: var(--color-primary);
+  box-shadow: 0 0 6px var(--color-primary-glow);
+}
+
+.lives__dot--lost {
+  background: var(--color-border);
+  transform: scale(0.8);
+}

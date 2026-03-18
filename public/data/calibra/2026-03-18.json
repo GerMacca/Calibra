@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-18",
+  "mode": "calibra",
+  "criteria": "velocidade máxima registrada em km/h",
+  "criteria_source": "Wikipedia — velocidade máxima de cada espécie",
+  "items": [
+    { "label": "Elefante", "value": 40  },
+    { "label": "Humano",   "value": 45  },
+    { "label": "Tubarão",  "value": 56  },
+    { "label": "Cavalo",   "value": 88  },
+    { "label": "Guepardo", "value": 112 }
+  ]
+}

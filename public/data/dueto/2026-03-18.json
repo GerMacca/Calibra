@@ -1,0 +1,12 @@
+{
+  "date": "2026-03-18",
+  "mode": "dueto",
+  "criteria": "população estimada em milhões de habitantes",
+  "criteria_source": "ONU — estimativa 2024",
+  "items": [
+    { "label": "Uruguai",   "value": 3.5  },
+    { "label": "Portugal",  "value": 10.3 },
+    { "label": "Chile",     "value": 19.5 },
+    { "label": "Argentina", "value": 46.0 }
+  ]
+}

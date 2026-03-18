@@ -1,0 +1,88 @@
+:root {
+  /* Background layers */
+  --color-bg: #080812;
+  --color-surface: #11112A;
+  --color-surface-alt: #1A1A3A;
+  --color-surface-hover: #22224A;
+
+  /* Borders */
+  --color-border: #2A2A50;
+  --color-border-hover: #5050A0;
+
+  /* Brand / Primary */
+  --color-primary: #8B5CF6;
+  --color-primary-hover: #A78BFA;
+  --color-primary-glow: rgba(139, 92, 246, 0.25);
+  --color-primary-dim: rgba(139, 92, 246, 0.12);
+
+  /* State colors */
+  --color-success: #10B981;
+  --color-success-glow: rgba(16, 185, 129, 0.3);
+  --color-success-dim: rgba(16, 185, 129, 0.12);
+
+  --color-error: #EF4444;
+  --color-error-glow: rgba(239, 68, 68, 0.3);
+  --color-error-dim: rgba(239, 68, 68, 0.12);
+
+  /* Text */
+  --color-text-primary: #F0EFFF;
+  --color-text-secondary: #9090C0;
+  --color-text-muted: #50507A;
+
+  /* Mode accent colors */
+  --color-dueto: #06B6D4;
+  --color-dueto-dim: rgba(6, 182, 212, 0.15);
+  --color-calibra: #8B5CF6;
+  --color-calibra-dim: rgba(139, 92, 246, 0.15);
+  --color-recalibra: #F97316;
+  --color-recalibra-dim: rgba(249, 115, 22, 0.15);
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 40px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.7);
+  --shadow-glow-primary: 0 0 20px var(--color-primary-glow);
+  --shadow-glow-success: 0 0 20px var(--color-success-glow);
+  --shadow-glow-error: 0 0 20px var(--color-error-glow);
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-normal: 220ms ease;
+  --transition-slow: 380ms ease;
+
+  /* Layout */
+  --max-width: 480px;
+  --header-height: 60px;
+}
