@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import type { GameMode, Puzzle } from './types/game';
+import type { GameMode, Puzzle, SavedState } from './types/game';
 import { loadPuzzle, getToday } from './utils/puzzle';
 import { useGame } from './hooks/useGame';
 import { Header } from './components/Header/Header';
@@ -25,6 +25,22 @@ function readCompletedModes(): Set<GameMode> {
     }
   });
   return done;
+}
+
+function readSavedStates(): Partial<Record<GameMode, SavedState>> {
+  const states: Partial<Record<GameMode, SavedState>> = {};
+  ALL_MODES.forEach(mode => {
+    try {
+      const raw = localStorage.getItem(`calibra_${mode}_${TODAY}`);
+      if (raw) {
+        const saved = JSON.parse(raw) as SavedState;
+        if (saved?.done) states[mode] = saved;
+      }
+    } catch {
+      // ignore
+    }
+  });
+  return states;
 }
 
 interface PuzzleLoadState {
@@ -127,6 +143,7 @@ function GameScreen({
 export default function App() {
   const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
   const [completedModes, setCompletedModes] = useState<Set<GameMode>>(readCompletedModes);
+  const [savedStates, setSavedStates] = useState<Partial<Record<GameMode, SavedState>>>(readSavedStates);
 
   const handleModeSelect = useCallback((mode: GameMode) => {
     setSelectedMode(mode);
@@ -135,11 +152,13 @@ export default function App() {
   const handleBack = useCallback(() => {
     setSelectedMode(null);
     setCompletedModes(readCompletedModes());
+    setSavedStates(readSavedStates());
   }, []);
 
   const handleDone = useCallback(() => {
     setSelectedMode(null);
     setCompletedModes(readCompletedModes());
+    setSavedStates(readSavedStates());
   }, []);
 
   if (selectedMode) {
@@ -158,7 +177,11 @@ export default function App() {
   return (
     <div className="app">
       <Header />
-      <ModeSelector onSelect={handleModeSelect} completedModes={completedModes} />
+      <ModeSelector
+        onSelect={handleModeSelect}
+        completedModes={completedModes}
+        savedStates={savedStates}
+      />
     </div>
   );
 }

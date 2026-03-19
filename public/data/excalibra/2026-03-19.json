@@ -1,0 +1,14 @@
+{
+  "date": "2026-03-19",
+  "mode": "excalibra",
+  "criteria": "população em milhões de habitantes (2023)",
+  "criteria_source": "Wikipedia — estimativa populacional 2023",
+  "items": [
+    { "label": "Portugal",   "value": 10.2 },
+    { "label": "Cuba",       "value": 11.3 },
+    { "label": "Bélgica",    "value": 11.6 },
+    { "label": "Chile",      "value": 19.6 },
+    { "label": "Austrália",  "value": 26.5 },
+    { "label": "Argentina",  "value": 45.8 }
+  ]
+}

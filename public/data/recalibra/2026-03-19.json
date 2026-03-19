@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-19",
+  "mode": "recalibra",
+  "criteria": "altitude máxima em metros",
+  "criteria_source": "Wikipedia — montanhas mais altas por continente",
+  "items": [
+    { "label": "Mont Blanc",   "value": 4808 },
+    { "label": "Denali",       "value": 6190 },
+    { "label": "Aconcágua",    "value": 6961 },
+    { "label": "Kilimanjaro",  "value": 5895 },
+    { "label": "Everest",      "value": 8849 }
+  ]
+}
