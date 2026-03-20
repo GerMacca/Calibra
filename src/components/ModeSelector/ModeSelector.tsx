@@ -3,6 +3,7 @@ import type { GameMode, SavedState, AttemptGrid } from '../../types/game';
 import { modeStyle } from '../../utils/modes';
 import { buildShareText } from '../../utils/share';
 import { getToday } from '../../utils/puzzle';
+import { DatePickerModal } from '../DatePickerModal/DatePickerModal';
 import './ModeSelector.css';
 
 const MAX_LIVES = 3;
@@ -43,6 +44,8 @@ interface ModeSelectorProps {
   onSelect: (mode: GameMode) => void;
   completedModes: Set<GameMode>;
   savedStates: Partial<Record<GameMode, SavedState>>;
+  selectedDate: string;
+  onDateChange: (date: string) => void;
 }
 
 function clearSiteData() {
@@ -133,17 +136,20 @@ function ItemDots({ count }: { count: number }) {
   );
 }
 
-export function ModeSelector({ onSelect, completedModes, savedStates }: ModeSelectorProps) {
+const PT_MONTHS_SHORT = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+
+function formatSelectedDate(date: string): string {
+  const d = new Date(date + 'T12:00:00');
+  return `${d.getDate()} de ${PT_MONTHS_SHORT[d.getMonth()]} de ${d.getFullYear()}`;
+}
+
+export function ModeSelector({ onSelect, completedModes, savedStates, selectedDate, onDateChange }: ModeSelectorProps) {
   const today = getToday();
   const countdown = useCountdown();
-  const [streak, setStreak] = useState(() => readStreak(today));
+  const streak = completedModes.size > 0 ? updateStreak(today) : readStreak(today);
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    if (completedModes.size > 0) {
-      setStreak(updateStreak(today));
-    }
-  }, [completedModes.size, today]);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const isPastDate = selectedDate !== today;
 
   const doneCount = completedModes.size;
   const totalCount = MODES.length;
@@ -169,6 +175,21 @@ export function ModeSelector({ onSelect, completedModes, savedStates }: ModeSele
 
   return (
     <div className="mode-selector">
+      {isPastDate && (
+        <div className="mode-selector__past-banner">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>{formatSelectedDate(selectedDate)}</span>
+          <button className="mode-selector__past-back" onClick={() => onDateChange(today)}>
+            Voltar para hoje
+          </button>
+        </div>
+      )}
+
       <div className="mode-selector__hero">
         <h1 className="mode-selector__title">Calibra</h1>
         <p className="mode-selector__subtitle">
@@ -255,9 +276,20 @@ export function ModeSelector({ onSelect, completedModes, savedStates }: ModeSele
             )}
           </button>
         )}
-        <p className="mode-selector__hint">
-          Próximo puzzle em <span className="mode-selector__countdown">{countdown}</span>
-        </p>
+        {!isPastDate && (
+          <p className="mode-selector__hint">
+            Próximo puzzle em <span className="mode-selector__countdown">{countdown}</span>
+          </p>
+        )}
+        <button className="mode-selector__calendar" onClick={() => setShowDatePicker(true)}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          Dias anteriores
+        </button>
         <button className="mode-selector__reset" onClick={clearSiteData} title="Resetar dados locais">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <polyline points="1 4 1 10 7 10" />
@@ -266,6 +298,14 @@ export function ModeSelector({ onSelect, completedModes, savedStates }: ModeSele
           Reset
         </button>
       </div>
+
+      {showDatePicker && (
+        <DatePickerModal
+          selectedDate={selectedDate}
+          onSelect={onDateChange}
+          onClose={() => setShowDatePicker(false)}
+        />
+      )}
     </div>
   );
 }

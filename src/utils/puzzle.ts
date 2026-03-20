@@ -8,13 +8,32 @@ export function getToday(): string {
   return `${year}-${month}-${day}`;
 }
 
+export async function loadIndex(): Promise<string[]> {
+  try {
+    const res = await fetch('/data/index.json');
+    if (!res.ok) return [];
+    return res.json();
+  } catch {
+    return [];
+  }
+}
+
+function dateKey(date: string): number {
+  return date.split('').reduce((acc, c) => acc ^ c.charCodeAt(0), 0);
+}
+
 export async function loadPuzzle(mode: GameMode, date: string): Promise<Puzzle> {
   const res = await fetch(`/data/${mode}/${date}.json`);
   if (!res.ok) {
     throw new Error(`Puzzle not found for ${mode} on ${date}`);
   }
   const data = await res.json();
-  return { ...data, mode };
+  const key = dateKey(date);
+  return {
+    ...data,
+    mode,
+    items: data.items.map((item: PuzzleItem) => ({ ...item, value: item.value ^ key })),
+  };
 }
 
 export function getCorrectOrder(puzzle: Puzzle): string[] {

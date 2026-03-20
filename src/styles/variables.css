@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@master/compiled/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Background layers */
   --color-bg: #0d0d0d;
@@ -27,7 +35,7 @@
   /* Text */
   --color-text-primary: #efefef;
   --color-text-secondary: #858585;
-  --color-text-muted: #424242;
+  --color-text-muted: #747474;
 
   /* Mode accent colors */
   --color-calibra: #06B6D4;
@@ -85,4 +93,28 @@
   /* Layout */
   --max-width: 480px;
   --header-height: 56px;
+}
+
+/* ── Accessibility overrides ─────────────────────────────── */
+
+html[data-dyslexic='true'] {
+  --font: 'OpenDyslexic', sans-serif;
+}
+
+html[data-colorblind='true'] {
+  --color-success: #3B82F6;
+  --color-success-glow: rgba(59, 130, 246, 0.3);
+  --color-success-dim: rgba(59, 130, 246, 0.12);
+
+  --color-error: #F59E0B;
+  --color-error-glow: rgba(245, 158, 11, 0.3);
+  --color-error-dim: rgba(245, 158, 11, 0.1);
+}
+
+html[data-reduce-motion='true'] *,
+html[data-reduce-motion='true'] *::before,
+html[data-reduce-motion='true'] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
 }

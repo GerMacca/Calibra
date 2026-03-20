@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-20",
+  "mode": "excalibra",
+  "criteria": "vão principal da ponte em metros",
+  "criteria_source": "Wikipedia — maiores pontes suspensas do mundo",
+  "items": [
+    {
+      "label": "25 de Abril",
+      "value": 1010
+    },
+    {
+      "label": "Golden Gate",
+      "value": 1287
+    },
+    {
+      "label": "Hardanger",
+      "value": 1305
+    },
+    {
+      "label": "Osmangazi",
+      "value": 1545
+    },
+    {
+      "label": "Great Belt",
+      "value": 1631
+    },
+    {
+      "label": "Akashi Kaikyō",
+      "value": 1984
+    }
+  ]
+}

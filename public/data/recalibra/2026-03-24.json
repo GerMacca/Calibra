@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-24",
+  "mode": "recalibra",
+  "criteria": "área territorial em mil km²",
+  "criteria_source": "Wikipedia — países da América do Sul",
+  "items": [
+    {
+      "label": "Uruguai",
+      "value": 179
+    },
+    {
+      "label": "Paraguai",
+      "value": 404
+    },
+    {
+      "label": "Chile",
+      "value": 758
+    },
+    {
+      "label": "Peru",
+      "value": 1286
+    },
+    {
+      "label": "Brasil",
+      "value": 8519
+    }
+  ]
+}

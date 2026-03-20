@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-22",
+  "mode": "calibra",
+  "criteria": "altitude da capital em metros",
+  "criteria_source": "Wikipedia — geografia das capitais mundiais",
+  "items": [
+    {
+      "label": "Washington D.C.",
+      "value": 2
+    },
+    {
+      "label": "Roma",
+      "value": 16
+    },
+    {
+      "label": "Madrid",
+      "value": 670
+    },
+    {
+      "label": "Brasília",
+      "value": 1169
+    }
+  ]
+}

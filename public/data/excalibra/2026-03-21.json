@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-21",
+  "mode": "excalibra",
+  "criteria": "ano de lançamento",
+  "criteria_source": "Wikipedia — discografia e singles históricos",
+  "items": [
+    {
+      "label": "Bohemian Rhapsody",
+      "value": 1969
+    },
+    {
+      "label": "Billie Jean",
+      "value": 1977
+    },
+    {
+      "label": "Smells Like Teen Spirit",
+      "value": 1985
+    },
+    {
+      "label": "Baby One More Time",
+      "value": 1992
+    },
+    {
+      "label": "Crazy in Love",
+      "value": 2005
+    },
+    {
+      "label": "Shape of You",
+      "value": 2023
+    }
+  ]
+}

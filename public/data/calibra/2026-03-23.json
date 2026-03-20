@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-23",
+  "mode": "calibra",
+  "criteria": "peso médio em kg",
+  "criteria_source": "Wikipedia — fisiologia e biologia das espécies",
+  "items": [
+    {
+      "label": "Pinguim-imperador",
+      "value": 26
+    },
+    {
+      "label": "Leão",
+      "value": 186
+    },
+    {
+      "label": "Hipopótamo",
+      "value": 1496
+    },
+    {
+      "label": "Elefante africano",
+      "value": 5004
+    }
+  ]
+}

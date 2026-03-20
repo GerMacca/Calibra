@@ -109,7 +109,10 @@
   background: var(--color-success);
   color: white;
   flex-shrink: 0;
-  animation: badge-pop 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.sortable-item__confirmed-badge--pop {
+  animation: badge-pop 0.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 @keyframes badge-pop {

@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-20",
+  "mode": "recalibra",
+  "criteria": "ano de lançamento",
+  "criteria_source": "Wikipedia — história dos consoles de videogame",
+  "items": [
+    {
+      "label": "Atari 2600",
+      "value": 1982
+    },
+    {
+      "label": "Game Boy",
+      "value": 1986
+    },
+    {
+      "label": "PlayStation 1",
+      "value": 1997
+    },
+    {
+      "label": "Xbox 360",
+      "value": 2002
+    },
+    {
+      "label": "Nintendo Switch",
+      "value": 2022
+    }
+  ]
+}

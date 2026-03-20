@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-22",
+  "mode": "recalibra",
+  "criteria": "comprimento do litoral em km",
+  "criteria_source": "CIA World Factbook — coastline by country",
+  "items": [
+    {
+      "label": "Portugal",
+      "value": 1796
+    },
+    {
+      "label": "Austrália",
+      "value": 25765
+    },
+    {
+      "label": "Japão",
+      "value": 29746
+    },
+    {
+      "label": "Noruega",
+      "value": 58128
+    },
+    {
+      "label": "Canadá",
+      "value": 202085
+    }
+  ]
+}

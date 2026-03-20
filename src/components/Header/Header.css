@@ -22,7 +22,7 @@
   gap: var(--space-3);
 }
 
-.header__back {
+.header__btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,13 +33,22 @@
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
   cursor: pointer;
+  flex-shrink: 0;
   transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.header__back:hover {
+.header__btn:hover {
   background: var(--color-surface-hover);
   color: var(--color-text-primary);
   border-color: var(--color-border-hover);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 34px;
+  justify-content: flex-end;
 }
 
 .header__spacer {

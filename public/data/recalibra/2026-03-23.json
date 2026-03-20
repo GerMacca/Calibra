@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-23",
+  "mode": "recalibra",
+  "criteria": "número de luas naturais confirmadas",
+  "criteria_source": "NASA — natural satellites of the Solar System (2024)",
+  "items": [
+    {
+      "label": "Terra",
+      "value": 5
+    },
+    {
+      "label": "Marte",
+      "value": 6
+    },
+    {
+      "label": "Netuno",
+      "value": 20
+    },
+    {
+      "label": "Urano",
+      "value": 24
+    },
+    {
+      "label": "Saturno",
+      "value": 150
+    }
+  ]
+}

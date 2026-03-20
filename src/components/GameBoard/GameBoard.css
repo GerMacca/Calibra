@@ -17,6 +17,18 @@
   padding: 0 var(--space-1);
 }
 
+.gameboard__instruction-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gameboard__instruction-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .gameboard__instruction {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -26,6 +38,139 @@
 .gameboard__instruction strong {
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-semibold);
+}
+
+.gameboard__criteria {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* Tooltip */
+.gameboard__tooltip-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gameboard__tooltip-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.gameboard__tooltip-wrap:hover .gameboard__tooltip-btn {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-secondary);
+}
+
+.gameboard__tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 190px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border-hover);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-md);
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.gameboard__tooltip-wrap:hover .gameboard__tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.gameboard__tooltip-title {
+  font-size: 11px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.gameboard__tooltip-example {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gameboard__tooltip-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  padding: 4px var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.gameboard__tooltip-item--marked {
+  border-color: var(--color-success);
+  background: var(--color-success-dim);
+}
+
+.gameboard__tooltip-number {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-success);
+  width: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.gameboard__tooltip-number--mid {
+  color: var(--color-border-hover);
+}
+
+.gameboard__tooltip-item--first .gameboard__tooltip-arrow {
+  color: var(--color-success);
+}
+
+.gameboard__tooltip-item--last .gameboard__tooltip-arrow {
+  color: var(--color-error);
+}
+
+.gameboard__tooltip-tag {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-success);
+  background: var(--color-success-dim);
+  border-radius: var(--radius-full);
+  padding: 1px 6px;
+}
+
+.gameboard__tooltip-criteria {
+  margin: var(--space-2) 0 0 0;
+  font-size: 12px;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-2);
+}
+
+.gameboard__tooltip-criteria strong {
+  color: var(--color-text);
 }
 
 /* Feedback banner */
@@ -39,8 +184,15 @@
 }
 
 @keyframes feedback-in {
-  from { opacity: 0; transform: translateY(-4px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .gameboard__feedback--win {
@@ -117,6 +269,7 @@
   background: linear-gradient(135deg, var(--mode-color), var(--mode-color-end));
   box-shadow: 0 4px 20px color-mix(in srgb, var(--mode-color) 30%, transparent);
 }
+
 .gameboard__confirm:not(:disabled):hover {
   box-shadow: 0 6px 28px color-mix(in srgb, var(--mode-color) 50%, transparent);
 }

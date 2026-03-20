@@ -48,7 +48,6 @@ export function ResultScreen({
         </div>
       </div>
 
-      {/* Emoji grid */}
       <div className="result__grid">
         {attemptGrid.map((row, rowIdx) => (
           <div key={rowIdx} className="result__grid-row">
@@ -125,7 +124,7 @@ export function ResultScreen({
           </button>
         )}
 
-        <button className="result__home" onClick={() => window.location.reload()}>
+        <button className="result__home" onClick={() => window.location.reload()}> {/* UseNavigate talvez seja mais interessante */}
           Início
         </button>
       </div>

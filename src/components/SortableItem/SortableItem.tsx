@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { useDndContext } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
@@ -24,6 +25,13 @@ export function SortableItem({
   isConfirmedCorrect,
 }: SortableItemProps) {
   const isLocked = isConfirmedCorrect === true;
+
+  // Track whether the badge animation has already played for this instance.
+  // We want it to animate only on the render where isConfirmedCorrect first
+  // becomes true — not on every re-render caused by DnD kit updates.
+  const confirmedOnce = useRef(false);
+  const playBadgeAnim = isConfirmedCorrect && !confirmedOnce.current;
+  if (isConfirmedCorrect) confirmedOnce.current = true;
 
   const { active: dndActive } = useDndContext();
 
@@ -74,20 +82,18 @@ export function SortableItem({
       <span className="sortable-item__label">{label}</span>
 
       <span className="sortable-item__right">
-        {isConfirmedCorrect && (
-          <span className="sortable-item__confirmed-badge" aria-label="Posição confirmada">
+        {isConfirmedCorrect ? (
+          <span className={`sortable-item__confirmed-badge${playBadgeAnim ? ' sortable-item__confirmed-badge--pop' : ''}`} aria-label="Posição confirmada">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
           </span>
-        )}
-        {isWrong && wasCorrect !== undefined && (
+        ) : isWrong && wasCorrect !== undefined ? (
           <span
             className={`sortable-item__result-dot ${wasCorrect ? 'sortable-item__result-dot--correct' : 'sortable-item__result-dot--wrong'}`}
             aria-hidden
           />
-        )}
-        {!isConfirmedCorrect && !(isWrong && wasCorrect !== undefined) && (
+        ) : (
           <span className="sortable-item__drag-handle" aria-hidden>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="8" y1="6" x2="21" y2="6" />

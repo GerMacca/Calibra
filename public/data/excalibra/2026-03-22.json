@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-22",
+  "mode": "excalibra",
+  "criteria": "bilheteria mundial em bilhões de dólares",
+  "criteria_source": "Box Office Mojo — all-time worldwide grosses",
+  "items": [
+    {
+      "label": "Frozen II",
+      "value": 4
+    },
+    {
+      "label": "Top Gun: Maverick",
+      "value": 4
+    },
+    {
+      "label": "Jurassic World",
+      "value": 4
+    },
+    {
+      "label": "Avengers: Infinity War",
+      "value": 7
+    },
+    {
+      "label": "Avatar: The Way of Water",
+      "value": 7
+    },
+    {
+      "label": "Avengers: Endgame",
+      "value": 7
+    }
+  ]
+}

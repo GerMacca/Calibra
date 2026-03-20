@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-21",
+  "mode": "recalibra",
+  "criteria": "número de países membros",
+  "criteria_source": "Wikipedia — lista de estados membros por organização",
+  "items": [
+    {
+      "label": "BRICS",
+      "value": 3
+    },
+    {
+      "label": "G7",
+      "value": 1
+    },
+    {
+      "label": "OTAN",
+      "value": 38
+    },
+    {
+      "label": "ONU",
+      "value": 199
+    },
+    {
+      "label": "FIFA",
+      "value": 213
+    }
+  ]
+}

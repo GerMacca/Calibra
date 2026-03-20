@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-21",
+  "mode": "calibra",
+  "criteria": "ponto de fusão em °C",
+  "criteria_source": "Wikipedia — propriedades físicas dos materiais",
+  "items": [
+    {
+      "label": "Chocolate",
+      "value": 36
+    },
+    {
+      "label": "Chumbo",
+      "value": 321
+    },
+    {
+      "label": "Ferro",
+      "value": 1540
+    },
+    {
+      "label": "Tungstênio",
+      "value": 3416
+    }
+  ]
+}

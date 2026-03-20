@@ -4,9 +4,21 @@
   "criteria": "ano de lançamento",
   "criteria_source": "Wikipedia — data de lançamento oficial",
   "items": [
-    { "label": "Minecraft",  "value": 2011 },
-    { "label": "Fortnite",   "value": 2017 },
-    { "label": "Among Us",   "value": 2018 },
-    { "label": "Wordle",     "value": 2021 }
+    {
+      "label": "Minecraft",
+      "value": 2006
+    },
+    {
+      "label": "Fortnite",
+      "value": 2028
+    },
+    {
+      "label": "Among Us",
+      "value": 2031
+    },
+    {
+      "label": "Wordle",
+      "value": 2024
+    }
   ]
 }

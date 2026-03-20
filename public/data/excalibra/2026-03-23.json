@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-23",
+  "mode": "excalibra",
+  "criteria": "altitude máxima em metros",
+  "criteria_source": "Wikipedia — vulcões do mundo",
+  "items": [
+    {
+      "label": "Kilauea",
+      "value": 1218
+    },
+    {
+      "label": "Vesúvio",
+      "value": 1285
+    },
+    {
+      "label": "Etna",
+      "value": 3353
+    },
+    {
+      "label": "Mauna Loa",
+      "value": 4173
+    },
+    {
+      "label": "Popocatépetl",
+      "value": 5430
+    },
+    {
+      "label": "Cotopaxi",
+      "value": 5901
+    }
+  ]
+}

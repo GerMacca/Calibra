@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-20",
+  "mode": "calibra",
+  "criteria": "duração em minutos",
+  "criteria_source": "Wikipedia — duração oficial dos filmes",
+  "items": [
+    {
+      "label": "Toy Story",
+      "value": 86
+    },
+    {
+      "label": "O Poderoso Chefão",
+      "value": 168
+    },
+    {
+      "label": "Vingadores: Ultimato",
+      "value": 178
+    },
+    {
+      "label": "Titanic",
+      "value": 197
+    }
+  ]
+}

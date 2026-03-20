@@ -46,7 +46,7 @@ const WIN_MESSAGES: Record<1 | 2 | 3, string[]> = {
     '🤯 UAU! Acertou de primeira!',
     '🔥 INCRÍVEL! Na primeira tentativa!',
     '🎯 PERFEITO! Direto na primeira!',
-    '⚡ QUE MONSTRO! Nem precisou errar!',
+    '⚡ MONSTRO! Nem precisou errar!',
     '🏆 ABSURDO! Acertou sem hesitar!',
   ],
   2: [
@@ -59,7 +59,7 @@ const WIN_MESSAGES: Record<1 | 2 | 3, string[]> = {
   3: [
     '😅 UFA! Por pouco!',
     '😤 NA ÚLTIMA! Que sufoco!',
-    '😰 SOBREVIVEU! Por um fio!',
+    '😰 NOSSA! Por um fio!',
     '🫠 QUASE NÃO DÁ! Mas deu!',
     '🎲 NO LIMITE! Na última tentativa!',
   ],
@@ -114,7 +114,7 @@ function makeStrategy(lockedIds: Set<string>, allItems: string[]): SortingStrate
     }, []);
 
     const activeFree = freeIdx.indexOf(activeIndex);
-    const overFree   = freeIdx.indexOf(overIndex);
+    const overFree = freeIdx.indexOf(overIndex);
     if (activeFree === -1 || overFree === -1) return null;
 
     const newFreeOrder = arrayMove(freeIdx, activeFree, overFree);
@@ -171,7 +171,7 @@ export function GameBoard({
     const { active, over } = event;
     if (!over || active.id === over.id) return;
     const from = items.indexOf(String(active.id));
-    const to   = items.indexOf(String(over.id));
+    const to = items.indexOf(String(over.id));
     if (from === -1 || to === -1) return;
 
     // Move free items only; locked slots are always restored to their owners
@@ -181,7 +181,7 @@ export function GameBoard({
     });
 
     const moved = arrayMove(items, from, to);
-    const free  = moved.filter(item => !confirmedCorrect.has(item));
+    const free = moved.filter(item => !confirmedCorrect.has(item));
     let fi = 0;
     const result = items.map((_, i) =>
       lockedAt.has(i) ? lockedAt.get(i)! : free[fi++]
@@ -191,26 +191,55 @@ export function GameBoard({
   }, [items, confirmedCorrect, onReorder]);
 
   const feedback = useMemo((): { text: string; className: string } | null => {
-    if (gameState === 'WIN')       return { text: pickWinMessage(attemptGrid.length), className: 'gameboard__feedback--win' };
-    if (gameState === 'WRONG')     return { text: pickWrongMessage(), className: 'gameboard__feedback--wrong' };
+    if (gameState === 'WIN') return { text: pickWinMessage(attemptGrid.length), className: 'gameboard__feedback--win' };
+    if (gameState === 'WRONG') return { text: pickWrongMessage(), className: 'gameboard__feedback--wrong' };
     if (gameState === 'GAME_OVER') return { text: '💀 Sem mais tentativas', className: 'gameboard__feedback--gameover' };
     return null;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameState]); // re-pick message only when state changes, not on every render
 
   const isConfirmable = gameState === 'IDLE';
-  const isDraggable   = gameState === 'IDLE';
+  const isDraggable = gameState === 'IDLE';
 
   // Per-item result during WRONG state
-  const lastRow         = attemptGrid.length > 0 ? attemptGrid[attemptGrid.length - 1] : null;
+  const lastRow = attemptGrid.length > 0 ? attemptGrid[attemptGrid.length - 1] : null;
   const wrongStateResult = gameState === 'WRONG' ? lastRow : null;
 
   return (
     <div className="gameboard" style={modeStyle(mode)}>
       <div className="gameboard__topbar">
-        <p className="gameboard__instruction">
-          Ordene do <strong>menor</strong> para o <strong>maior</strong>
-        </p>
+        <div className="gameboard__instruction-wrap">
+          <div className="gameboard__instruction-row">
+            <p className="gameboard__instruction">
+              Ordene do <strong>menor</strong> para o <strong>maior</strong>
+            </p>
+            <div className="gameboard__tooltip-wrap">
+              <button className="gameboard__tooltip-btn" aria-label="Exemplo">?</button>
+              <div className="gameboard__tooltip">
+                <p className="gameboard__tooltip-title">Como funciona</p>
+                <div className="gameboard__tooltip-example">
+                  <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
+                    <span className="gameboard__tooltip-number">1</span>
+                    <span>Formiga</span>
+                    <span className="gameboard__tooltip-tag">menor</span>
+                  </div>
+                  <div className="gameboard__tooltip-item">
+                    <span className="gameboard__tooltip-number gameboard__tooltip-number--mid">2</span>
+                    <span>Gato</span>
+                  </div>
+                  <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
+                    <span className="gameboard__tooltip-number">3</span>
+                    <span>Elefante</span>
+                    <span className="gameboard__tooltip-tag gameboard__tooltip-tag">maior</span>
+                  </div>
+                </div>
+                <p className="gameboard__tooltip-criteria">
+                  Ex: Por <strong>tamanho</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <LivesIndicator total={MAX_LIVES} remaining={livesLeft} />
       </div>
 
@@ -237,7 +266,7 @@ export function GameBoard({
                 gameState={gameState}
                 isShaking={isShaking}
                 wasCorrect={wrongStateResult ? wrongStateResult[i] : undefined}
-                isConfirmedCorrect={gameState === 'IDLE' && confirmedCorrect.has(label)}
+                isConfirmedCorrect={confirmedCorrect.has(label)}
               />
             ))}
           </div>
