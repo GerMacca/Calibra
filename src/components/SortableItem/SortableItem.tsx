@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { useDndContext } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
@@ -11,8 +10,8 @@ interface SortableItemProps {
   index: number;
   gameState: GameState;
   isShaking: boolean;
-  wasCorrect?: boolean;       // defined only during WRONG state: green or red
-  isConfirmedCorrect?: boolean; // persists in IDLE after being confirmed correct once
+  wasCorrect?: boolean;
+  isConfirmedCorrect?: boolean;
 }
 
 export function SortableItem({
@@ -25,13 +24,7 @@ export function SortableItem({
   isConfirmedCorrect,
 }: SortableItemProps) {
   const isLocked = isConfirmedCorrect === true;
-
-  // Track whether the badge animation has already played for this instance.
-  // We want it to animate only on the render where isConfirmedCorrect first
-  // becomes true — not on every re-render caused by DnD kit updates.
-  const confirmedOnce = useRef(false);
-  const playBadgeAnim = isConfirmedCorrect && !confirmedOnce.current;
-  if (isConfirmedCorrect) confirmedOnce.current = true;
+  const playBadgeAnim = isConfirmedCorrect === true;
 
   const { active: dndActive } = useDndContext();
 

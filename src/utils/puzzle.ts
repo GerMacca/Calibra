@@ -1,4 +1,4 @@
-import type { GameMode, Puzzle } from '../types/game';
+import type { GameMode, Puzzle, PuzzleItem } from '../types/game';
 
 export function getToday(): string {
   const d = new Date();
