@@ -37,6 +37,7 @@ interface GameBoardProps {
   attemptGrid: AttemptGrid;
   onReorder: (newOrder: string[]) => void;
   onConfirm: () => void;
+  criteria?: string;
 }
 
 const MAX_LIVES = 3;
@@ -142,6 +143,7 @@ export function GameBoard({
   attemptGrid,
   onReorder,
   onConfirm,
+  criteria,
 }: GameBoardProps) {
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
@@ -242,6 +244,12 @@ export function GameBoard({
         </div>
         <LivesIndicator total={MAX_LIVES} remaining={livesLeft} />
       </div>
+
+      {criteria && (
+        <p className="gameboard__criteria">
+          Por: <strong>{criteria}</strong>
+        </p>
+      )}
 
       {feedback && (
         <div className={`gameboard__feedback ${feedback.className}`}>

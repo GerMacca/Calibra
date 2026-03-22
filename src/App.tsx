@@ -69,6 +69,7 @@ interface PuzzleLoadState {
 function GameScreen({
   mode,
   date,
+  hardMode,
   onBack,
   onDone,
   onHelp,
@@ -76,6 +77,7 @@ function GameScreen({
 }: {
   mode: GameMode;
   date: string;
+  hardMode: boolean;
   onBack: () => void;
   onDone: () => void;
   onHelp: () => void;
@@ -159,6 +161,7 @@ function GameScreen({
         attemptGrid={attemptGrid}
         onReorder={reorder}
         onConfirm={confirm}
+        criteria={hardMode ? undefined : puzzle.criteria}
       />
     </>
   );
@@ -223,6 +226,7 @@ export default function App() {
           key={`${selectedMode}-${selectedDate}`}
           mode={selectedMode}
           date={selectedDate}
+          hardMode={settings.hardMode}
           onBack={handleBack}
           onDone={handleDone}
           onHelp={handleHelp}

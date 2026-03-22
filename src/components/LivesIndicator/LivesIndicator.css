@@ -11,7 +11,6 @@
 }
 
 .lives__dot--active {
-  color: var(--color-error);
   filter: drop-shadow(0 0 4px var(--color-error-glow));
 }
 
