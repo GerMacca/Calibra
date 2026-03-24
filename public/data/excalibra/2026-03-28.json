@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-28",
+  "mode": "excalibra",
+  "criteria": "Altura de cachoeiras em metros",
+  "criteria_source": "Wikipedia — lista das maiores cachoeiras do mundo",
+  "items": [
+    {
+      "label": "Niágara",
+      "value": 54
+    },
+    {
+      "label": "Iguaçu",
+      "value": 93
+    },
+    {
+      "label": "Victoria",
+      "value": 99
+    },
+    {
+      "label": "Kaieteur",
+      "value": 237
+    },
+    {
+      "label": "Tugela",
+      "value": 955
+    },
+    {
+      "label": "Salto Ángel",
+      "value": 988
+    }
+  ]
+}

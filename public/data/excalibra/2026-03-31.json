@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-31",
+  "mode": "excalibra",
+  "criteria": "Bilheteria de filmes em milhões de USD",
+  "criteria_source": "Wikipedia — filmes de maior bilheteria",
+  "items": [
+    {
+      "label": "Spider-Man: No Way Home",
+      "value": 1898
+    },
+    {
+      "label": "Avengers: Infinity War",
+      "value": 2055
+    },
+    {
+      "label": "Star Wars: The Force Awakens",
+      "value": 2066
+    },
+    {
+      "label": "Titanic",
+      "value": 2262
+    },
+    {
+      "label": "Avengers: Endgame",
+      "value": 2792
+    },
+    {
+      "label": "Avatar",
+      "value": 2924
+    }
+  ]
+}

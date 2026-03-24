@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-26",
+  "mode": "calibra",
+  "criteria": "Altitude de montanhas em metros",
+  "criteria_source": "Wikipedia — lista de montanhas por altitude",
+  "items": [
+    {
+      "label": "Monte Roraima",
+      "value": 2811
+    },
+    {
+      "label": "Pico da Bandeira",
+      "value": 2893
+    },
+    {
+      "label": "Monte Etna",
+      "value": 3356
+    },
+    {
+      "label": "Monte Fuji",
+      "value": 3777
+    }
+  ]
+}

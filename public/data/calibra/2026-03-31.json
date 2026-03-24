@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-31",
+  "mode": "calibra",
+  "criteria": "Altitude de vulcões em metros",
+  "criteria_source": "Wikipedia — lista de vulcões por altitude",
+  "items": [
+    {
+      "label": "Monte Etna",
+      "value": 3354
+    },
+    {
+      "label": "Monte Fuji",
+      "value": 3783
+    },
+    {
+      "label": "Mauna Loa",
+      "value": 4174
+    },
+    {
+      "label": "Kilimanjaro",
+      "value": 5888
+    }
+  ]
+}

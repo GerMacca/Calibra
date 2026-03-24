@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-30",
+  "mode": "recalibra",
+  "criteria": "Volume de grandes lagos em km³",
+  "criteria_source": "Wikipedia — lista dos maiores lagos do mundo por volume",
+  "items": [
+    {
+      "label": "Titicaca",
+      "value": 891
+    },
+    {
+      "label": "Michigan",
+      "value": 4926
+    },
+    {
+      "label": "Superior",
+      "value": 12098
+    },
+    {
+      "label": "Baikal",
+      "value": 23609
+    },
+    {
+      "label": "Cáspio",
+      "value": 78206
+    }
+  ]
+}

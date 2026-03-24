@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-27",
+  "mode": "excalibra",
+  "criteria": "Número de satélites naturais conhecidos",
+  "criteria_source": "Wikipedia — luas dos planetas do Sistema Solar",
+  "items": [
+    {
+      "label": "Terra",
+      "value": 1
+    },
+    {
+      "label": "Marte",
+      "value": 2
+    },
+    {
+      "label": "Netuno",
+      "value": 16
+    },
+    {
+      "label": "Urano",
+      "value": 27
+    },
+    {
+      "label": "Saturno",
+      "value": 83
+    },
+    {
+      "label": "Júpiter",
+      "value": 95
+    }
+  ]
+}

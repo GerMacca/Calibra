@@ -100,12 +100,12 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
               <div className="demo-items">
                 <div className="demo-item demo-item--correct">
                   <span className="demo-item__index">1</span>
-                  <span className="demo-item__label">Elefante</span>
+                  <span className="demo-item__label">Guepardo</span>
                   <span className="demo-dot demo-dot--correct" />
                 </div>
                 <div className="demo-item demo-item--wrong">
                   <span className="demo-item__index">2</span>
-                  <span className="demo-item__label">Guepardo</span>
+                  <span className="demo-item__label">Elefante</span>
                   <span className="demo-dot demo-dot--wrong" />
                 </div>
                 <div className="demo-item demo-item--wrong">
@@ -135,17 +135,17 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
               <div className="demo-items">
                 <div className="demo-item demo-item--confirmed">
                   <span className="demo-item__index">1</span>
-                  <span className="demo-item__label">Elefante</span>
+                  <span className="demo-item__label">Guepardo</span>
                   <CheckBadge />
                 </div>
                 <div className="demo-item">
                   <span className="demo-item__index">2</span>
-                  <span className="demo-item__label">Humano</span>
+                  <span className="demo-item__label">Elefante</span>
                   <span className="demo-item__handle"><DragHandle /></span>
                 </div>
                 <div className="demo-item">
                   <span className="demo-item__index">3</span>
-                  <span className="demo-item__label">Guepardo</span>
+                  <span className="demo-item__label">Humano</span>
                   <span className="demo-item__handle"><DragHandle /></span>
                 </div>
               </div>

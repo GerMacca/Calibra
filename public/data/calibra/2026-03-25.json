@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-25",
+  "mode": "calibra",
+  "criteria": "Distância média ao Sol em milhões de km",
+  "criteria_source": "Wikipedia — Sistema Solar",
+  "items": [
+    {
+      "label": "Mercúrio",
+      "value": 56
+    },
+    {
+      "label": "Vênus",
+      "value": 110
+    },
+    {
+      "label": "Terra",
+      "value": 148
+    },
+    {
+      "label": "Marte",
+      "value": 230
+    }
+  ]
+}

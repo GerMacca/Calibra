@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-28",
+  "mode": "recalibra",
+  "criteria": "Área de países europeus em mil km²",
+  "criteria_source": "Wikipedia — lista de países da Europa por área",
+  "items": [
+    {
+      "label": "Luxemburgo",
+      "value": 12
+    },
+    {
+      "label": "Bélgica",
+      "value": 16
+    },
+    {
+      "label": "Portugal",
+      "value": 83
+    },
+    {
+      "label": "Itália",
+      "value": 290
+    },
+    {
+      "label": "França",
+      "value": 551
+    }
+  ]
+}

@@ -213,7 +213,7 @@ export function GameBoard({
         <div className="gameboard__instruction-wrap">
           <div className="gameboard__instruction-row">
             <p className="gameboard__instruction">
-              Ordene do <strong>menor</strong> para o <strong>maior</strong>
+              Ordene do <strong>maior</strong> para o <strong>menor</strong>
             </p>
             <div className="gameboard__tooltip-wrap">
               <button className="gameboard__tooltip-btn" aria-label="Exemplo">?</button>
@@ -222,8 +222,8 @@ export function GameBoard({
                 <div className="gameboard__tooltip-example">
                   <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
                     <span className="gameboard__tooltip-number">1</span>
-                    <span>Formiga</span>
-                    <span className="gameboard__tooltip-tag">menor</span>
+                    <span>Elefante</span>
+                    <span className="gameboard__tooltip-tag">maior</span>
                   </div>
                   <div className="gameboard__tooltip-item">
                     <span className="gameboard__tooltip-number gameboard__tooltip-number--mid">2</span>
@@ -231,8 +231,8 @@ export function GameBoard({
                   </div>
                   <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
                     <span className="gameboard__tooltip-number">3</span>
-                    <span>Elefante</span>
-                    <span className="gameboard__tooltip-tag gameboard__tooltip-tag">maior</span>
+                    <span>Formiga</span>
+                    <span className="gameboard__tooltip-tag">menor</span>
                   </div>
                 </div>
                 <p className="gameboard__tooltip-criteria">

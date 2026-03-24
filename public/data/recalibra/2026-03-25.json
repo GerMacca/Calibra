@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-25",
+  "mode": "recalibra",
+  "criteria": "Velocidade máxima de animais em km/h",
+  "criteria_source": "Wikipedia — recordes de velocidade animal",
+  "items": [
+    {
+      "label": "Tartaruga",
+      "value": 3
+    },
+    {
+      "label": "Humano",
+      "value": 47
+    },
+    {
+      "label": "Leão",
+      "value": 82
+    },
+    {
+      "label": "Guepardo",
+      "value": 122
+    },
+    {
+      "label": "Falcão-peregrino",
+      "value": 391
+    }
+  ]
+}

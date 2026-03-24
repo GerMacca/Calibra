@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-31",
+  "mode": "recalibra",
+  "criteria": "Capacidade de estádios de futebol em pessoas",
+  "criteria_source": "Wikipedia — maiores estádios do mundo",
+  "items": [
+    {
+      "label": "Maracanã",
+      "value": 78833
+    },
+    {
+      "label": "Wembley",
+      "value": 90007
+    },
+    {
+      "label": "Camp Nou",
+      "value": 99357
+    },
+    {
+      "label": "Rungrado",
+      "value": 114007
+    },
+    {
+      "label": "Narendra Modi",
+      "value": 132007
+    }
+  ]
+}

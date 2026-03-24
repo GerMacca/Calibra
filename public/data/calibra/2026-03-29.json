@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-29",
+  "mode": "calibra",
+  "criteria": "Velocidade máxima de trens em km/h",
+  "criteria_source": "Wikipedia — trens de alta velocidade",
+  "items": [
+    {
+      "label": "Eurostar",
+      "value": 290
+    },
+    {
+      "label": "AVE (Espanha)",
+      "value": 312
+    },
+    {
+      "label": "CRH (China)",
+      "value": 336
+    },
+    {
+      "label": "Maglev (Xangai)",
+      "value": 417
+    }
+  ]
+}

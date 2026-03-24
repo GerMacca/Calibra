@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-29",
+  "mode": "excalibra",
+  "criteria": "Potência instalada de usinas hidrelétricas em MW",
+  "criteria_source": "Wikipedia — maiores usinas hidrelétricas do mundo",
+  "items": [
+    {
+      "label": "Hoover Dam",
+      "value": 2094
+    },
+    {
+      "label": "Ilha Solteira",
+      "value": 3450
+    },
+    {
+      "label": "Grand Coulee",
+      "value": 6807
+    },
+    {
+      "label": "Tucuruí",
+      "value": 8380
+    },
+    {
+      "label": "Itaipu",
+      "value": 14014
+    },
+    {
+      "label": "Three Gorges",
+      "value": 22506
+    }
+  ]
+}

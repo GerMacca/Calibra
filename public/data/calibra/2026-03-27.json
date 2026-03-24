@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-27",
+  "mode": "calibra",
+  "criteria": "Profundidade máxima de lagos em metros",
+  "criteria_source": "Wikipedia — lista dos lagos mais profundos do mundo",
+  "items": [
+    {
+      "label": "Lago Titicaca",
+      "value": 281
+    },
+    {
+      "label": "Lago Superior",
+      "value": 406
+    },
+    {
+      "label": "Lago Tanganyika",
+      "value": 1470
+    },
+    {
+      "label": "Lago Baikal",
+      "value": 1642
+    }
+  ]
+}

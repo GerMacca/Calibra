@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-26",
+  "mode": "recalibra",
+  "criteria": "Horas de sol por ano em média",
+  "criteria_source": "Wikipedia — insolação média por cidade",
+  "items": [
+    {
+      "label": "Londres",
+      "value": 1632
+    },
+    {
+      "label": "Paris",
+      "value": 1660
+    },
+    {
+      "label": "Nova York",
+      "value": 2534
+    },
+    {
+      "label": "Rio de Janeiro",
+      "value": 2801
+    },
+    {
+      "label": "Dubai",
+      "value": 3508
+    }
+  ]
+}

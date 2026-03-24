@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-27",
+  "mode": "recalibra",
+  "criteria": "Número de países por continente",
+  "criteria_source": "Wikipedia — divisão geopolítica por continente",
+  "items": [
+    {
+      "label": "Oceania",
+      "value": 14
+    },
+    {
+      "label": "América do Norte",
+      "value": 23
+    },
+    {
+      "label": "Europa",
+      "value": 44
+    },
+    {
+      "label": "Ásia",
+      "value": 48
+    },
+    {
+      "label": "África",
+      "value": 54
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-03-29",
+  "mode": "recalibra",
+  "criteria": "Total de medalhas nas Olimpíadas Paris 2024",
+  "criteria_source": "Wikipedia — quadro de medalhas Olimpíadas 2024",
+  "items": [
+    {
+      "label": "Austrália",
+      "value": 59
+    },
+    {
+      "label": "Reino Unido",
+      "value": 79
+    },
+    {
+      "label": "França",
+      "value": 76
+    },
+    {
+      "label": "China",
+      "value": 85
+    },
+    {
+      "label": "EUA",
+      "value": 112
+    }
+  ]
+}

@@ -38,7 +38,7 @@ export async function loadPuzzle(mode: GameMode, date: string): Promise<Puzzle> 
 
 export function getCorrectOrder(puzzle: Puzzle): string[] {
   return [...puzzle.items]
-    .sort((a, b) => a.value - b.value)
+    .sort((a, b) => b.value - a.value)
     .map(item => item.label);
 }
 

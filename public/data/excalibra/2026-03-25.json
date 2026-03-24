@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-25",
+  "mode": "excalibra",
+  "criteria": "Comprimento de rios em km",
+  "criteria_source": "Wikipedia — lista dos maiores rios do mundo",
+  "items": [
+    {
+      "label": "Rio Sena",
+      "value": 773
+    },
+    {
+      "label": "Rio Reno",
+      "value": 1228
+    },
+    {
+      "label": "Rio Danúbio",
+      "value": 2862
+    },
+    {
+      "label": "Rio Mississipi",
+      "value": 3728
+    },
+    {
+      "label": "Rio Nilo",
+      "value": 6648
+    },
+    {
+      "label": "Rio Amazonas",
+      "value": 6994
+    }
+  ]
+}

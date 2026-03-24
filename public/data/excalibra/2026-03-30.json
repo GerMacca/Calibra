@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-30",
+  "mode": "excalibra",
+  "criteria": "Número de ilhas por país",
+  "criteria_source": "Wikipedia — lista de países por número de ilhas",
+  "items": [
+    {
+      "label": "Maldivas",
+      "value": 1206
+    },
+    {
+      "label": "Japão",
+      "value": 6850
+    },
+    {
+      "label": "Filipinas",
+      "value": 7647
+    },
+    {
+      "label": "Noruega",
+      "value": 50006
+    },
+    {
+      "label": "Finlândia",
+      "value": 180006
+    },
+    {
+      "label": "Suécia",
+      "value": 221806
+    }
+  ]
+}

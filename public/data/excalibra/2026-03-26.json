@@ -1,0 +1,32 @@
+{
+  "date": "2026-03-26",
+  "mode": "excalibra",
+  "criteria": "Temperatura média anual em °C",
+  "criteria_source": "Wikipedia — clima de cidades do mundo",
+  "items": [
+    {
+      "label": "Reykjavik",
+      "value": 4
+    },
+    {
+      "label": "Londres",
+      "value": 13
+    },
+    {
+      "label": "Lisboa",
+      "value": 16
+    },
+    {
+      "label": "Cairo",
+      "value": 23
+    },
+    {
+      "label": "Mumbai",
+      "value": 26
+    },
+    {
+      "label": "Bangkok",
+      "value": 28
+    }
+  ]
+}

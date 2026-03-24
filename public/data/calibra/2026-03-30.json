@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-30",
+  "mode": "calibra",
+  "criteria": "Raio médio de planetas em km",
+  "criteria_source": "Wikipedia — planetas do Sistema Solar",
+  "items": [
+    {
+      "label": "Marte",
+      "value": 3384
+    },
+    {
+      "label": "Vênus",
+      "value": 6050
+    },
+    {
+      "label": "Terra",
+      "value": 6373
+    },
+    {
+      "label": "Netuno",
+      "value": 24616
+    }
+  ]
+}

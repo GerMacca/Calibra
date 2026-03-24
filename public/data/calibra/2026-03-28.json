@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-28",
+  "mode": "calibra",
+  "criteria": "Duração da gestação de animais em dias",
+  "criteria_source": "Wikipedia — período de gestação por espécie",
+  "items": [
+    {
+      "label": "Rato",
+      "value": 26
+    },
+    {
+      "label": "Cachorro",
+      "value": 48
+    },
+    {
+      "label": "Leão",
+      "value": 97
+    },
+    {
+      "label": "Elefante",
+      "value": 650
+    }
+  ]
+}
