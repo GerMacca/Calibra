@@ -168,6 +168,69 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             </div>
           </div>
 
+          {/* Step 5: Settings */}
+          <div className="tutorial-section" style={{ animationDelay: '400ms' }}>
+            <p className="tutorial-section__label">
+              <span className="tutorial-section__num">5</span>
+              Personalize sua experiência nas <strong>configurações</strong>
+            </p>
+            <div className="tutorial-demo">
+              <div className="tutorial-settings-list">
+
+                <div className="tutorial-setting tutorial-setting--highlight">
+                  <span className="tutorial-setting__icon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                  </span>
+                  <div className="tutorial-setting__text">
+                    <span className="tutorial-setting__label">Modo Difícil</span>
+                    <span className="tutorial-setting__desc">Esconde o tema do dia — você joga sem dica nenhuma</span>
+                  </div>
+                </div>
+
+                <div className="tutorial-setting">
+                  <span className="tutorial-setting__icon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 7V4h16v3" /><path d="M9 20h6" /><path d="M12 4v16" />
+                    </svg>
+                  </span>
+                  <div className="tutorial-setting__text">
+                    <span className="tutorial-setting__label">Fonte para dislexia</span>
+                    <span className="tutorial-setting__desc">Ativa a fonte OpenDyslexic</span>
+                  </div>
+                </div>
+
+                <div className="tutorial-setting">
+                  <span className="tutorial-setting__icon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="3" />
+                      <path d="M12 5C7 5 2.73 8.11 1 12.5 2.73 16.89 7 20 12 20s9.27-3.11 11-7.5C21.27 8.11 17 5 12 5z" />
+                    </svg>
+                  </span>
+                  <div className="tutorial-setting__text">
+                    <span className="tutorial-setting__label">Modo daltonismo</span>
+                    <span className="tutorial-setting__desc">Troca verde/vermelho por azul/âmbar</span>
+                  </div>
+                </div>
+
+                <div className="tutorial-setting">
+                  <span className="tutorial-setting__icon">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                      <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                    </svg>
+                  </span>
+                  <div className="tutorial-setting__text">
+                    <span className="tutorial-setting__label">Som & animações</span>
+                    <span className="tutorial-setting__desc">Controle o som de vitória e os efeitos visuais</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
         </div>{/* end scroll */}
 
