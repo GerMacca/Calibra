@@ -5,6 +5,7 @@ import './Header.css';
 interface HeaderProps {
   mode?: GameMode;
   onBack?: () => void;
+  onStats?: () => void;
   onHelp?: () => void;
   onSettings?: () => void;
 }
@@ -15,7 +16,7 @@ const MODE_LABELS: Record<GameMode, string> = {
   excalibra: 'Excalibra',
 };
 
-export function Header({ mode, onBack, onHelp, onSettings }: HeaderProps) {
+export function Header({ mode, onBack, onStats, onHelp, onSettings }: HeaderProps) {
   return (
     <header className="header">
       <div className="header__inner">
@@ -39,6 +40,15 @@ export function Header({ mode, onBack, onHelp, onSettings }: HeaderProps) {
         </div>
 
         <div className="header__actions">
+          {onStats && (
+            <button className="header__btn" onClick={onStats} aria-label="Estatísticas">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg>
+            </button>
+          )}
           {onHelp && (
             <button className="header__btn" onClick={onHelp} aria-label="Como jogar">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +66,7 @@ export function Header({ mode, onBack, onHelp, onSettings }: HeaderProps) {
               </svg>
             </button>
           )}
-          {!onHelp && !onSettings && <div className="header__spacer" />}
+          {!onStats && !onHelp && !onSettings && <div className="header__spacer" />}
         </div>
       </div>
     </header>

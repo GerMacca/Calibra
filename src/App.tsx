@@ -8,6 +8,7 @@ import { GameBoard } from './components/GameBoard/GameBoard';
 import { ResultScreen } from './components/ResultScreen/ResultScreen';
 import { TutorialModal } from './components/TutorialModal/TutorialModal';
 import { SettingsModal } from './components/SettingsModal/SettingsModal';
+import { StatsModal } from './components/StatsModal/StatsModal';
 import { type AppSettings, DEFAULT_SETTINGS } from './types/settings';
 import './App.css';
 
@@ -241,8 +242,10 @@ export default function App() {
     localStorage.setItem('calibra_tutorial_seen', TODAY);
     setShowTutorial(false);
   }, []);
+  const [showStats, setShowStats] = useState(false);
   const handleHelp = useCallback(() => setShowTutorial(true), []);
   const handleSettings = useCallback(() => setShowSettings(true), []);
+  const handleStats = useCallback(() => setShowStats(true), []);
 
   if (selectedMode) {
     return (
@@ -272,7 +275,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header onHelp={handleHelp} onSettings={handleSettings} />
+      <Header onStats={handleStats} onHelp={handleHelp} onSettings={handleSettings} />
       <ModeSelector
         onSelect={handleModeSelect}
         completedModes={completedModes}
@@ -281,6 +284,7 @@ export default function App() {
         onDateChange={handleDateChange}
       />
       {showTutorial && <TutorialModal onClose={closeTutorial} />}
+      {showStats && <StatsModal onClose={() => setShowStats(false)} />}
       {showSettings && (
         <SettingsModal
           settings={settings}
