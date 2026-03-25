@@ -67,8 +67,9 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
   const availableMonths = new Set([...availableDates].map(toYearMonth));
   const currentYM = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}`;
 
+  const todayYM = toYearMonth(today);
   const canGoPrev = [...availableMonths].some(ym => ym < currentYM);
-  const canGoNext = [...availableMonths].some(ym => ym > currentYM);
+  const canGoNext = [...availableMonths].some(ym => ym > currentYM && ym <= todayYM);
 
   function prevMonth() {
     if (viewMonth === 0) { setViewYear(y => y - 1); setViewMonth(11); }
@@ -127,7 +128,8 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
             }
 
             const dateStr = toDateStr(viewYear, viewMonth, day);
-            const isAvailable = availableDates.has(dateStr);
+            const isFuture = dateStr > today;
+            const isAvailable = availableDates.has(dateStr) && !isFuture;
             const isSelected = dateStr === selectedDate;
             const isToday = dateStr === today;
             const status = isAvailable ? getModeStatus(dateStr) : null;

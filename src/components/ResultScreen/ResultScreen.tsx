@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Puzzle, AttemptGrid, GameMode } from '../../types/game';
 import { buildShareText } from '../../utils/share';
 import { modeStyle } from '../../utils/modes';
+import { useCountdown } from '../../hooks/useCountdown';
 import './ResultScreen.css';
 
 interface ResultScreenProps {
@@ -11,6 +12,7 @@ interface ResultScreenProps {
   correctOrder: string[];
   mode: GameMode;
   onPlayNext?: () => void;
+  onHome: () => void;
 }
 
 const MAX_LIVES = 3;
@@ -22,8 +24,10 @@ export function ResultScreen({
   correctOrder,
   mode,
   onPlayNext,
+  onHome,
 }: ResultScreenProps) {
   const [copied, setCopied] = useState(false);
+  const countdown = useCountdown();
 
   const labelToValue = new Map(puzzle.items.map(i => [i.label, i.value]));
   const attemptsUsed = attemptGrid.length;
@@ -124,10 +128,14 @@ export function ResultScreen({
           </button>
         )}
 
-        <button className="result__home" onClick={() => window.location.reload()}> {/* UseNavigate talvez seja mais interessante */}
+        <button className="result__home" onClick={onHome}>
           Início
         </button>
       </div>
+
+      <p className="result__countdown">
+        Próximo puzzle em <span className="result__countdown-time">{countdown}</span>
+      </p>
     </div>
   );
 }

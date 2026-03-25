@@ -3,6 +3,8 @@ export interface AppSettings {
   colorblindMode: boolean;
   reduceMotion: boolean;
   hardMode: boolean;
+  soundEnabled: boolean;
+  dynamicTheme: boolean;
 }
 
 export const DEFAULT_SETTINGS: AppSettings = {
@@ -10,4 +12,6 @@ export const DEFAULT_SETTINGS: AppSettings = {
   colorblindMode: false,
   reduceMotion: false,
   hardMode: false,
+  soundEnabled: true,
+  dynamicTheme: false,
 };

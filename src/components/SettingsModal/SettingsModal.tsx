@@ -35,6 +35,40 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
           <SettingsRow
             icon={
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+            }
+            label="Som"
+            desc="Toca som de vitória ao acertar"
+            checked={settings.soundEnabled}
+            onToggle={() => toggle('soundEnabled')}
+          />
+
+          <SettingsRow
+            icon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            }
+            label="Tema dinâmico"
+            desc="Claro de dia (6h–18h), escuro à noite"
+            checked={settings.dynamicTheme}
+            onToggle={() => toggle('dynamicTheme')}
+          />
+
+          <SettingsRow
+            icon={
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             }
@@ -52,7 +86,7 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M12 4v16" />
               </svg>
             }
-            label="Fonte para esquizofrenia"
+            label="Fonte para dislexia"
             desc="Usa a fonte OpenDyslexic"
             checked={settings.dyslexicFont}
             onToggle={() => toggle('dyslexicFont')}

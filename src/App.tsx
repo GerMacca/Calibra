@@ -24,7 +24,27 @@ function applySettings(s: AppSettings) {
   el.dataset.dyslexic = String(s.dyslexicFont);
   el.dataset.colorblind = String(s.colorblindMode);
   el.dataset.reduceMotion = String(s.reduceMotion);
+  applyTheme(s.dynamicTheme);
 }
+
+function getThemeByTime(): 'light' | 'dark' {
+  const h = new Date().getHours();
+  return h >= 6 && h < 18 ? 'light' : 'dark';
+}
+
+function applyTheme(dynamic: boolean) {
+  document.documentElement.dataset.theme = dynamic ? getThemeByTime() : 'dark';
+}
+
+function useDynamicTheme(enabled: boolean) {
+  useEffect(() => {
+    applyTheme(enabled);
+    if (!enabled) return;
+    const id = setInterval(() => applyTheme(true), 60_000);
+    return () => clearInterval(id);
+  }, [enabled]);
+}
+
 
 const TODAY = getToday();
 const ALL_MODES: GameMode[] = ['calibra', 'recalibra', 'excalibra'];
@@ -70,6 +90,7 @@ function GameScreen({
   mode,
   date,
   hardMode,
+  soundEnabled,
   onBack,
   onDone,
   onHelp,
@@ -78,6 +99,7 @@ function GameScreen({
   mode: GameMode;
   date: string;
   hardMode: boolean;
+  soundEnabled: boolean;
   onBack: () => void;
   onDone: () => void;
   onHelp: () => void;
@@ -143,6 +165,7 @@ function GameScreen({
           correctOrder={correctOrder}
           mode={mode}
           onPlayNext={mode !== 'excalibra' ? onDone : undefined}
+          onHome={onBack}
         />
       </>
     );
@@ -162,6 +185,7 @@ function GameScreen({
         onReorder={reorder}
         onConfirm={confirm}
         criteria={hardMode ? undefined : puzzle.criteria}
+        soundEnabled={soundEnabled}
       />
     </>
   );
@@ -169,6 +193,12 @@ function GameScreen({
 
 export default function App() {
   const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
+  const [settings, setSettings] = useState<AppSettings>(() => {
+    const s = readSettings();
+    applySettings(s);
+    return s;
+  });
+  useDynamicTheme(settings.dynamicTheme);
   const [selectedDate, setSelectedDate] = useState(TODAY);
   const [completedModes, setCompletedModes] = useState(() => readCompletedModes(TODAY));
   const [savedStates, setSavedStates] = useState(() => readSavedStates(TODAY));
@@ -176,11 +206,6 @@ export default function App() {
     () => localStorage.getItem('calibra_tutorial_seen') !== TODAY
   );
   const [showSettings, setShowSettings] = useState(false);
-  const [settings, setSettings] = useState<AppSettings>(() => {
-    const s = readSettings();
-    applySettings(s);
-    return s;
-  });
 
   const handleSettingsChange = useCallback((next: AppSettings) => {
     applySettings(next);
@@ -227,6 +252,7 @@ export default function App() {
           mode={selectedMode}
           date={selectedDate}
           hardMode={settings.hardMode}
+          soundEnabled={settings.soundEnabled}
           onBack={handleBack}
           onDone={handleDone}
           onHelp={handleHelp}

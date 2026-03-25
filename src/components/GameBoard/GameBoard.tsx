@@ -1,4 +1,5 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import {
   DndContext,
   KeyboardSensor,
@@ -38,6 +39,28 @@ interface GameBoardProps {
   onReorder: (newOrder: string[]) => void;
   onConfirm: () => void;
   criteria?: string;
+  soundEnabled?: boolean;
+}
+
+function playVictorySound() {
+  try {
+    const ctx = new AudioContext();
+    const notes = [261.63, 329.63, 392.00, 523.25]; // C4 E4 G4 C5
+    notes.forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const t = ctx.currentTime + i * 0.1;
+      gain.gain.setValueAtTime(0.001, t);
+      gain.gain.linearRampToValueAtTime(0.13, t + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.6);
+      osc.start(t);
+      osc.stop(t + 0.65);
+    });
+  } catch { /* AudioContext não suportado */ }
 }
 
 const MAX_LIVES = 3;
@@ -144,7 +167,16 @@ export function GameBoard({
   onReorder,
   onConfirm,
   criteria,
+  soundEnabled = true,
 }: GameBoardProps) {
+  useEffect(() => {
+    if (gameState !== 'WIN') return;
+    const reduceMotion = document.documentElement.dataset.reduceMotion === 'true';
+    if (!reduceMotion) {
+      confetti({ particleCount: 140, spread: 70, origin: { y: 0.55 }, colors: ['#8B5CF6', '#06B6D4', '#F97316', '#10B981', '#F59E0B'] });
+    }
+    if (soundEnabled) playVictorySound();
+  }, [gameState, soundEnabled]);
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })

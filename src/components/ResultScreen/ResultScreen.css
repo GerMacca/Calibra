@@ -223,3 +223,16 @@
   border-color: var(--color-border-hover);
   color: var(--color-text-primary);
 }
+
+.result__countdown {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  padding-bottom: var(--space-4);
+}
+
+.result__countdown-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}

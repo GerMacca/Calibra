@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { GameMode, SavedState, AttemptGrid } from '../../types/game';
 import { modeStyle } from '../../utils/modes';
 import { buildShareText } from '../../utils/share';
 import { getToday } from '../../utils/puzzle';
+import { syncStreaks } from '../../utils/streak';
+import { useCountdown } from '../../hooks/useCountdown';
 import { DatePickerModal } from '../DatePickerModal/DatePickerModal';
 import './ModeSelector.css';
 
@@ -48,66 +50,6 @@ interface ModeSelectorProps {
   onDateChange: (date: string) => void;
 }
 
-function clearSiteData() {
-  localStorage.clear();
-  location.reload();
-}
-
-function getYesterday(today: string): string {
-  const d = new Date(today + 'T12:00:00');
-  d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
-}
-
-function readStreak(today: string): number {
-  try {
-    const raw = localStorage.getItem('calibra_streak');
-    if (!raw) return 0;
-    const s = JSON.parse(raw);
-    const yesterday = getYesterday(today);
-    if (s.date === today || s.date === yesterday) return s.count;
-    return 0;
-  } catch {
-    return 0;
-  }
-}
-
-function updateStreak(today: string): number {
-  try {
-    const raw = localStorage.getItem('calibra_streak');
-    const s = raw ? JSON.parse(raw) : { date: '', count: 0 };
-    if (s.date === today) return s.count;
-    const yesterday = getYesterday(today);
-    const newCount = s.date === yesterday ? s.count + 1 : 1;
-    localStorage.setItem('calibra_streak', JSON.stringify({ date: today, count: newCount }));
-    return newCount;
-  } catch {
-    return 0;
-  }
-}
-
-function useCountdown(): string {
-  const [countdown, setCountdown] = useState('');
-  useEffect(() => {
-    function update() {
-      const now = new Date();
-      const midnight = new Date(now);
-      midnight.setDate(midnight.getDate() + 1);
-      midnight.setHours(0, 0, 0, 0);
-      const diff = midnight.getTime() - now.getTime();
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const sec = Math.floor((diff % 60000) / 1000);
-      setCountdown(
-        `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`
-      );
-    }
-    update();
-    const id = setInterval(update, 1000);
-    return () => clearInterval(id);
-  }, []);
-  return countdown;
-}
 
 function MiniGrid({ grid }: { grid: AttemptGrid }) {
   return (
@@ -136,7 +78,7 @@ function ItemDots({ count }: { count: number }) {
   );
 }
 
-const PT_MONTHS_SHORT = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const PT_MONTHS_SHORT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 
 function formatSelectedDate(date: string): string {
   const d = new Date(date + 'T12:00:00');
@@ -146,7 +88,10 @@ function formatSelectedDate(date: string): string {
 export function ModeSelector({ onSelect, completedModes, savedStates, selectedDate, onDateChange }: ModeSelectorProps) {
   const today = getToday();
   const countdown = useCountdown();
-  const streak = completedModes.size > 0 ? updateStreak(today) : readStreak(today);
+  const streaks = selectedDate === today
+    ? syncStreaks(completedModes, today)
+    : { all: 0, calibra: 0, recalibra: 0, excalibra: 0 };
+  const streak = streaks['all'];
   const [copied, setCopied] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const isPastDate = selectedDate !== today;
@@ -191,7 +136,6 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
       )}
 
       <div className="mode-selector__hero">
-        <h1 className="mode-selector__title">Calibra</h1>
         <p className="mode-selector__subtitle">
           Ordene os itens pelo critério secreto.<br />
           Descubra a ordem certa em até 3 tentativas.
@@ -245,6 +189,11 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
                 )}
               </div>
               <p className="mode-card__desc">{description}</p>
+              {streaks[mode] > 0 && (
+                <p className="mode-card__streak">
+                  🔥 {streaks[mode]} dia{streaks[mode] !== 1 ? 's' : ''} seguidos
+                </p>
+              )}
               <div className="mode-card__meta">
                 <ItemDots count={items} />
                 {done && saved?.grid && <MiniGrid grid={saved.grid} />}
@@ -289,13 +238,6 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
             <line x1="3" y1="10" x2="21" y2="10" />
           </svg>
           Dias anteriores
-        </button>
-        <button className="mode-selector__reset" onClick={clearSiteData} title="Resetar dados locais">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="1 4 1 10 7 10" />
-            <path d="M3.51 15a9 9 0 1 0 .49-4.95" />
-          </svg>
-          Reset
         </button>
       </div>
 
