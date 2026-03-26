@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Puzzle, AttemptGrid, GameMode } from '../../types/game';
 import { buildShareText } from '../../utils/share';
+import { shareAsImage } from '../../utils/shareImage';
 import { modeStyle } from '../../utils/modes';
 import { useCountdown } from '../../hooks/useCountdown';
 import './ResultScreen.css';
@@ -27,6 +28,7 @@ export function ResultScreen({
   onHome,
 }: ResultScreenProps) {
   const [copied, setCopied] = useState(false);
+  const [sharingImage, setSharingImage] = useState(false);
   const countdown = useCountdown();
 
   const labelToValue = new Map(puzzle.items.map(i => [i.label, i.value]));
@@ -41,6 +43,20 @@ export function ResultScreen({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
+  }
+
+  function handleShareImage() {
+    if (sharingImage) return;
+    setSharingImage(true);
+    shareAsImage({
+      mode,
+      date: puzzle.date,
+      solved,
+      attemptGrid,
+      criteria: puzzle.criteria,
+      correctOrder,
+      values: labelToValue,
+    }).finally(() => setSharingImage(false));
   }
 
   return (
@@ -118,6 +134,19 @@ export function ResultScreen({
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
               </svg>
               Compartilhar
+            </>
+          )}
+        </button>
+
+        <button className="result__share-image" onClick={handleShareImage} disabled={sharingImage}>
+          {sharingImage ? 'Gerando...' : (
+            <>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              Compartilhar imagem
             </>
           )}
         </button>

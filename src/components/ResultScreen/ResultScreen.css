@@ -203,6 +203,34 @@
 }
 .result__share:hover { box-shadow: 0 6px 28px color-mix(in srgb, var(--mode-color) 50%, transparent); }
 
+.result__share-image {
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.result__share-image:hover:not(:disabled) {
+  background: var(--color-surface-alt);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.result__share-image:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .result__next,
 .result__home {
   width: 100%;

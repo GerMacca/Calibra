@@ -137,7 +137,7 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
 
       <div className="mode-selector__hero">
         <p className="mode-selector__subtitle">
-          Ordene os itens pelo critério secreto.<br />
+          Ordene os itens pelo critério apresentado (ou não).<br />
           Descubra a ordem certa em até 3 tentativas.
         </p>
       </div>
