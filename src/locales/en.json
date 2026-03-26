@@ -1,0 +1,131 @@
+{
+  "common": {
+    "close": "Close",
+    "back": "Back",
+    "play": "Play!",
+    "copied": "Copied!"
+  },
+  "header": {
+    "stats": "Statistics",
+    "help": "How to play",
+    "settings": "Settings"
+  },
+  "modes": {
+    "calibra":   "Calibra",
+    "recalibra": "Recalibra",
+    "excalibra": "Excalibra",
+    "difficulty": {
+      "calibra":   "Easy",
+      "recalibra": "Medium",
+      "excalibra": "Hard"
+    },
+    "description": {
+      "calibra":   "Order 4 items from highest to lowest",
+      "recalibra": "Order 5 items from highest to lowest",
+      "excalibra": "Order 6 items from highest to lowest"
+    }
+  },
+  "modeSelector": {
+    "subtitle": "Order the items by the presented criteria (or not).\nFind the correct order in up to 3 attempts.",
+    "streakDays_one": "{{count}} day",
+    "streakDays_other": "{{count}} days",
+    "streakSuffix": "in a row",
+    "progress": "{{done}} of {{total}} complete",
+    "shareDay": "Share today",
+    "nextPuzzle": "Next puzzle in",
+    "previousDays": "Previous days",
+    "backToToday": "Back to today"
+  },
+  "months": {
+    "short": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+    "long":  ["January","February","March","April","May","June","July","August","September","October","November","December"]
+  },
+  "weekdays": ["S","M","T","W","T","F","S"],
+  "datePicker": {
+    "title": "Choose date",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month"
+  },
+  "game": {
+    "orderInstruction": "Order from",
+    "highest": "highest",
+    "lowest": "lowest",
+    "exampleLabel": "Example",
+    "howItWorks": "How it works",
+    "exampleCriteria": "size",
+    "confirm": "Confirm",
+    "noMoreAttempts": "💀 No more attempts",
+    "criteriaBy": "By:",
+    "confirmedPosition": "Position confirmed",
+    "livesRemaining": "{{remaining}} of {{total}} attempts remaining",
+    "win1": ["🤯 WOW! Got it on the first try!", "🔥 AMAZING! First attempt!", "🎯 PERFECT! Nailed it first time!", "⚡ INCREDIBLE! Didn't even need to think!", "🏆 UNBELIEVABLE! Got it without hesitation!"],
+    "win2": ["🎉 NICE! Got it on the second try!", "👏 GOT IT! Well done!", "✨ GREAT! Almost perfect!", "💪 GOOD! Second attempt!", "🌟 VERY GOOD! Only needed two tries!"],
+    "win3": ["😅 PHEW! Just made it!", "😤 LAST TRY! What a close call!", "😰 WOW! By the skin of your teeth!", "🫠 BARELY! But you did it!", "🎲 ON THE LIMIT! Last attempt!"],
+    "wrong": ["Not this time... try again", "Close! Rearrange and try again", "Hmm, not quite... try once more", "Not right, but you'll get there!", "Wrong! Think harder and try again"]
+  },
+  "result": {
+    "solved": "Solved in {{n}}/{{max}}!",
+    "failed": "Better luck next time...",
+    "winEmoji": "🎉",
+    "loseEmoji": "😔",
+    "criteriaLabel": "Daily criteria",
+    "correctOrderLabel": "Correct order",
+    "share": "Share",
+    "shareImage": "Share image",
+    "imageCopied": "Image copied!",
+    "generating": "Generating...",
+    "nextMode": "Next mode",
+    "home": "Home",
+    "nextPuzzle": "Next puzzle in"
+  },
+  "tutorial": {
+    "title": "How to play",
+    "step1": "Drag the items to arrange them in the correct order",
+    "step2": "Confirm and see which positions are correct",
+    "step2hint": "Correct items get <strong>locked</strong> in the next attempt",
+    "step3": "Confirmed positions stay locked",
+    "step4label": "You have <strong>3 attempts</strong> — use them wisely!",
+    "step5": "Customize your experience in <strong>settings</strong>",
+    "demoItems": ["Cheetah", "Elephant", "Human"],
+    "settings": {
+      "hardMode": "Hard Mode",
+      "hardModeDesc": "Hides the daily theme — you play without any hints",
+      "dyslexia": "Dyslexia font",
+      "dyslexiaDesc": "Enables the OpenDyslexic font",
+      "colorblind": "Colorblind mode",
+      "colorblindDesc": "Swaps green/red for blue/amber",
+      "sound": "Sound & animations",
+      "soundDesc": "Control victory sound and visual effects"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "sound": "Sound",
+    "soundDesc": "Plays victory sound when you win",
+    "dynamicTheme": "Dynamic theme",
+    "dynamicThemeDesc": "Light during the day (6am–6pm), dark at night",
+    "hardMode": "Hard Mode",
+    "hardModeDesc": "Hides the theme during gameplay",
+    "dyslexia": "Dyslexia font",
+    "dyslexiaDesc": "Uses the OpenDyslexic font",
+    "colorblind": "Colorblind mode",
+    "colorblindDesc": "Swaps green/red for blue/amber",
+    "reduceMotion": "Reduce motion",
+    "reduceMotionDesc": "Disables visual effects"
+  },
+  "stats": {
+    "title": "Statistics",
+    "overall": "Overall",
+    "daysPlayed": "Days played",
+    "daysCompleted": "Days completed",
+    "streak": "🔥 Streak",
+    "best": "🏆 Best",
+    "byMode": "By mode",
+    "played": "Played",
+    "wins": "Wins",
+    "currentStreak": "Streak",
+    "bestStreak": "Best",
+    "distribution": "Attempt distribution",
+    "close": "Close"
+  }
+}

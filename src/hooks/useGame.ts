@@ -1,5 +1,5 @@
 import { useReducer, useCallback, useEffect } from 'react';
-import type { Puzzle, GameState, AttemptGrid } from '../types/game';
+import type { Lang, Puzzle, GameState, AttemptGrid } from '../types/game';
 import { getCorrectOrder, shuffle } from '../utils/puzzle';
 import { usePersistence } from './usePersistence';
 
@@ -65,14 +65,14 @@ export interface UseGameReturn {
   goToResult: () => void;
 }
 
-export function useGame(puzzle: Puzzle | null): UseGameReturn {
+export function useGame(puzzle: Puzzle | null, lang: Lang = 'pt'): UseGameReturn {
   const { load, save } = usePersistence();
   const [state, dispatch] = useReducer(reducer, initialSlice);
 
   // Init when puzzle changes
   useEffect(() => {
     if (!puzzle) return;
-    const order = getCorrectOrder(puzzle);
+    const order = getCorrectOrder(puzzle, lang);
     const saved = load(puzzle.mode, puzzle.date);
 
     let payload: GameSlice;
@@ -81,7 +81,7 @@ export function useGame(puzzle: Puzzle | null): UseGameReturn {
     } else if (saved) {
       payload = { items: saved.items, gameState: 'IDLE', livesLeft: saved.livesLeft, attemptGrid: saved.grid, correctOrder: order, isShaking: false };
     } else {
-      payload = { items: shuffle(puzzle.items.map(i => i.label)), gameState: 'IDLE', livesLeft: MAX_LIVES, attemptGrid: [], correctOrder: order, isShaking: false };
+      payload = { items: shuffle(puzzle.items.map(i => typeof i.label === 'string' ? i.label : i.label[lang] ?? i.label.pt)), gameState: 'IDLE', livesLeft: MAX_LIVES, attemptGrid: [], correctOrder: order, isShaking: false };
     }
     dispatch({ type: 'INIT', payload });
   }, [puzzle, load]);

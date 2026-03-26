@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './TutorialModal.css';
 
 interface TutorialModalProps {
@@ -29,11 +30,15 @@ function CheckBadge() {
 }
 
 export function TutorialModal({ onClose }: TutorialModalProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
+
+  const demoItems = t('tutorial.demoItems', { returnObjects: true }) as string[];
 
   return (
     <div className="tutorial-overlay" onClick={onClose}>
@@ -42,8 +47,8 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
 
           {/* Header */}
           <div className="tutorial-modal__header">
-            <h2 className="tutorial-modal__title">Como jogar</h2>
-            <button className="tutorial-modal__close" onClick={onClose} aria-label="Fechar">
+            <h2 className="tutorial-modal__title">{t('tutorial.title')}</h2>
+            <button className="tutorial-modal__close" onClick={onClose} aria-label={t('common.close')}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
@@ -57,13 +62,13 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             <div className="tutorial-section" style={{ animationDelay: '80ms' }}>
               <p className="tutorial-section__label">
                 <span className="tutorial-section__num">1</span>
-                Arraste os itens para ordena-los da forma correta
+                {t('tutorial.step1')}
               </p>
               <div className="tutorial-demo">
                 <div className="demo-items">
                   <div className="demo-item demo-item--active">
                     <span className="demo-item__index">1</span>
-                    <span className="demo-item__label">Guepardo</span>
+                    <span className="demo-item__label">{demoItems[0]}</span>
                     <span className="demo-item__handle"><DragHandle /></span>
                   </div>
 
@@ -77,13 +82,13 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
 
                   <div className="demo-item">
                     <span className="demo-item__index">2</span>
-                    <span className="demo-item__label">Elefante</span>
+                    <span className="demo-item__label">{demoItems[1]}</span>
                     <span className="demo-item__handle"><DragHandle /></span>
                   </div>
 
                   <div className="demo-item">
                     <span className="demo-item__index">3</span>
-                    <span className="demo-item__label">Humano</span>
+                    <span className="demo-item__label">{demoItems[2]}</span>
                     <span className="demo-item__handle"><DragHandle /></span>
                   </div>
                 </div>
@@ -94,23 +99,23 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             <div className="tutorial-section" style={{ animationDelay: '160ms' }}>
               <p className="tutorial-section__label">
                 <span className="tutorial-section__num">2</span>
-                Confirme e veja quais posições estão certas
+                {t('tutorial.step2')}
               </p>
               <div className="tutorial-demo">
                 <div className="demo-items">
                   <div className="demo-item demo-item--correct">
                     <span className="demo-item__index">1</span>
-                    <span className="demo-item__label">Guepardo</span>
+                    <span className="demo-item__label">{demoItems[0]}</span>
                     <span className="demo-dot demo-dot--correct" />
                   </div>
                   <div className="demo-item demo-item--wrong">
                     <span className="demo-item__index">2</span>
-                    <span className="demo-item__label">Elefante</span>
+                    <span className="demo-item__label">{demoItems[1]}</span>
                     <span className="demo-dot demo-dot--wrong" />
                   </div>
                   <div className="demo-item demo-item--wrong">
                     <span className="demo-item__index">3</span>
-                    <span className="demo-item__label">Humano</span>
+                    <span className="demo-item__label">{demoItems[2]}</span>
                     <span className="demo-dot demo-dot--wrong" />
                   </div>
                 </div>
@@ -120,7 +125,7 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
                     <line x1="12" y1="8" x2="12" y2="12" />
                     <line x1="12" y1="16" x2="12.01" y2="16" />
                   </svg>
-                  Itens corretos ficam <strong>travados</strong> na próxima tentativa
+                  <span dangerouslySetInnerHTML={{ __html: t('tutorial.step2hint') }} />
                 </p>
               </div>
             </div>
@@ -129,23 +134,23 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             <div className="tutorial-section" style={{ animationDelay: '240ms' }}>
               <p className="tutorial-section__label">
                 <span className="tutorial-section__num">3</span>
-                Posições confirmadas ficam bloqueadas
+                {t('tutorial.step3')}
               </p>
               <div className="tutorial-demo">
                 <div className="demo-items">
                   <div className="demo-item demo-item--confirmed">
                     <span className="demo-item__index">1</span>
-                    <span className="demo-item__label">Guepardo</span>
+                    <span className="demo-item__label">{demoItems[0]}</span>
                     <CheckBadge />
                   </div>
                   <div className="demo-item">
                     <span className="demo-item__index">2</span>
-                    <span className="demo-item__label">Elefante</span>
+                    <span className="demo-item__label">{demoItems[1]}</span>
                     <span className="demo-item__handle"><DragHandle /></span>
                   </div>
                   <div className="demo-item">
                     <span className="demo-item__index">3</span>
-                    <span className="demo-item__label">Humano</span>
+                    <span className="demo-item__label">{demoItems[2]}</span>
                     <span className="demo-item__handle"><DragHandle /></span>
                   </div>
                 </div>
@@ -156,7 +161,7 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             <div className="tutorial-section" style={{ animationDelay: '320ms' }}>
               <p className="tutorial-section__label">
                 <span className="tutorial-section__num">4</span>
-                Você tem <strong>3 tentativas</strong> Use com sabedoria!
+                <span dangerouslySetInnerHTML={{ __html: t('tutorial.step4label') }} />
               </p>
               <div className="tutorial-demo tutorial-demo--lives">
                 {[0, 1, 2].map(i => (
@@ -172,7 +177,7 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
             <div className="tutorial-section" style={{ animationDelay: '400ms' }}>
               <p className="tutorial-section__label">
                 <span className="tutorial-section__num">5</span>
-                Personalize sua experiência nas <strong>configurações</strong>
+                <span dangerouslySetInnerHTML={{ __html: t('tutorial.step5') }} />
               </p>
               <div className="tutorial-demo">
                 <div className="tutorial-settings-list">
@@ -184,8 +189,8 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
                       </svg>
                     </span>
                     <div className="tutorial-setting__text">
-                      <span className="tutorial-setting__label">Modo Difícil</span>
-                      <span className="tutorial-setting__desc">Esconde o tema do dia - você joga sem dica nenhuma</span>
+                      <span className="tutorial-setting__label">{t('tutorial.settings.hardMode')}</span>
+                      <span className="tutorial-setting__desc">{t('tutorial.settings.hardModeDesc')}</span>
                     </div>
                   </div>
 
@@ -196,8 +201,8 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
                       </svg>
                     </span>
                     <div className="tutorial-setting__text">
-                      <span className="tutorial-setting__label">Fonte para dislexia</span>
-                      <span className="tutorial-setting__desc">Ativa a fonte OpenDyslexic</span>
+                      <span className="tutorial-setting__label">{t('tutorial.settings.dyslexia')}</span>
+                      <span className="tutorial-setting__desc">{t('tutorial.settings.dyslexiaDesc')}</span>
                     </div>
                   </div>
 
@@ -209,8 +214,8 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
                       </svg>
                     </span>
                     <div className="tutorial-setting__text">
-                      <span className="tutorial-setting__label">Modo daltonismo</span>
-                      <span className="tutorial-setting__desc">Troca verde/vermelho por azul/âmbar</span>
+                      <span className="tutorial-setting__label">{t('tutorial.settings.colorblind')}</span>
+                      <span className="tutorial-setting__desc">{t('tutorial.settings.colorblindDesc')}</span>
                     </div>
                   </div>
 
@@ -222,8 +227,8 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
                       </svg>
                     </span>
                     <div className="tutorial-setting__text">
-                      <span className="tutorial-setting__label">Som & animações</span>
-                      <span className="tutorial-setting__desc">Controle o som de vitória e os efeitos visuais</span>
+                      <span className="tutorial-setting__label">{t('tutorial.settings.sound')}</span>
+                      <span className="tutorial-setting__desc">{t('tutorial.settings.soundDesc')}</span>
                     </div>
                   </div>
 
@@ -236,7 +241,7 @@ export function TutorialModal({ onClose }: TutorialModalProps) {
 
         <div className="tutorial-modal__footer">
           <button className="tutorial-modal__btn" onClick={onClose}>
-            Jogar!
+            {t('common.play')}
           </button>
         </div>
       </div>

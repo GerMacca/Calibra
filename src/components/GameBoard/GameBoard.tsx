@@ -1,4 +1,5 @@
 import { useMemo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import confetti from 'canvas-confetti';
 import {
   DndContext,
@@ -65,47 +66,6 @@ function playVictorySound() {
 
 const MAX_LIVES = 3;
 
-const WIN_MESSAGES: Record<1 | 2 | 3, string[]> = {
-  1: [
-    '🤯 UAU! Acertou de primeira!',
-    '🔥 INCRÍVEL! Na primeira tentativa!',
-    '🎯 PERFEITO! Direto na primeira!',
-    '⚡ MONSTRO! Nem precisou errar!',
-    '🏆 ABSURDO! Acertou sem hesitar!',
-  ],
-  2: [
-    '🎉 BOA! Acertou na segunda!',
-    '👏 CONSEGUIU! Muito bem!',
-    '✨ SHOW! Quase perfeito!',
-    '💪 ÓTIMO! Na segunda tentativa!',
-    '🌟 MUITO BOM! Só precisou de duas!',
-  ],
-  3: [
-    '😅 UFA! Por pouco!',
-    '😤 NA ÚLTIMA! Que sufoco!',
-    '😰 NOSSA! Por um fio!',
-    '🫠 QUASE NÃO DÁ! Mas deu!',
-    '🎲 NO LIMITE! Na última tentativa!',
-  ],
-};
-
-function pickWinMessage(attempt: number): string {
-  const pool = WIN_MESSAGES[(Math.min(attempt, 3) as 1 | 2 | 3)] ?? WIN_MESSAGES[3];
-  return pool[Math.floor(Math.random() * pool.length)];
-}
-
-const WRONG_MESSAGES = [
-  'Não foi dessa vez... tente de novo',
-  'Quase! Reorganize e tente de novo',
-  'Hmm, não exatamente... tente outra vez',
-  'Não está certo, mas você chega lá!',
-  'Errou! Pense melhor e tente de novo',
-];
-
-function pickWrongMessage(): string {
-  return WRONG_MESSAGES[Math.floor(Math.random() * WRONG_MESSAGES.length)];
-}
-
 /**
  * Collision detection that skips locked (confirmed-correct) items entirely.
  * When the drag pointer is over a locked card, the nearest FREE card is returned instead.
@@ -169,6 +129,8 @@ export function GameBoard({
   criteria,
   soundEnabled = true,
 }: GameBoardProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (gameState !== 'WIN') return;
     const reduceMotion = document.documentElement.dataset.reduceMotion === 'true';
@@ -177,6 +139,7 @@ export function GameBoard({
     }
     if (soundEnabled) playVictorySound();
   }, [gameState, soundEnabled]);
+
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
@@ -225,9 +188,17 @@ export function GameBoard({
   }, [items, confirmedCorrect, onReorder]);
 
   const feedback = useMemo((): { text: string; className: string } | null => {
-    if (gameState === 'WIN') return { text: pickWinMessage(attemptGrid.length), className: 'gameboard__feedback--win' };
-    if (gameState === 'WRONG') return { text: pickWrongMessage(), className: 'gameboard__feedback--wrong' };
-    if (gameState === 'GAME_OVER') return { text: '💀 Sem mais tentativas', className: 'gameboard__feedback--gameover' };
+    if (gameState === 'WIN') {
+      const attempt = Math.min(attemptGrid.length, 3) as 1 | 2 | 3;
+      const key = `game.win${attempt}` as 'game.win1' | 'game.win2' | 'game.win3';
+      const pool = t(key, { returnObjects: true }) as string[];
+      return { text: pool[Math.floor(Math.random() * pool.length)], className: 'gameboard__feedback--win' };
+    }
+    if (gameState === 'WRONG') {
+      const pool = t('game.wrong', { returnObjects: true }) as string[];
+      return { text: pool[Math.floor(Math.random() * pool.length)], className: 'gameboard__feedback--wrong' };
+    }
+    if (gameState === 'GAME_OVER') return { text: t('game.noMoreAttempts'), className: 'gameboard__feedback--gameover' };
     return null;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameState]); // re-pick message only when state changes, not on every render
@@ -245,17 +216,17 @@ export function GameBoard({
         <div className="gameboard__instruction-wrap">
           <div className="gameboard__instruction-row">
             <p className="gameboard__instruction">
-              Ordene do <strong>maior</strong> para o <strong>menor</strong>
+              {t('game.orderInstruction')} <strong>{t('game.highest')}</strong> para o <strong>{t('game.lowest')}</strong>
             </p>
             <div className="gameboard__tooltip-wrap">
-              <button className="gameboard__tooltip-btn" aria-label="Exemplo">?</button>
+              <button className="gameboard__tooltip-btn" aria-label={t('game.exampleLabel')}>?</button>
               <div className="gameboard__tooltip">
-                <p className="gameboard__tooltip-title">Como funciona</p>
+                <p className="gameboard__tooltip-title">{t('game.howItWorks')}</p>
                 <div className="gameboard__tooltip-example">
                   <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
                     <span className="gameboard__tooltip-number">1</span>
                     <span>Elefante</span>
-                    <span className="gameboard__tooltip-tag">maior</span>
+                    <span className="gameboard__tooltip-tag">{t('game.highest')}</span>
                   </div>
                   <div className="gameboard__tooltip-item">
                     <span className="gameboard__tooltip-number gameboard__tooltip-number--mid">2</span>
@@ -264,11 +235,11 @@ export function GameBoard({
                   <div className="gameboard__tooltip-item gameboard__tooltip-item--marked">
                     <span className="gameboard__tooltip-number">3</span>
                     <span>Formiga</span>
-                    <span className="gameboard__tooltip-tag">menor</span>
+                    <span className="gameboard__tooltip-tag">{t('game.lowest')}</span>
                   </div>
                 </div>
                 <p className="gameboard__tooltip-criteria">
-                  Ex: Por <strong>tamanho</strong>
+                  Ex: {t('game.criteriaBy')} <strong>{t('game.exampleCriteria')}</strong>
                 </p>
               </div>
             </div>
@@ -279,7 +250,7 @@ export function GameBoard({
 
       {criteria && (
         <p className="gameboard__criteria">
-          Por: <strong>{criteria}</strong>
+          {t('game.criteriaBy')} <strong>{criteria}</strong>
         </p>
       )}
 
@@ -319,7 +290,7 @@ export function GameBoard({
           onClick={onConfirm}
           disabled={!isConfirmable}
         >
-          {isConfirmable ? 'Confirmar' : '...'}
+          {isConfirmable ? t('game.confirm') : '...'}
         </button>
       </div>
     </div>

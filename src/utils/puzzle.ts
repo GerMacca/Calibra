@@ -1,4 +1,5 @@
-import type { GameMode, Puzzle, PuzzleItem } from '../types/game';
+import type { GameMode, Lang, Puzzle, PuzzleItem } from '../types/game';
+import { localize } from '../types/game';
 
 export function getToday(): string {
   const d = new Date();
@@ -36,10 +37,10 @@ export async function loadPuzzle(mode: GameMode, date: string): Promise<Puzzle> 
   };
 }
 
-export function getCorrectOrder(puzzle: Puzzle): string[] {
+export function getCorrectOrder(puzzle: Puzzle, lang: Lang = 'pt'): string[] {
   return [...puzzle.items]
     .sort((a, b) => b.value - a.value)
-    .map(item => item.label);
+    .map(item => localize(item.label, lang));
 }
 
 export function shuffle<T>(arr: T[]): T[] {

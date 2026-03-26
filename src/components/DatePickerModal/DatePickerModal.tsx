@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { loadIndex, getToday } from '../../utils/puzzle';
 import type { GameMode } from '../../types/game';
 import './DatePickerModal.css';
@@ -15,8 +16,6 @@ const MODE_COLORS: Record<GameMode, string> = {
   recalibra: 'var(--color-recalibra)',
   excalibra: 'var(--color-excalibra)',
 };
-const PT_MONTHS = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-const PT_WEEKDAYS_SHORT = ['D','S','T','Q','Q','S','S'];
 
 function toYearMonth(date: string): string { return date.slice(0, 7); }
 function toDateStr(year: number, month: number, day: number): string {
@@ -45,8 +44,12 @@ function getModeStatus(date: string): Record<GameMode, 'done' | 'failed' | 'none
 }
 
 export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerModalProps) {
+  const { t } = useTranslation();
   const today = getToday();
   const [availableDates, setAvailableDates] = useState<Set<string>>(new Set());
+
+  const monthsLong = t('months.long', { returnObjects: true }) as string[];
+  const weekdays = t('weekdays', { returnObjects: true }) as string[];
 
   // Start on the month of the most recent available date (or today)
   const initialDate = new Date(selectedDate + 'T12:00:00');
@@ -90,8 +93,8 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
 
         {/* Header */}
         <div className="datepicker-modal__header">
-          <h2 className="datepicker-modal__title">Escolher data</h2>
-          <button className="datepicker-modal__close" onClick={onClose} aria-label="Fechar">
+          <h2 className="datepicker-modal__title">{t('datePicker.title')}</h2>
+          <button className="datepicker-modal__close" onClick={onClose} aria-label={t('common.close')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
@@ -101,13 +104,13 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
 
         {/* Month navigation */}
         <div className="datepicker-nav">
-          <button className="datepicker-nav__btn" onClick={prevMonth} disabled={!canGoPrev} aria-label="Mês anterior">
+          <button className="datepicker-nav__btn" onClick={prevMonth} disabled={!canGoPrev} aria-label={t('datePicker.prevMonth')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
-          <span className="datepicker-nav__label">{PT_MONTHS[viewMonth]} {viewYear}</span>
-          <button className="datepicker-nav__btn" onClick={nextMonth} disabled={!canGoNext} aria-label="Próximo mês">
+          <span className="datepicker-nav__label">{monthsLong[viewMonth]} {viewYear}</span>
+          <button className="datepicker-nav__btn" onClick={nextMonth} disabled={!canGoNext} aria-label={t('datePicker.nextMonth')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 18l6-6-6-6" />
             </svg>
@@ -116,7 +119,7 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
 
         {/* Weekday headers */}
         <div className="datepicker-grid">
-          {PT_WEEKDAYS_SHORT.map((d, i) => (
+          {weekdays.map((d, i) => (
             <div key={i} className="datepicker-weekday">{d}</div>
           ))}
 
@@ -168,7 +171,7 @@ export function DatePickerModal({ selectedDate, onSelect, onClose }: DatePickerM
           {ALL_MODES.map(mode => (
             <div key={mode} className="datepicker-legend__item">
               <span className="datepicker-legend__dot" style={{ background: MODE_COLORS[mode] }} />
-              <span className="datepicker-legend__label">{mode.charAt(0).toUpperCase() + mode.slice(1)}</span>
+              <span className="datepicker-legend__label">{t(`modes.${mode}`)}</span>
             </div>
           ))}
         </div>

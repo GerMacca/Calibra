@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useSortable } from '@dnd-kit/sortable';
 import { useDndContext } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
@@ -23,6 +24,7 @@ export function SortableItem({
   wasCorrect,
   isConfirmedCorrect,
 }: SortableItemProps) {
+  const { t } = useTranslation();
   const isLocked = isConfirmedCorrect === true;
   const playBadgeAnim = isConfirmedCorrect === true;
 
@@ -76,7 +78,7 @@ export function SortableItem({
 
       <span className="sortable-item__right">
         {isConfirmedCorrect ? (
-          <span className={`sortable-item__confirmed-badge${playBadgeAnim ? ' sortable-item__confirmed-badge--pop' : ''}`} aria-label="Posição confirmada">
+          <span className={`sortable-item__confirmed-badge${playBadgeAnim ? ' sortable-item__confirmed-badge--pop' : ''}`} aria-label={t('game.confirmedPosition')}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>

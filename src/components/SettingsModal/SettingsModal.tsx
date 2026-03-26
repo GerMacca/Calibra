@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { AppSettings } from '../../types/settings';
 import './SettingsModal.css';
 
@@ -9,6 +10,8 @@ interface SettingsModalProps {
 }
 
 export function SettingsModal({ settings, onChange, onClose }: SettingsModalProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handler);
@@ -22,8 +25,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
     <div className="settings-overlay" onClick={onClose}>
       <div className="settings-modal" onClick={e => e.stopPropagation()}>
         <div className="settings-modal__header">
-          <span className="settings-modal__title">Acessibilidade</span>
-          <button className="settings-modal__close" onClick={onClose} aria-label="Fechar">
+          <span className="settings-modal__title">{t('settings.title')}</span>
+          <button className="settings-modal__close" onClick={onClose} aria-label={t('common.close')}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
@@ -40,8 +43,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
               </svg>
             }
-            label="Som"
-            desc="Toca som de vitória ao acertar"
+            label={t('settings.sound')}
+            desc={t('settings.soundDesc')}
             checked={settings.soundEnabled}
             onToggle={() => toggle('soundEnabled')}
           />
@@ -60,8 +63,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
             }
-            label="Tema dinâmico"
-            desc="Claro de dia (6h–18h), escuro à noite"
+            label={t('settings.dynamicTheme')}
+            desc={t('settings.dynamicThemeDesc')}
             checked={settings.dynamicTheme}
             onToggle={() => toggle('dynamicTheme')}
           />
@@ -72,8 +75,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             }
-            label="Modo Difícil"
-            desc="Esconde o tema durante o jogo"
+            label={t('settings.hardMode')}
+            desc={t('settings.hardModeDesc')}
             checked={settings.hardMode}
             onToggle={() => toggle('hardMode')}
           />
@@ -86,8 +89,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M12 4v16" />
               </svg>
             }
-            label="Fonte para dislexia"
-            desc="Usa a fonte OpenDyslexic"
+            label={t('settings.dyslexia')}
+            desc={t('settings.dyslexiaDesc')}
             checked={settings.dyslexicFont}
             onToggle={() => toggle('dyslexicFont')}
           />
@@ -99,8 +102,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M12 5C7 5 2.73 8.11 1 12.5 2.73 16.89 7 20 12 20s9.27-3.11 11-7.5C21.27 8.11 17 5 12 5z" />
               </svg>
             }
-            label="Modo daltonismo"
-            desc="Troca verde/vermelho por azul/âmbar"
+            label={t('settings.colorblind')}
+            desc={t('settings.colorblindDesc')}
             checked={settings.colorblindMode}
             onToggle={() => toggle('colorblindMode')}
           />
@@ -111,8 +114,8 @@ export function SettingsModal({ settings, onChange, onClose }: SettingsModalProp
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
             }
-            label="Reduzir animações"
-            desc="Desativa efeitos visuais"
+            label={t('settings.reduceMotion')}
+            desc={t('settings.reduceMotionDesc')}
             checked={settings.reduceMotion}
             onToggle={() => toggle('reduceMotion')}
           />

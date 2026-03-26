@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { GameMode } from '../../types/game';
 import { readGameStats, type ModeStats } from '../../utils/stats';
 import { modeStyle } from '../../utils/modes';
@@ -7,12 +8,6 @@ import './StatsModal.css';
 interface StatsModalProps {
   onClose: () => void;
 }
-
-const MODE_LABELS: Record<GameMode, string> = {
-  calibra: 'Calibra',
-  recalibra: 'Recalibra',
-  excalibra: 'Excalibra',
-};
 
 const MODE_COLORS: Record<GameMode, string> = {
   calibra: '#06B6D4',
@@ -46,6 +41,7 @@ function DistributionBar({ attempt, count, max, color }: { attempt: number; coun
 }
 
 function ModeSection({ mode, stats }: { mode: GameMode; stats: ModeStats }) {
+  const { t } = useTranslation();
   const winRate = stats.played > 0 ? Math.round((stats.won / stats.played) * 100) : 0;
   const maxDist = Math.max(...stats.distribution);
 
@@ -53,19 +49,19 @@ function ModeSection({ mode, stats }: { mode: GameMode; stats: ModeStats }) {
     <div className="stats-mode">
       <div className="stats-mode__header">
         <span className="stats-mode__badge" style={modeStyle(mode)}>
-          {MODE_LABELS[mode]}
+          {t(`modes.${mode}`)}
         </span>
       </div>
 
       <div className="stats-mode__cards">
-        <StatCard value={stats.played} label="Jogados" />
-        <StatCard value={`${winRate}%`} label="Vitórias" />
-        <StatCard value={stats.currentStreak} label="Sequência" />
-        <StatCard value={stats.bestStreak} label="Recorde" />
+        <StatCard value={stats.played} label={t('stats.played')} />
+        <StatCard value={`${winRate}%`} label={t('stats.wins')} />
+        <StatCard value={stats.currentStreak} label={t('stats.currentStreak')} />
+        <StatCard value={stats.bestStreak} label={t('stats.bestStreak')} />
       </div>
 
       <div className="stats-mode__dist">
-        <p className="stats-mode__dist-title">Distribuição de tentativas</p>
+        <p className="stats-mode__dist-title">{t('stats.distribution')}</p>
         {stats.distribution.map((count, i) => (
           <DistributionBar key={i} attempt={i + 1} count={count} max={maxDist} color={MODE_COLORS[mode]} />
         ))}
@@ -75,6 +71,7 @@ function ModeSection({ mode, stats }: { mode: GameMode; stats: ModeStats }) {
 }
 
 export function StatsModal({ onClose }: StatsModalProps) {
+  const { t } = useTranslation();
   const stats = readGameStats();
 
   useEffect(() => {
@@ -89,8 +86,8 @@ export function StatsModal({ onClose }: StatsModalProps) {
         <div className="stats-modal__scroll">
 
           <div className="stats-modal__header">
-            <h2 className="stats-modal__title">Estatísticas</h2>
-            <button className="stats-modal__close" onClick={onClose} aria-label="Fechar">
+            <h2 className="stats-modal__title">{t('stats.title')}</h2>
+            <button className="stats-modal__close" onClick={onClose} aria-label={t('common.close')}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
@@ -100,19 +97,19 @@ export function StatsModal({ onClose }: StatsModalProps) {
 
           {/* Overall */}
           <div className="stats-overall">
-            <p className="stats-section__title">Geral</p>
+            <p className="stats-section__title">{t('stats.overall')}</p>
             <div className="stats-overall__cards">
-              <StatCard value={stats.overall.daysWithAnyMode} label="Dias jogados" />
-              <StatCard value={stats.overall.daysWithAllModes} label="Dias completos" />
-              <StatCard value={stats.overall.currentStreak} label="🔥 Sequência" />
-              <StatCard value={stats.overall.bestStreak} label="🏆 Recorde" />
+              <StatCard value={stats.overall.daysWithAnyMode} label={t('stats.daysPlayed')} />
+              <StatCard value={stats.overall.daysWithAllModes} label={t('stats.daysCompleted')} />
+              <StatCard value={stats.overall.currentStreak} label={t('stats.streak')} />
+              <StatCard value={stats.overall.bestStreak} label={t('stats.best')} />
             </div>
           </div>
 
           <div className="stats-divider" />
 
           {/* Per mode */}
-          <p className="stats-section__title">Por modo</p>
+          <p className="stats-section__title">{t('stats.byMode')}</p>
           {ALL_MODES.map(mode => (
             <ModeSection key={mode} mode={mode} stats={stats.modes[mode]} />
           ))}
@@ -120,7 +117,7 @@ export function StatsModal({ onClose }: StatsModalProps) {
         </div>
 
         <div className="stats-modal__footer">
-          <button className="stats-modal__btn" onClick={onClose}>Fechar</button>
+          <button className="stats-modal__btn" onClick={onClose}>{t('stats.close')}</button>
         </div>
       </div>
     </div>

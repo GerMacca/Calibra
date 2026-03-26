@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
-import type { GameMode, Puzzle, SavedState } from './types/game';
+import { useTranslation } from 'react-i18next';
+import type { GameMode, Lang, Puzzle, SavedState } from './types/game';
+import { localize } from './types/game';
 import { loadPuzzle, getToday } from './utils/puzzle';
 import { useGame } from './hooks/useGame';
 import { Header } from './components/Header/Header';
@@ -92,6 +94,7 @@ function GameScreen({
   date,
   hardMode,
   soundEnabled,
+  lang,
   onBack,
   onDone,
   onHelp,
@@ -101,20 +104,22 @@ function GameScreen({
   date: string;
   hardMode: boolean;
   soundEnabled: boolean;
+  lang: Lang;
   onBack: () => void;
   onDone: () => void;
   onHelp: () => void;
   onSettings: () => void;
 }) {
+  const { t } = useTranslation();
   const [loadState, setLoadState] = useState<PuzzleLoadState>({ puzzle: null, error: null });
 
   useEffect(() => {
     let cancelled = false;
     loadPuzzle(mode, date)
       .then(puzzle => { if (!cancelled) setLoadState({ puzzle, error: null }); })
-      .catch(() => { if (!cancelled) setLoadState({ puzzle: null, error: 'Puzzle não encontrado para essa data.' }); });
+      .catch(() => { if (!cancelled) setLoadState({ puzzle: null, error: t('game.puzzleNotFound', 'Puzzle não encontrado para essa data.') }); });
     return () => { cancelled = true; };
-  }, [mode, date]);
+  }, [mode, date, t]);
 
   const { puzzle, error } = loadState;
 
@@ -127,7 +132,7 @@ function GameScreen({
     isShaking,
     confirm,
     reorder,
-  } = useGame(puzzle);
+  } = useGame(puzzle, lang);
 
   const solved =
     attemptGrid.length > 0 && attemptGrid[attemptGrid.length - 1].every(Boolean);
@@ -185,7 +190,7 @@ function GameScreen({
         attemptGrid={attemptGrid}
         onReorder={reorder}
         onConfirm={confirm}
-        criteria={hardMode ? undefined : puzzle.criteria}
+        criteria={hardMode ? undefined : localize(puzzle.criteria, lang)}
         soundEnabled={soundEnabled}
       />
     </>
@@ -193,6 +198,8 @@ function GameScreen({
 }
 
 export default function App() {
+  const { i18n } = useTranslation();
+  const lang = (i18n.language?.slice(0, 2) ?? 'pt') as Lang;
   const [selectedMode, setSelectedMode] = useState<GameMode | null>(null);
   const [settings, setSettings] = useState<AppSettings>(() => {
     const s = readSettings();
@@ -256,6 +263,7 @@ export default function App() {
           date={selectedDate}
           hardMode={settings.hardMode}
           soundEnabled={settings.soundEnabled}
+          lang={lang}
           onBack={handleBack}
           onDone={handleDone}
           onHelp={handleHelp}

@@ -1,0 +1,131 @@
+{
+  "common": {
+    "close": "Cerrar",
+    "back": "Volver",
+    "play": "¡Jugar!",
+    "copied": "¡Copiado!"
+  },
+  "header": {
+    "stats": "Estadísticas",
+    "help": "Cómo jugar",
+    "settings": "Configuración"
+  },
+  "modes": {
+    "calibra":   "Calibra",
+    "recalibra": "Recalibra",
+    "excalibra": "Excalibra",
+    "difficulty": {
+      "calibra":   "Fácil",
+      "recalibra": "Medio",
+      "excalibra": "Difícil"
+    },
+    "description": {
+      "calibra":   "Ordena 4 elementos de mayor a menor",
+      "recalibra": "Ordena 5 elementos de mayor a menor",
+      "excalibra": "Ordena 6 elementos de mayor a menor"
+    }
+  },
+  "modeSelector": {
+    "subtitle": "Ordena los elementos según el criterio presentado (o no).\nDescubre el orden correcto en hasta 3 intentos.",
+    "streakDays_one": "{{count}} día",
+    "streakDays_other": "{{count}} días",
+    "streakSuffix": "seguidos",
+    "progress": "{{done}} de {{total}} completos",
+    "shareDay": "Compartir día",
+    "nextPuzzle": "Próximo puzzle en",
+    "previousDays": "Días anteriores",
+    "backToToday": "Volver a hoy"
+  },
+  "months": {
+    "short": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
+    "long":  ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+  },
+  "weekdays": ["D","L","M","X","J","V","S"],
+  "datePicker": {
+    "title": "Elegir fecha",
+    "prevMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente"
+  },
+  "game": {
+    "orderInstruction": "Ordena de",
+    "highest": "mayor",
+    "lowest": "menor",
+    "exampleLabel": "Ejemplo",
+    "howItWorks": "Cómo funciona",
+    "exampleCriteria": "tamaño",
+    "confirm": "Confirmar",
+    "noMoreAttempts": "💀 Sin más intentos",
+    "criteriaBy": "Por:",
+    "confirmedPosition": "Posición confirmada",
+    "livesRemaining": "{{remaining}} de {{total}} intentos restantes",
+    "win1": ["🤯 ¡INCREÍBLE! ¡A la primera!", "🔥 ¡GENIAL! ¡En el primer intento!", "🎯 ¡PERFECTO! ¡Directo al primer intento!", "⚡ ¡BESTIAL! ¡Ni necesitaste fallar!", "🏆 ¡BRUTAL! ¡Sin dudar!"],
+    "win2": ["🎉 ¡BIEN! ¡Lo lograste en el segundo!", "👏 ¡CONSEGUIDO! ¡Muy bien!", "✨ ¡GENIAL! ¡Casi perfecto!", "💪 ¡BIEN! ¡En el segundo intento!", "🌟 ¡MUY BIEN! ¡Solo necesitaste dos!"],
+    "win3": ["😅 ¡UF! ¡Por poco!", "😤 ¡EN EL ÚLTIMO! ¡Qué susto!", "😰 ¡VAYA! ¡Por un pelo!", "🫠 ¡POR LOS PELOS! ¡Pero lo lograste!", "🎲 ¡AL LÍMITE! ¡En el último intento!"],
+    "wrong": ["Esta vez no... inténtalo de nuevo", "¡Casi! Reorganiza e inténtalo de nuevo", "Hmm, no exactamente... inténtalo otra vez", "No es correcto, ¡pero puedes lograrlo!", "¡Fallaste! Piensa mejor e inténtalo de nuevo"]
+  },
+  "result": {
+    "solved": "¡Resuelto en {{n}}/{{max}}!",
+    "failed": "Esta vez no fue...",
+    "winEmoji": "🎉",
+    "loseEmoji": "😔",
+    "criteriaLabel": "Criterio del día",
+    "correctOrderLabel": "Orden correcto",
+    "share": "Compartir",
+    "shareImage": "Compartir imagen",
+    "imageCopied": "¡Imagen copiada!",
+    "generating": "Generando...",
+    "nextMode": "Siguiente modo",
+    "home": "Inicio",
+    "nextPuzzle": "Próximo puzzle en"
+  },
+  "tutorial": {
+    "title": "Cómo jugar",
+    "step1": "Arrastra los elementos para ordenarlos correctamente",
+    "step2": "Confirma y ve qué posiciones son correctas",
+    "step2hint": "Los elementos correctos quedan <strong>bloqueados</strong> en el siguiente intento",
+    "step3": "Las posiciones confirmadas quedan bloqueadas",
+    "step4label": "Tienes <strong>3 intentos</strong> ¡Úsalos con sabiduría!",
+    "step5": "Personaliza tu experiencia en <strong>configuración</strong>",
+    "demoItems": ["Guepardo", "Elefante", "Humano"],
+    "settings": {
+      "hardMode": "Modo Difícil",
+      "hardModeDesc": "Oculta el tema del día — juegas sin ninguna pista",
+      "dyslexia": "Fuente para dislexia",
+      "dyslexiaDesc": "Activa la fuente OpenDyslexic",
+      "colorblind": "Modo daltónico",
+      "colorblindDesc": "Cambia verde/rojo por azul/ámbar",
+      "sound": "Sonido y animaciones",
+      "soundDesc": "Controla el sonido de victoria y los efectos visuales"
+    }
+  },
+  "settings": {
+    "title": "Configuración",
+    "sound": "Sonido",
+    "soundDesc": "Reproduce sonido de victoria al acertar",
+    "dynamicTheme": "Tema dinámico",
+    "dynamicThemeDesc": "Claro de día (6h–18h), oscuro de noche",
+    "hardMode": "Modo Difícil",
+    "hardModeDesc": "Oculta el tema durante el juego",
+    "dyslexia": "Fuente para dislexia",
+    "dyslexiaDesc": "Usa la fuente OpenDyslexic",
+    "colorblind": "Modo daltónico",
+    "colorblindDesc": "Cambia verde/rojo por azul/ámbar",
+    "reduceMotion": "Reducir animaciones",
+    "reduceMotionDesc": "Desactiva los efectos visuales"
+  },
+  "stats": {
+    "title": "Estadísticas",
+    "overall": "General",
+    "daysPlayed": "Días jugados",
+    "daysCompleted": "Días completos",
+    "streak": "🔥 Racha",
+    "best": "🏆 Récord",
+    "byMode": "Por modo",
+    "played": "Jugados",
+    "wins": "Victorias",
+    "currentStreak": "Racha",
+    "bestStreak": "Récord",
+    "distribution": "Distribución de intentos",
+    "close": "Cerrar"
+  }
+}

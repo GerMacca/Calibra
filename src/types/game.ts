@@ -7,17 +7,31 @@ export type GameState =
   | 'GAME_OVER'
   | 'RESULT';
 
+export type Lang = 'pt' | 'en' | 'es';
+
+export interface LocalizedString {
+  pt: string;
+  en: string;
+  es: string;
+}
+
 export interface PuzzleItem {
-  label: string;
+  label: string | LocalizedString;
   value: number;
 }
 
 export interface Puzzle {
   date: string;
   mode: GameMode;
-  criteria: string;
+  criteria: string | LocalizedString;
   criteria_source?: string;
   items: PuzzleItem[];
+}
+
+/** Resolve a string or localized string to a plain string */
+export function localize(value: string | LocalizedString, lang: Lang): string {
+  if (typeof value === 'string') return value;
+  return value[lang] ?? value.pt;
 }
 
 export type AttemptRow = boolean[];

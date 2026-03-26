@@ -12,6 +12,7 @@
 }
 
 .header__inner {
+  position: relative;
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -83,4 +84,34 @@
 
 .header__mode {
   color: var(--mode-color);
+}
+
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.header__lang-btn {
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.header__lang-btn:hover {
+  color: var(--color-text-secondary);
+}
+
+.header__lang-btn--active {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-hover);
+  background: var(--color-surface-alt);
 }

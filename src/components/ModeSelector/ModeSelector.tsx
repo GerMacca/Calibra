@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { GameMode, SavedState, AttemptGrid } from '../../types/game';
 import { modeStyle } from '../../utils/modes';
 import { buildShareText } from '../../utils/share';
@@ -12,34 +13,13 @@ const MAX_LIVES = 3;
 
 interface ModeConfig {
   mode: GameMode;
-  label: string;
-  description: string;
   items: number;
-  difficulty: string;
 }
 
 const MODES: ModeConfig[] = [
-  {
-    mode: 'calibra',
-    label: 'Calibra',
-    description: 'Ordene 4 itens do maior ao menor',
-    items: 4,
-    difficulty: 'Fácil',
-  },
-  {
-    mode: 'recalibra',
-    label: 'Recalibra',
-    description: 'Ordene 5 itens do maior ao menor',
-    items: 5,
-    difficulty: 'Médio',
-  },
-  {
-    mode: 'excalibra',
-    label: 'Excalibra',
-    description: 'Ordene 6 itens do maior ao menor',
-    items: 6,
-    difficulty: 'Difícil',
-  },
+  { mode: 'calibra', items: 4 },
+  { mode: 'recalibra', items: 5 },
+  { mode: 'excalibra', items: 6 },
 ];
 
 interface ModeSelectorProps {
@@ -78,14 +58,8 @@ function ItemDots({ count }: { count: number }) {
   );
 }
 
-const PT_MONTHS_SHORT = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
-
-function formatSelectedDate(date: string): string {
-  const d = new Date(date + 'T12:00:00');
-  return `${d.getDate()} de ${PT_MONTHS_SHORT[d.getMonth()]} de ${d.getFullYear()}`;
-}
-
 export function ModeSelector({ onSelect, completedModes, savedStates, selectedDate, onDateChange }: ModeSelectorProps) {
+  const { t } = useTranslation();
   const today = getToday();
   const countdown = useCountdown();
   const streaks = selectedDate === today
@@ -99,6 +73,13 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
   const doneCount = completedModes.size;
   const totalCount = MODES.length;
   const allDone = doneCount === totalCount;
+
+  const monthsShort = t('months.short', { returnObjects: true }) as string[];
+
+  function formatSelectedDate(date: string): string {
+    const d = new Date(date + 'T12:00:00');
+    return `${d.getDate()} de ${monthsShort[d.getMonth()]} de ${d.getFullYear()}`;
+  }
 
   const sortedModes = [...MODES].sort((a, b) => {
     return (completedModes.has(a.mode) ? 1 : 0) - (completedModes.has(b.mode) ? 1 : 0);
@@ -130,15 +111,16 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
           </svg>
           <span>{formatSelectedDate(selectedDate)}</span>
           <button className="mode-selector__past-back" onClick={() => onDateChange(today)}>
-            Voltar para hoje
+            {t('modeSelector.backToToday')}
           </button>
         </div>
       )}
 
       <div className="mode-selector__hero">
         <p className="mode-selector__subtitle">
-          Ordene os itens pelo critério apresentado (ou não).<br />
-          Descubra a ordem certa em até 3 tentativas.
+          {t('modeSelector.subtitle').split('\n').map((line, i, arr) => (
+            <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+          ))}
         </p>
       </div>
 
@@ -149,11 +131,11 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
               <path fillRule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clipRule="evenodd" />
             </svg>
             <span className="mode-selector__streak-count">{streak}</span>
-            <span className="mode-selector__streak-label">dia{streak !== 1 ? 's' : ''}</span>
+            <span className="mode-selector__streak-label">{t('modeSelector.streakDays', { count: streak })}</span>
           </div>
         )}
         <div className="mode-selector__progress">
-          <span className="mode-selector__progress-text">{doneCount} de {totalCount} completos</span>
+          <span className="mode-selector__progress-text">{t('modeSelector.progress', { done: doneCount, total: totalCount })}</span>
           <div className="mode-selector__progress-bar">
             <div
               className="mode-selector__progress-fill"
@@ -164,10 +146,11 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
       </div>
 
       <div className="mode-selector__modes">
-        {sortedModes.map(({ mode, label, description, items, difficulty }, idx) => {
+        {sortedModes.map(({ mode, items }, idx) => {
           const done = completedModes.has(mode);
           const saved = savedStates[mode];
           const attemptsUsed = saved?.attempts ?? 0;
+          const modeStreak = streaks[mode];
           return (
             <button
               key={mode}
@@ -176,7 +159,7 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
               onClick={() => onSelect(mode)}
             >
               <div className="mode-card__top">
-                <span className="mode-card__label">{label}</span>
+                <span className="mode-card__label">{t(`modes.${mode}`)}</span>
                 {done ? (
                   <span className="mode-card__done-badge">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -185,13 +168,13 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
                     {saved?.solved ? `${attemptsUsed}/${MAX_LIVES}` : `X/${MAX_LIVES}`}
                   </span>
                 ) : (
-                  <span className="mode-card__difficulty">{difficulty}</span>
+                  <span className="mode-card__difficulty">{t(`modes.difficulty.${mode}`)}</span>
                 )}
               </div>
-              <p className="mode-card__desc">{description}</p>
-              {streaks[mode] > 0 && (
+              <p className="mode-card__desc">{t(`modes.description.${mode}`)}</p>
+              {modeStreak > 0 && (
                 <p className="mode-card__streak">
-                  🔥 {streaks[mode]} dia{streaks[mode] !== 1 ? 's' : ''} seguidos
+                  🔥 {t('modeSelector.streakDays', { count: modeStreak })} {t('modeSelector.streakSuffix')}
                 </p>
               )}
               <div className="mode-card__meta">
@@ -211,7 +194,7 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                Copiado!
+                {t('common.copied')}
               </>
             ) : (
               <>
@@ -220,14 +203,14 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
                   <polyline points="16 6 12 2 8 6" />
                   <line x1="12" y1="2" x2="12" y2="15" />
                 </svg>
-                Compartilhar dia
+                {t('modeSelector.shareDay')}
               </>
             )}
           </button>
         )}
         {!isPastDate && (
           <p className="mode-selector__hint">
-            Próximo puzzle em <span className="mode-selector__countdown">{countdown}</span>
+            {t('modeSelector.nextPuzzle')} <span className="mode-selector__countdown">{countdown}</span>
           </p>
         )}
         <button className="mode-selector__calendar" onClick={() => setShowDatePicker(true)}>
@@ -237,7 +220,7 @@ export function ModeSelector({ onSelect, completedModes, savedStates, selectedDa
             <line x1="8" y1="2" x2="8" y2="6" />
             <line x1="3" y1="10" x2="21" y2="10" />
           </svg>
-          Dias anteriores
+          {t('modeSelector.previousDays')}
         </button>
       </div>
 

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import './LivesIndicator.css';
 
 interface LivesIndicatorProps {
@@ -6,8 +7,10 @@ interface LivesIndicatorProps {
 }
 
 export function LivesIndicator({ total, remaining }: LivesIndicatorProps) {
+  const { t } = useTranslation();
+
   return (
-    <div className="lives" aria-label={`${remaining} de ${total} tentativas restantes`}>
+    <div className="lives" aria-label={t('game.livesRemaining', { remaining, total })}>
       {Array.from({ length: total }).map((_, i) => (
         <svg
           key={i}

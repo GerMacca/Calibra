@@ -50,7 +50,7 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   return lines;
 }
 
-export async function shareAsImage(params: {
+export function shareAsImage(params: {
   mode: GameMode;
   date: string;
   solved: boolean;
@@ -58,7 +58,7 @@ export async function shareAsImage(params: {
   criteria: string;
   correctOrder: string[];
   values: Map<string, number>;
-}): Promise<void> {
+}): Promise<'shared' | 'copied'> {
   const { mode, date, solved, attemptGrid, criteria, correctOrder, values } = params;
   const [modeColor, modeColorEnd] = MODE_COLORS[mode];
 
@@ -270,23 +270,22 @@ export async function shareAsImage(params: {
   ctx.textBaseline = 'middle';
   ctx.fillText('calibra.app', W / 2, y + 8);
 
-  // ── Share or download ──────────────────────────────────────
-  return new Promise((resolve, reject) => {
+  // ── Share or copy to clipboard ─────────────────────────────
+  return new Promise<'shared' | 'copied'>((resolve, reject) => {
     canvas.toBlob(async (blob) => {
       if (!blob) { reject(new Error('Canvas toBlob failed')); return; }
       const file = new File([blob], `calibra-${mode}-${date}.png`, { type: 'image/png' });
       try {
-        if (navigator.canShare?.({ files: [file] })) {
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        // Mobile: Web Share API (abre compartilhamento nativo)
+        if (isMobile && navigator.canShare?.({ files: [file] })) {
           await navigator.share({ files: [file], title: `Calibra · ${MODE_LABELS[mode]}` });
+          resolve('shared');
         } else {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `calibra-${mode}-${date}.png`;
-          a.click();
-          URL.revokeObjectURL(url);
+          // Desktop: copia imagem para a área de transferência
+          await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+          resolve('copied');
         }
-        resolve();
       } catch (e) {
         reject(e);
       }

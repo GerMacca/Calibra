@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import type { Puzzle, AttemptGrid, GameMode } from '../../types/game';
+import { localize } from '../../types/game';
 import { buildShareText } from '../../utils/share';
 import { shareAsImage } from '../../utils/shareImage';
 import { modeStyle } from '../../utils/modes';
@@ -27,15 +29,18 @@ export function ResultScreen({
   onPlayNext,
   onHome,
 }: ResultScreenProps) {
+  const { t, i18n } = useTranslation();
+  const lang = (i18n.language?.slice(0, 2) ?? 'pt') as 'pt' | 'en' | 'es';
   const [copied, setCopied] = useState(false);
   const [sharingImage, setSharingImage] = useState(false);
+  const [imageFeedback, setImageFeedback] = useState<'copied' | 'shared' | null>(null);
   const countdown = useCountdown();
 
-  const labelToValue = new Map(puzzle.items.map(i => [i.label, i.value]));
+  const labelToValue = new Map(puzzle.items.map(i => [localize(i.label, lang), i.value]));
   const attemptsUsed = attemptGrid.length;
   const resultText = solved
-    ? `Acertou em ${attemptsUsed}/${MAX_LIVES}!`
-    : 'Não foi dessa vez...';
+    ? t('result.solved', { n: attemptsUsed, max: MAX_LIVES })
+    : t('result.failed');
 
   function handleShare() {
     const text = buildShareText(mode, puzzle.date, attemptGrid, solved, MAX_LIVES);
@@ -53,9 +58,12 @@ export function ResultScreen({
       date: puzzle.date,
       solved,
       attemptGrid,
-      criteria: puzzle.criteria,
+      criteria: localize(puzzle.criteria, lang),
       correctOrder,
       values: labelToValue,
+    }).then((result) => {
+      setImageFeedback(result);
+      setTimeout(() => setImageFeedback(null), 2500);
     }).finally(() => setSharingImage(false));
   }
 
@@ -63,7 +71,7 @@ export function ResultScreen({
     <div className="result" style={modeStyle(mode)}>
       <div className="result__header">
         <div className={`result__outcome ${solved ? 'result__outcome--win' : 'result__outcome--lose'}`}>
-          <span className="result__outcome-icon">{solved ? '🎉' : '😔'}</span>
+          <span className="result__outcome-icon">{solved ? t('result.winEmoji') : t('result.loseEmoji')}</span>
           <span className="result__outcome-text">{resultText}</span>
         </div>
       </div>
@@ -86,8 +94,8 @@ export function ResultScreen({
 
       {/* Criteria reveal */}
       <div className="result__criteria">
-        <p className="result__criteria-label">Critério do dia</p>
-        <p className="result__criteria-value">{puzzle.criteria}</p>
+        <p className="result__criteria-label">{t('result.criteriaLabel')}</p>
+        <p className="result__criteria-value">{localize(puzzle.criteria, lang)}</p>
         {puzzle.criteria_source && (
           <p className="result__criteria-source">{puzzle.criteria_source}</p>
         )}
@@ -95,7 +103,7 @@ export function ResultScreen({
 
       {/* Correct order with values */}
       <div className="result__items">
-        <p className="result__items-label">Ordem correta</p>
+        <p className="result__items-label">{t('result.correctOrderLabel')}</p>
         <div className="result__items-list">
           {correctOrder.map((label, i) => (
             <div
@@ -122,7 +130,7 @@ export function ResultScreen({
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              Copiado!
+              {t('common.copied')}
             </>
           ) : (
             <>
@@ -133,37 +141,44 @@ export function ResultScreen({
                 <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
                 <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
               </svg>
-              Compartilhar
+              {t('result.share')}
             </>
           )}
         </button>
 
         <button className="result__share-image" onClick={handleShareImage} disabled={sharingImage}>
-          {sharingImage ? 'Gerando...' : (
+          {sharingImage ? t('result.generating') : imageFeedback === 'copied' ? (
+            <>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              {t('result.imageCopied')}
+            </>
+          ) : (
             <>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <circle cx="8.5" cy="8.5" r="1.5" />
                 <polyline points="21 15 16 10 5 21" />
               </svg>
-              Compartilhar imagem
+              {t('result.shareImage')}
             </>
           )}
         </button>
 
         {onPlayNext && (
           <button className="result__next" onClick={onPlayNext}>
-            Próximo modo
+            {t('result.nextMode')}
           </button>
         )}
 
         <button className="result__home" onClick={onHome}>
-          Início
+          {t('result.home')}
         </button>
       </div>
 
       <p className="result__countdown">
-        Próximo puzzle em <span className="result__countdown-time">{countdown}</span>
+        {t('result.nextPuzzle')} <span className="result__countdown-time">{countdown}</span>
       </p>
     </div>
   );
