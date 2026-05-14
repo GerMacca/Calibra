@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-16",
+  "mode": "excalibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — maiores bacias hidrográficas por área",
+  "items": [
+    {
+      "label": "Bacia do Ob",
+      "value": 2990000
+    },
+    {
+      "label": "Bacia do Rio da Prata",
+      "value": 3100000
+    },
+    {
+      "label": "Bacia do Mississippi",
+      "value": 3220000
+    },
+    {
+      "label": "Bacia do Nilo",
+      "value": 3254000
+    },
+    {
+      "label": "Bacia do Congo",
+      "value": 3730000
+    },
+    {
+      "label": "Bacia Amazônica",
+      "value": 7050000
+    }
+  ]
+}

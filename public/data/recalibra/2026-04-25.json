@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-25",
+  "mode": "recalibra",
+  "criteria": "consumo de energia per capita em MWh/ano",
+  "criteria_source": "Wikipedia — consumo de energia por país",
+  "items": [
+    {
+      "label": "Brasil",
+      "value": 2.5
+    },
+    {
+      "label": "Alemanha",
+      "value": 5.5
+    },
+    {
+      "label": "Austrália",
+      "value": 9.4
+    },
+    {
+      "label": "Canadá",
+      "value": 14.2
+    },
+    {
+      "label": "Islândia",
+      "value": 53.7
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-11",
+  "mode": "calibra",
+  "criteria": "extensão em mil km²",
+  "criteria_source": "Wikipedia — biomas brasileiros",
+  "items": [
+    {
+      "label": "Pantanal",
+      "value": 150
+    },
+    {
+      "label": "Caatinga",
+      "value": 844
+    },
+    {
+      "label": "Cerrado",
+      "value": 2036
+    },
+    {
+      "label": "Amazônia",
+      "value": 4196
+    }
+  ]
+}

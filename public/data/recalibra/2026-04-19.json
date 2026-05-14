@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-19",
+  "mode": "recalibra",
+  "criteria": "velocidade máxima em km/h",
+  "criteria_source": "Wikipedia — animais mais rápidos do mundo",
+  "items": [
+    {
+      "label": "Tubarão",
+      "value": 50
+    },
+    {
+      "label": "Leão",
+      "value": 80
+    },
+    {
+      "label": "Guepardo",
+      "value": 120
+    },
+    {
+      "label": "Andorinha-do-rabo-espinhoso",
+      "value": 171
+    },
+    {
+      "label": "Falcão-peregrino (mergulho)",
+      "value": 389
+    }
+  ]
+}

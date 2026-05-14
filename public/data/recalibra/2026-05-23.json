@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-23",
+  "mode": "recalibra",
+  "criteria": "temperatura mínima já registrada em °C",
+  "criteria_source": "Wikipedia — recordes climáticos",
+  "items": [
+    {
+      "label": "Base Vostok (Antártica)",
+      "value": -89.2
+    },
+    {
+      "label": "Oymyakon, Rússia",
+      "value": -67.8
+    },
+    {
+      "label": "Yakutsk, Rússia",
+      "value": -64
+    },
+    {
+      "label": "Snag, Canadá",
+      "value": -63
+    },
+    {
+      "label": "Astana, Cazaquistão",
+      "value": -52
+    }
+  ]
+}

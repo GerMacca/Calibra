@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-07",
+  "mode": "recalibra",
+  "criteria": "área em mil km²",
+  "criteria_source": "Wikipedia — estados brasileiros",
+  "items": [
+    {
+      "label": "Ceará",
+      "value": 149
+    },
+    {
+      "label": "Bahia",
+      "value": 568
+    },
+    {
+      "label": "Mato Grosso",
+      "value": 906
+    },
+    {
+      "label": "Pará",
+      "value": 1248
+    },
+    {
+      "label": "Amazonas",
+      "value": 1559
+    }
+  ]
+}

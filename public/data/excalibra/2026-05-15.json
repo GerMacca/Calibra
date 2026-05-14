@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-15",
+  "mode": "excalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores parques nacionais do mundo",
+  "items": [
+    {
+      "label": "Parque Yellowstone",
+      "value": 8983
+    },
+    {
+      "label": "Parque Amazônia (Brasil)",
+      "value": 9946
+    },
+    {
+      "label": "Parque Serengeti",
+      "value": 14763
+    },
+    {
+      "label": "Parque Great Barrier Reef",
+      "value": 344400
+    },
+    {
+      "label": "Parque Patagônia (Argentina)",
+      "value": 789610
+    },
+    {
+      "label": "Parque Ártico do Nordeste",
+      "value": 972000
+    }
+  ]
+}

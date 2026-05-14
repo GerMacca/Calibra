@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-15",
+  "mode": "calibra",
+  "criteria": "temperatura de fusão em °C",
+  "criteria_source": "Wikipedia — pontos de fusão de metais",
+  "items": [
+    {
+      "label": "Gálio",
+      "value": 30
+    },
+    {
+      "label": "Chumbo",
+      "value": 327
+    },
+    {
+      "label": "Ouro",
+      "value": 1064
+    },
+    {
+      "label": "Ferro",
+      "value": 1538
+    }
+  ]
+}

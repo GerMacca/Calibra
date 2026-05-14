@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-22",
+  "mode": "excalibra",
+  "criteria": "tempo de órbita em dias terrestres",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Mercúrio",
+      "value": 88
+    },
+    {
+      "label": "Vênus",
+      "value": 225
+    },
+    {
+      "label": "Terra",
+      "value": 365
+    },
+    {
+      "label": "Marte",
+      "value": 687
+    },
+    {
+      "label": "Júpiter",
+      "value": 4333
+    },
+    {
+      "label": "Saturno",
+      "value": 10759
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-06",
+  "mode": "recalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores metrôs do mundo",
+  "items": [
+    {
+      "label": "São Paulo",
+      "value": 101
+    },
+    {
+      "label": "Madrid",
+      "value": 294
+    },
+    {
+      "label": "Londres",
+      "value": 402
+    },
+    {
+      "label": "Moscou",
+      "value": 435
+    },
+    {
+      "label": "Pequim",
+      "value": 836
+    }
+  ]
+}

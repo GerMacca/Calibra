@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-10",
+  "mode": "calibra",
+  "criteria": "peso em kg",
+  "criteria_source": "Wikipedia — maiores animais terrestres",
+  "items": [
+    {
+      "label": "Gorila",
+      "value": 200
+    },
+    {
+      "label": "Hipopótamo",
+      "value": 1500
+    },
+    {
+      "label": "Rinoceronte",
+      "value": 2300
+    },
+    {
+      "label": "Elefante africano",
+      "value": 6000
+    }
+  ]
+}

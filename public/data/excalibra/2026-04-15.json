@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-15",
+  "mode": "excalibra",
+  "criteria": "profundidade máxima em metros",
+  "criteria_source": "Wikipedia — oceanos e mares do mundo",
+  "items": [
+    {
+      "label": "Mar Mediterrâneo",
+      "value": 5267
+    },
+    {
+      "label": "Mar do Sul da China",
+      "value": 5559
+    },
+    {
+      "label": "Oceano Ártico",
+      "value": 5625
+    },
+    {
+      "label": "Oceano Índico",
+      "value": 7906
+    },
+    {
+      "label": "Oceano Atlântico",
+      "value": 8605
+    },
+    {
+      "label": "Oceano Pacífico",
+      "value": 11034
+    }
+  ]
+}

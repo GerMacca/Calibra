@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-20",
+  "mode": "excalibra",
+  "criteria": "peso em toneladas",
+  "criteria_source": "Wikipedia — maiores estruturas já construídas",
+  "items": [
+    {
+      "label": "Avião An-225",
+      "value": 640
+    },
+    {
+      "label": "Porta-aviões Gerald R. Ford",
+      "value": 100000
+    },
+    {
+      "label": "Plataforma Hibernia",
+      "value": 1300000
+    },
+    {
+      "label": "Pirâmide de Quéops",
+      "value": 6000000
+    },
+    {
+      "label": "Barragem de Hoover",
+      "value": 6600000
+    },
+    {
+      "label": "Grande Muralha da China",
+      "value": 57000000
+    }
+  ]
+}

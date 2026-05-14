@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-22",
+  "mode": "calibra",
+  "criteria": "comprimento total em km",
+  "criteria_source": "Wikipedia — fronteiras terrestres do Brasil",
+  "items": [
+    {
+      "label": "Brasil-Uruguai",
+      "value": 1068
+    },
+    {
+      "label": "Brasil-Argentina",
+      "value": 1263
+    },
+    {
+      "label": "Brasil-Colômbia",
+      "value": 1644
+    },
+    {
+      "label": "Brasil-Peru",
+      "value": 2995
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-14",
+  "mode": "recalibra",
+  "criteria": "área da floresta em mil km²",
+  "criteria_source": "Wikipedia — maiores florestas do mundo",
+  "items": [
+    {
+      "label": "Floresta do Congo",
+      "value": 1780
+    },
+    {
+      "label": "Floresta Boreal Escandinava",
+      "value": 1870
+    },
+    {
+      "label": "Floresta Boreal Siberiana",
+      "value": 5500
+    },
+    {
+      "label": "Floresta Amazônica",
+      "value": 5500
+    },
+    {
+      "label": "Taiga Russa",
+      "value": 8100
+    }
+  ]
+}

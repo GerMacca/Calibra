@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-16",
+  "mode": "excalibra",
+  "criteria": "altitude máxima em metros",
+  "criteria_source": "Wikipedia — picos mais altos por continente",
+  "items": [
+    {
+      "label": "Vinson (Antártica)",
+      "value": 4892
+    },
+    {
+      "label": "Elbrus (Europa)",
+      "value": 5642
+    },
+    {
+      "label": "Kilimanjaro (África)",
+      "value": 5895
+    },
+    {
+      "label": "McKinley (América do Norte)",
+      "value": 6190
+    },
+    {
+      "label": "Aconcágua (América do Sul)",
+      "value": 6961
+    },
+    {
+      "label": "Everest (Ásia)",
+      "value": 8849
+    }
+  ]
+}

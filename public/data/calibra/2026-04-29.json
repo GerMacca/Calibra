@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-29",
+  "mode": "calibra",
+  "criteria": "duração em horas do dia",
+  "criteria_source": "Wikipedia — dias nos planetas do sistema solar",
+  "items": [
+    {
+      "label": "Júpiter",
+      "value": 9.9
+    },
+    {
+      "label": "Saturno",
+      "value": 10.7
+    },
+    {
+      "label": "Terra",
+      "value": 24
+    },
+    {
+      "label": "Vênus",
+      "value": 5832
+    }
+  ]
+}

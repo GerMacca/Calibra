@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-19",
+  "mode": "excalibra",
+  "criteria": "comprimento em m",
+  "criteria_source": "Wikipedia — maiores aeronaves já construídas",
+  "items": [
+    {
+      "label": "Airbus BelugaXL",
+      "value": 63.1
+    },
+    {
+      "label": "Hughes H-4 Hercules",
+      "value": 66.65
+    },
+    {
+      "label": "Antonov An-124",
+      "value": 68.96
+    },
+    {
+      "label": "Airbus A380",
+      "value": 72.7
+    },
+    {
+      "label": "Boeing 747-8",
+      "value": 76.3
+    },
+    {
+      "label": "Antonov An-225",
+      "value": 84
+    }
+  ]
+}

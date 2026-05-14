@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-28",
+  "mode": "excalibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — maiores rios da América do Sul",
+  "items": [
+    {
+      "label": "Rio Negro",
+      "value": 2250
+    },
+    {
+      "label": "Rio Paraguai",
+      "value": 2621
+    },
+    {
+      "label": "Rio Tocantins",
+      "value": 2640
+    },
+    {
+      "label": "Rio São Francisco",
+      "value": 2863
+    },
+    {
+      "label": "Rio Paraná",
+      "value": 4880
+    },
+    {
+      "label": "Rio Amazonas",
+      "value": 6992
+    }
+  ]
+}

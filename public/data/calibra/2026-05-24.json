@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-24",
+  "mode": "calibra",
+  "criteria": "número de espécies descritas",
+  "criteria_source": "Wikipedia — insetos e outros invertebrados",
+  "items": [
+    {
+      "label": "Moluscos",
+      "value": 85000
+    },
+    {
+      "label": "Aracnídeos",
+      "value": 114000
+    },
+    {
+      "label": "Besouros",
+      "value": 400000
+    },
+    {
+      "label": "Todos os insetos",
+      "value": 1000000
+    }
+  ]
+}

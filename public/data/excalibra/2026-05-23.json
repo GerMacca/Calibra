@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-23",
+  "mode": "excalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores estruturas construídas pelo homem",
+  "items": [
+    {
+      "label": "Canal do Panamá",
+      "value": 82
+    },
+    {
+      "label": "Canal de Suez",
+      "value": 193
+    },
+    {
+      "label": "Oleoduto Trans-Alasca",
+      "value": 1300
+    },
+    {
+      "label": "Sistema de irrigação Karakum",
+      "value": 1375
+    },
+    {
+      "label": "Gasoduto Druzhba",
+      "value": 4000
+    },
+    {
+      "label": "Grande Muralha da China",
+      "value": 21196
+    }
+  ]
+}

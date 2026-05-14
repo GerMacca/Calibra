@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-23",
+  "mode": "recalibra",
+  "criteria": "diâmetro em km",
+  "criteria_source": "Wikipedia — maiores luas do sistema solar",
+  "items": [
+    {
+      "label": "Europa (lua)",
+      "value": 3122
+    },
+    {
+      "label": "Io",
+      "value": 3643
+    },
+    {
+      "label": "Calisto",
+      "value": 4821
+    },
+    {
+      "label": "Titã",
+      "value": 5150
+    },
+    {
+      "label": "Ganímedes",
+      "value": 5268
+    }
+  ]
+}

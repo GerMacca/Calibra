@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-14",
+  "mode": "calibra",
+  "criteria": "velocidade máxima em km/h",
+  "criteria_source": "Wikipedia — velocidade máxima de animais",
+  "items": [
+    {
+      "label": "Caracol",
+      "value": 0.05
+    },
+    {
+      "label": "Tartaruga",
+      "value": 0.4
+    },
+    {
+      "label": "Elefante",
+      "value": 25
+    },
+    {
+      "label": "Guepardo",
+      "value": 120
+    }
+  ]
+}

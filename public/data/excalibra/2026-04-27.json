@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-27",
+  "mode": "excalibra",
+  "criteria": "temperatura em °C",
+  "criteria_source": "Wikipedia — temperaturas de corpos celestes",
+  "items": [
+    {
+      "label": "Núcleo da Lua",
+      "value": 1327
+    },
+    {
+      "label": "Núcleo da Terra",
+      "value": 5430
+    },
+    {
+      "label": "Superfície do Sol",
+      "value": 5778
+    },
+    {
+      "label": "Núcleo de Júpiter",
+      "value": 24000
+    },
+    {
+      "label": "Núcleo do Sol",
+      "value": 15000000
+    },
+    {
+      "label": "Raio cósmico (partícula)",
+      "value": 1000000000000
+    }
+  ]
+}

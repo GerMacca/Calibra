@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-18",
+  "mode": "calibra",
+  "criteria": "pressão de vapor em Pa a 25°C",
+  "criteria_source": "Wikipedia — substâncias voláteis",
+  "items": [
+    {
+      "label": "Água",
+      "value": 3169
+    },
+    {
+      "label": "Etanol",
+      "value": 5932
+    },
+    {
+      "label": "Acetona",
+      "value": 30600
+    },
+    {
+      "label": "Éter etílico",
+      "value": 71000
+    }
+  ]
+}

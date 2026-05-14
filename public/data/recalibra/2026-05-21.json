@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-21",
+  "mode": "recalibra",
+  "criteria": "peso em toneladas",
+  "criteria_source": "Wikipedia — maiores animais da história",
+  "items": [
+    {
+      "label": "Girafa",
+      "value": 1.2
+    },
+    {
+      "label": "Elefante africano",
+      "value": 6
+    },
+    {
+      "label": "Brachiosaurus",
+      "value": 56
+    },
+    {
+      "label": "Patagotitan mayorum",
+      "value": 70
+    },
+    {
+      "label": "Baleia-azul",
+      "value": 150
+    }
+  ]
+}

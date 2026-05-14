@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-06",
+  "mode": "excalibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — maiores lagos do mundo por área",
+  "items": [
+    {
+      "label": "Lago Baikal",
+      "value": 31722
+    },
+    {
+      "label": "Lago Tanganica",
+      "value": 32900
+    },
+    {
+      "label": "Lago Huron",
+      "value": 59600
+    },
+    {
+      "label": "Lago Vitória",
+      "value": 68800
+    },
+    {
+      "label": "Lago Superior",
+      "value": 82100
+    },
+    {
+      "label": "Mar Cáspio",
+      "value": 371000
+    }
+  ]
+}

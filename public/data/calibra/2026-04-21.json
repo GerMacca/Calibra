@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-21",
+  "mode": "calibra",
+  "criteria": "temperatura média anual em °C",
+  "criteria_source": "Wikipedia — capitais brasileiras",
+  "items": [
+    {
+      "label": "Curitiba",
+      "value": 17.4
+    },
+    {
+      "label": "Porto Alegre",
+      "value": 19.5
+    },
+    {
+      "label": "São Paulo",
+      "value": 21.2
+    },
+    {
+      "label": "Fortaleza",
+      "value": 26.9
+    }
+  ]
+}

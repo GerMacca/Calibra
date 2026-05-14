@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-26",
+  "mode": "recalibra",
+  "criteria": "profundidade máxima em m",
+  "criteria_source": "Wikipedia — oceanos e mares",
+  "items": [
+    {
+      "label": "Mar Báltico",
+      "value": 459
+    },
+    {
+      "label": "Mar do Norte",
+      "value": 700
+    },
+    {
+      "label": "Mar Mediterrâneo",
+      "value": 5267
+    },
+    {
+      "label": "Oceano Índico",
+      "value": 7906
+    },
+    {
+      "label": "Oceano Pacífico",
+      "value": 11034
+    }
+  ]
+}

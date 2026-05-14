@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-01",
+  "mode": "recalibra",
+  "criteria": "IDH em pontos (×100)",
+  "criteria_source": "Wikipedia — países com maior IDH 2023",
+  "items": [
+    {
+      "label": "Brasil",
+      "value": 76.4
+    },
+    {
+      "label": "Portugal",
+      "value": 86.6
+    },
+    {
+      "label": "Alemanha",
+      "value": 95.3
+    },
+    {
+      "label": "Noruega",
+      "value": 96.6
+    },
+    {
+      "label": "Suíça",
+      "value": 96.7
+    }
+  ]
+}

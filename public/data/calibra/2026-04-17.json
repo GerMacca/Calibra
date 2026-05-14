@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-17",
+  "mode": "calibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — rios mais longos do Brasil",
+  "items": [
+    {
+      "label": "Rio Paraíba do Sul",
+      "value": 1137
+    },
+    {
+      "label": "Rio Tocantins",
+      "value": 2640
+    },
+    {
+      "label": "Rio São Francisco",
+      "value": 2863
+    },
+    {
+      "label": "Rio Amazonas",
+      "value": 6992
+    }
+  ]
+}

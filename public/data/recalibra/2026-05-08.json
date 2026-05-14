@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-08",
+  "mode": "recalibra",
+  "criteria": "produção de café em mil toneladas",
+  "criteria_source": "Wikipedia — maiores produtores de café 2023",
+  "items": [
+    {
+      "label": "Etiópia",
+      "value": 480
+    },
+    {
+      "label": "Indonésia",
+      "value": 660
+    },
+    {
+      "label": "Colômbia",
+      "value": 754
+    },
+    {
+      "label": "Vietnã",
+      "value": 1850
+    },
+    {
+      "label": "Brasil",
+      "value": 3558
+    }
+  ]
+}

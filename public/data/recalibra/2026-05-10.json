@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-10",
+  "mode": "recalibra",
+  "criteria": "comprimento em metros",
+  "criteria_source": "Wikipedia — edifícios mais altos do mundo",
+  "items": [
+    {
+      "label": "Empire State Building",
+      "value": 443
+    },
+    {
+      "label": "Petronas Towers",
+      "value": 452
+    },
+    {
+      "label": "Mecca Royal Clock Tower",
+      "value": 601
+    },
+    {
+      "label": "Shanghai Tower",
+      "value": 632
+    },
+    {
+      "label": "Burj Khalifa",
+      "value": 828
+    }
+  ]
+}

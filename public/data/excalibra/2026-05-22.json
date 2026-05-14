@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-22",
+  "mode": "excalibra",
+  "criteria": "número de habitantes em milhões",
+  "criteria_source": "Wikipedia — megacidades asiáticas 2024",
+  "items": [
+    {
+      "label": "Karachi",
+      "value": 17.1
+    },
+    {
+      "label": "Osaka",
+      "value": 19.2
+    },
+    {
+      "label": "Mumbai",
+      "value": 21.7
+    },
+    {
+      "label": "Pequim",
+      "value": 21.9
+    },
+    {
+      "label": "Xangai",
+      "value": 29
+    },
+    {
+      "label": "Tóquio",
+      "value": 37.4
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-16",
+  "mode": "recalibra",
+  "criteria": "velocidade de órbita em km/s",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Plutão",
+      "value": 4.7
+    },
+    {
+      "label": "Netuno",
+      "value": 5.4
+    },
+    {
+      "label": "Saturno",
+      "value": 9.7
+    },
+    {
+      "label": "Terra",
+      "value": 29.8
+    },
+    {
+      "label": "Mercúrio",
+      "value": 47.9
+    }
+  ]
+}

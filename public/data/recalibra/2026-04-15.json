@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-15",
+  "mode": "recalibra",
+  "criteria": "população em milhões",
+  "criteria_source": "Wikipedia — países mais populosos 2024",
+  "items": [
+    {
+      "label": "Brasil",
+      "value": 215
+    },
+    {
+      "label": "Paquistão",
+      "value": 235
+    },
+    {
+      "label": "Indonésia",
+      "value": 278
+    },
+    {
+      "label": "Estados Unidos",
+      "value": 335
+    },
+    {
+      "label": "Índia",
+      "value": 1430
+    }
+  ]
+}

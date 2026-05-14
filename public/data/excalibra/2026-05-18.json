@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-18",
+  "mode": "excalibra",
+  "criteria": "velocidade de propagação em km/s",
+  "criteria_source": "Wikipedia — ondas físicas",
+  "items": [
+    {
+      "label": "Ondas de superfície sísmicas",
+      "value": 3.5
+    },
+    {
+      "label": "Ondas S (sísmicas)",
+      "value": 4.5
+    },
+    {
+      "label": "Som no aço",
+      "value": 5.96
+    },
+    {
+      "label": "Ondas P (crosta)",
+      "value": 6
+    },
+    {
+      "label": "Ondas P (manto)",
+      "value": 13
+    },
+    {
+      "label": "Luz (vácuo)",
+      "value": 300000
+    }
+  ]
+}

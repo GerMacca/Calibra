@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-16",
+  "mode": "calibra",
+  "criteria": "area em mil km²",
+  "criteria_source": "Wikipedia — estados brasileiros maiores",
+  "items": [
+    {
+      "label": "Sergipe",
+      "value": 21.9
+    },
+    {
+      "label": "Paraíba",
+      "value": 56.4
+    },
+    {
+      "label": "Bahia",
+      "value": 567.3
+    },
+    {
+      "label": "Amazonas",
+      "value": 1559
+    }
+  ]
+}

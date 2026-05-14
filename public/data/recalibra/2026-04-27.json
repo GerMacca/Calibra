@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-27",
+  "mode": "recalibra",
+  "criteria": "número de espécies de mamíferos",
+  "criteria_source": "Wikipedia — países megadiversos",
+  "items": [
+    {
+      "label": "Austrália",
+      "value": 386
+    },
+    {
+      "label": "China",
+      "value": 502
+    },
+    {
+      "label": "México",
+      "value": 535
+    },
+    {
+      "label": "Indonésia",
+      "value": 670
+    },
+    {
+      "label": "Brasil",
+      "value": 752
+    }
+  ]
+}

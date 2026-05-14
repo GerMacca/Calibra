@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-20",
+  "mode": "calibra",
+  "criteria": "autonomia em km (ciclo WLTP)",
+  "criteria_source": "Wikipedia — autonomia de carros elétricos 2024",
+  "items": [
+    {
+      "label": "Fiat 500e",
+      "value": 320
+    },
+    {
+      "label": "Tesla Model 3",
+      "value": 576
+    },
+    {
+      "label": "Mercedes EQS",
+      "value": 770
+    },
+    {
+      "label": "Lucid Air",
+      "value": 836
+    }
+  ]
+}

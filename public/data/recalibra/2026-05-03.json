@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-03",
+  "mode": "recalibra",
+  "criteria": "número de ilhas",
+  "criteria_source": "Wikipedia — países insulares e arquipélagos",
+  "items": [
+    {
+      "label": "Grécia",
+      "value": 6000
+    },
+    {
+      "label": "Filipinas",
+      "value": 7641
+    },
+    {
+      "label": "Noruega",
+      "value": 50000
+    },
+    {
+      "label": "Canadá",
+      "value": 52455
+    },
+    {
+      "label": "Suécia",
+      "value": 267570
+    }
+  ]
+}

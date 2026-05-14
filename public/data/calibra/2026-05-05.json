@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-05",
+  "mode": "calibra",
+  "criteria": "espessura em km",
+  "criteria_source": "Wikipedia — camadas da Terra",
+  "items": [
+    {
+      "label": "Crosta continental",
+      "value": 35
+    },
+    {
+      "label": "Litosfera",
+      "value": 100
+    },
+    {
+      "label": "Manto superior",
+      "value": 670
+    },
+    {
+      "label": "Núcleo externo",
+      "value": 2300
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-24",
+  "mode": "excalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores cadeias de montanhas do mundo",
+  "items": [
+    {
+      "label": "Alpes",
+      "value": 1200
+    },
+    {
+      "label": "Himalaia",
+      "value": 2400
+    },
+    {
+      "label": "Montes Urais",
+      "value": 2500
+    },
+    {
+      "label": "Montanhas Rochosas",
+      "value": 4800
+    },
+    {
+      "label": "Andes",
+      "value": 7000
+    },
+    {
+      "label": "Cordilheira Mesoatlântica",
+      "value": 16000
+    }
+  ]
+}

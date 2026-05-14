@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-19",
+  "mode": "excalibra",
+  "criteria": "área em milhões de km²",
+  "criteria_source": "Wikipedia — continentes e oceanos",
+  "items": [
+    {
+      "label": "Austrália",
+      "value": 7.7
+    },
+    {
+      "label": "Europa",
+      "value": 10.5
+    },
+    {
+      "label": "Antártica",
+      "value": 14.2
+    },
+    {
+      "label": "América do Norte",
+      "value": 24.7
+    },
+    {
+      "label": "África",
+      "value": 30.4
+    },
+    {
+      "label": "Ásia",
+      "value": 44.6
+    }
+  ]
+}

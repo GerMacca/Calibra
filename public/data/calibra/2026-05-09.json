@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-09",
+  "mode": "calibra",
+  "criteria": "velocidade do vento em km/h",
+  "criteria_source": "Wikipedia — escalas de vento",
+  "items": [
+    {
+      "label": "Brisa suave",
+      "value": 15
+    },
+    {
+      "label": "Vendaval",
+      "value": 75
+    },
+    {
+      "label": "Furacão categoria 1",
+      "value": 119
+    },
+    {
+      "label": "Furacão categoria 5",
+      "value": 252
+    }
+  ]
+}

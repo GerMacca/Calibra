@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-24",
+  "mode": "recalibra",
+  "criteria": "área em mil km²",
+  "criteria_source": "Wikipedia — maiores desertos do mundo",
+  "items": [
+    {
+      "label": "Deserto do Gobi",
+      "value": 1295
+    },
+    {
+      "label": "Deserto Australiano",
+      "value": 1558
+    },
+    {
+      "label": "Deserto da Arábia",
+      "value": 2330
+    },
+    {
+      "label": "Deserto do Saara",
+      "value": 9200
+    },
+    {
+      "label": "Deserto Antártico",
+      "value": 14200
+    }
+  ]
+}

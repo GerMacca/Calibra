@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-16",
+  "mode": "recalibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — rios mais longos do mundo",
+  "items": [
+    {
+      "label": "Rio Danúbio",
+      "value": 2860
+    },
+    {
+      "label": "Rio Mississipi",
+      "value": 3730
+    },
+    {
+      "label": "Rio Yenissei",
+      "value": 5539
+    },
+    {
+      "label": "Rio Nilo",
+      "value": 6853
+    },
+    {
+      "label": "Rio Amazonas",
+      "value": 6992
+    }
+  ]
+}

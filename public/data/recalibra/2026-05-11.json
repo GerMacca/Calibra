@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-11",
+  "mode": "recalibra",
+  "criteria": "área em km²",
+  "criteria_source": "Wikipedia — menores países do mundo",
+  "items": [
+    {
+      "label": "Vaticano",
+      "value": 0.44
+    },
+    {
+      "label": "Mônaco",
+      "value": 2.02
+    },
+    {
+      "label": "Nauru",
+      "value": 21
+    },
+    {
+      "label": "São Marino",
+      "value": 61
+    },
+    {
+      "label": "Liechtenstein",
+      "value": 160
+    }
+  ]
+}

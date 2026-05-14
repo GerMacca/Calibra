@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-13",
+  "mode": "excalibra",
+  "criteria": "número de espécies de peixes",
+  "criteria_source": "Wikipedia — bacias hidrográficas mais biodiversas",
+  "items": [
+    {
+      "label": "Yangtze",
+      "value": 361
+    },
+    {
+      "label": "Mississippi",
+      "value": 375
+    },
+    {
+      "label": "Congo",
+      "value": 700
+    },
+    {
+      "label": "Orinoco",
+      "value": 1000
+    },
+    {
+      "label": "Mekong",
+      "value": 1200
+    },
+    {
+      "label": "Amazonas",
+      "value": 2400
+    }
+  ]
+}

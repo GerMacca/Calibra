@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-22",
+  "mode": "recalibra",
+  "criteria": "número de espécies de peixes",
+  "criteria_source": "Wikipedia — bacias hidrográficas megadiversas",
+  "items": [
+    {
+      "label": "Mississippi",
+      "value": 375
+    },
+    {
+      "label": "Congo",
+      "value": 700
+    },
+    {
+      "label": "Orinoco",
+      "value": 1000
+    },
+    {
+      "label": "Mekong",
+      "value": 1200
+    },
+    {
+      "label": "Amazonas",
+      "value": 2400
+    }
+  ]
+}

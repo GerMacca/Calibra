@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-26",
+  "mode": "calibra",
+  "criteria": "velocidade em km/h",
+  "criteria_source": "Wikipedia — meios de transporte",
+  "items": [
+    {
+      "label": "Bicicleta",
+      "value": 20
+    },
+    {
+      "label": "Carro (rodovia)",
+      "value": 120
+    },
+    {
+      "label": "Trem-bala Shinkansen",
+      "value": 320
+    },
+    {
+      "label": "Avião comercial",
+      "value": 900
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-21",
+  "mode": "excalibra",
+  "criteria": "área em km²",
+  "criteria_source": "Wikipedia — maiores bacias lacustres do mundo",
+  "items": [
+    {
+      "label": "Lago Baikal",
+      "value": 31722
+    },
+    {
+      "label": "Lago Tanganica",
+      "value": 32900
+    },
+    {
+      "label": "Lago Huron",
+      "value": 59600
+    },
+    {
+      "label": "Lago Vitória",
+      "value": 68800
+    },
+    {
+      "label": "Lago Superior",
+      "value": 82100
+    },
+    {
+      "label": "Mar Cáspio",
+      "value": 371000
+    }
+  ]
+}

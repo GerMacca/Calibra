@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-08",
+  "mode": "calibra",
+  "criteria": "distância de Brasília em km",
+  "criteria_source": "Wikipedia — capitais estaduais do Brasil",
+  "items": [
+    {
+      "label": "Goiânia",
+      "value": 209
+    },
+    {
+      "label": "Belo Horizonte",
+      "value": 716
+    },
+    {
+      "label": "São Paulo",
+      "value": 1015
+    },
+    {
+      "label": "Manaus",
+      "value": 3523
+    }
+  ]
+}

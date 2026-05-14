@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-05",
+  "mode": "excalibra",
+  "criteria": "número de satélites naturais",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Vênus",
+      "value": 0
+    },
+    {
+      "label": "Terra",
+      "value": 1
+    },
+    {
+      "label": "Marte",
+      "value": 2
+    },
+    {
+      "label": "Netuno",
+      "value": 16
+    },
+    {
+      "label": "Urano",
+      "value": 27
+    },
+    {
+      "label": "Saturno",
+      "value": 146
+    }
+  ]
+}

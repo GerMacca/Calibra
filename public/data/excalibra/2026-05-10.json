@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-10",
+  "mode": "excalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores sistemas de metrô do mundo",
+  "items": [
+    {
+      "label": "São Paulo",
+      "value": 101
+    },
+    {
+      "label": "Nova York",
+      "value": 380
+    },
+    {
+      "label": "Londres",
+      "value": 402
+    },
+    {
+      "label": "Moscou",
+      "value": 435
+    },
+    {
+      "label": "Xangai",
+      "value": 831
+    },
+    {
+      "label": "Pequim",
+      "value": 836
+    }
+  ]
+}

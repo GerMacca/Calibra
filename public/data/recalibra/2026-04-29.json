@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-29",
+  "mode": "recalibra",
+  "criteria": "velocidade média em km/h",
+  "criteria_source": "Wikipedia — animais aquáticos",
+  "items": [
+    {
+      "label": "Tartaruga marinha",
+      "value": 35
+    },
+    {
+      "label": "Orca",
+      "value": 56
+    },
+    {
+      "label": "Golfinho",
+      "value": 60
+    },
+    {
+      "label": "Peixe-espada",
+      "value": 95
+    },
+    {
+      "label": "Peixe-vela",
+      "value": 110
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-15",
+  "mode": "recalibra",
+  "criteria": "número de prêmios Nobel",
+  "criteria_source": "Wikipedia — países com mais Prêmios Nobel",
+  "items": [
+    {
+      "label": "Rússia/URSS",
+      "value": 32
+    },
+    {
+      "label": "França",
+      "value": 72
+    },
+    {
+      "label": "Alemanha",
+      "value": 114
+    },
+    {
+      "label": "Reino Unido",
+      "value": 137
+    },
+    {
+      "label": "Estados Unidos",
+      "value": 411
+    }
+  ]
+}

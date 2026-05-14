@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-17",
+  "mode": "recalibra",
+  "criteria": "distância ao Sol em milhões de km",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Mercúrio",
+      "value": 58
+    },
+    {
+      "label": "Vênus",
+      "value": 108
+    },
+    {
+      "label": "Terra",
+      "value": 150
+    },
+    {
+      "label": "Marte",
+      "value": 228
+    },
+    {
+      "label": "Júpiter",
+      "value": 778
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-13",
+  "mode": "calibra",
+  "criteria": "distância em anos-luz",
+  "criteria_source": "Wikipedia — estrelas mais próximas do Sol",
+  "items": [
+    {
+      "label": "Próxima Centauri",
+      "value": 4.24
+    },
+    {
+      "label": "Sirius",
+      "value": 8.6
+    },
+    {
+      "label": "Vega",
+      "value": 25
+    },
+    {
+      "label": "Rigel",
+      "value": 860
+    }
+  ]
+}

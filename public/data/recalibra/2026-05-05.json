@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-05",
+  "mode": "recalibra",
+  "criteria": "temperatura superficial em K",
+  "criteria_source": "Wikipedia — estrelas mais brilhantes",
+  "items": [
+    {
+      "label": "Betelgeuse",
+      "value": 3500
+    },
+    {
+      "label": "Sol",
+      "value": 5778
+    },
+    {
+      "label": "Sirius",
+      "value": 9940
+    },
+    {
+      "label": "Rigel",
+      "value": 12000
+    },
+    {
+      "label": "Spica",
+      "value": 25000
+    }
+  ]
+}

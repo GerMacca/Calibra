@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-09",
+  "mode": "excalibra",
+  "criteria": "peso em kg",
+  "criteria_source": "Wikipedia — maiores animais marinhos",
+  "items": [
+    {
+      "label": "Tubarão-branco",
+      "value": 1100
+    },
+    {
+      "label": "Peixe-lua",
+      "value": 2300
+    },
+    {
+      "label": "Raia-manta gigante",
+      "value": 2721
+    },
+    {
+      "label": "Tubarão-baleia",
+      "value": 18700
+    },
+    {
+      "label": "Cachalote",
+      "value": 57000
+    },
+    {
+      "label": "Baleia-azul",
+      "value": 150000
+    }
+  ]
+}

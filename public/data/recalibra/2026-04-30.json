@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-30",
+  "mode": "recalibra",
+  "criteria": "área em mil km²",
+  "criteria_source": "Wikipedia — países europeus",
+  "items": [
+    {
+      "label": "Portugal",
+      "value": 92
+    },
+    {
+      "label": "Polônia",
+      "value": 313
+    },
+    {
+      "label": "Alemanha",
+      "value": 357
+    },
+    {
+      "label": "Espanha",
+      "value": 506
+    },
+    {
+      "label": "Rússia",
+      "value": 17098
+    }
+  ]
+}

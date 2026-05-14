@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-26",
+  "mode": "excalibra",
+  "criteria": "altitude de órbita em km",
+  "criteria_source": "Wikipedia — satélites artificiais",
+  "items": [
+    {
+      "label": "ISS",
+      "value": 408
+    },
+    {
+      "label": "Hubble",
+      "value": 547
+    },
+    {
+      "label": "Iridium",
+      "value": 780
+    },
+    {
+      "label": "GPS",
+      "value": 20200
+    },
+    {
+      "label": "Galileo",
+      "value": 23222
+    },
+    {
+      "label": "Satélites geoestacionários",
+      "value": 35786
+    }
+  ]
+}

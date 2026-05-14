@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-09",
+  "mode": "recalibra",
+  "criteria": "número de línguas faladas",
+  "criteria_source": "Wikipedia — países mais multilíngues",
+  "items": [
+    {
+      "label": "Brasil",
+      "value": 228
+    },
+    {
+      "label": "México",
+      "value": 289
+    },
+    {
+      "label": "Austrália",
+      "value": 319
+    },
+    {
+      "label": "Índia",
+      "value": 780
+    },
+    {
+      "label": "Papua-Nova Guiné",
+      "value": 840
+    }
+  ]
+}

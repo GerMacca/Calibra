@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-23",
+  "mode": "calibra",
+  "criteria": "volume em km³",
+  "criteria_source": "Wikipedia — maiores reservatórios do mundo",
+  "items": [
+    {
+      "label": "Balbina",
+      "value": 17.5
+    },
+    {
+      "label": "Itaipu",
+      "value": 29
+    },
+    {
+      "label": "Represa de Bratsk",
+      "value": 169
+    },
+    {
+      "label": "Lago Kariba",
+      "value": 180
+    }
+  ]
+}

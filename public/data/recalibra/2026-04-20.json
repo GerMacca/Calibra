@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-20",
+  "mode": "recalibra",
+  "criteria": "temperatura média em °C",
+  "criteria_source": "Wikipedia — capitais europeias",
+  "items": [
+    {
+      "label": "Oslo",
+      "value": 6.3
+    },
+    {
+      "label": "Berlim",
+      "value": 10.1
+    },
+    {
+      "label": "Madrid",
+      "value": 15.3
+    },
+    {
+      "label": "Roma",
+      "value": 16.2
+    },
+    {
+      "label": "Atenas",
+      "value": 19.1
+    }
+  ]
+}

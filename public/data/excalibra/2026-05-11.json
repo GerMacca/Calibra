@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-11",
+  "mode": "excalibra",
+  "criteria": "temperatura média em °C",
+  "criteria_source": "Wikipedia — camadas da atmosfera terrestre",
+  "items": [
+    {
+      "label": "Mesosfera (-85 km)",
+      "value": -85
+    },
+    {
+      "label": "Estratosfera (20 km)",
+      "value": -60
+    },
+    {
+      "label": "Troposfera (10 km)",
+      "value": -50
+    },
+    {
+      "label": "Superfície",
+      "value": 15
+    },
+    {
+      "label": "Exosfera (600 km)",
+      "value": 1500
+    },
+    {
+      "label": "Termosfera (100 km)",
+      "value": 2000
+    }
+  ]
+}

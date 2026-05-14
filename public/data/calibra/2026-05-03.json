@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-03",
+  "mode": "calibra",
+  "criteria": "distância da Terra em milhões de km (média)",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Vênus",
+      "value": 41
+    },
+    {
+      "label": "Marte",
+      "value": 78
+    },
+    {
+      "label": "Júpiter",
+      "value": 628
+    },
+    {
+      "label": "Saturno",
+      "value": 1275
+    }
+  ]
+}

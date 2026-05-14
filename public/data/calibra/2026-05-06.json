@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-06",
+  "mode": "calibra",
+  "criteria": "aceleração gravitacional em m/s²",
+  "criteria_source": "Wikipedia — gravidade nos planetas",
+  "items": [
+    {
+      "label": "Lua",
+      "value": 1.62
+    },
+    {
+      "label": "Marte",
+      "value": 3.72
+    },
+    {
+      "label": "Terra",
+      "value": 9.81
+    },
+    {
+      "label": "Júpiter",
+      "value": 24.8
+    }
+  ]
+}

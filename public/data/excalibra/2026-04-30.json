@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-30",
+  "mode": "excalibra",
+  "criteria": "velocidade em km/h",
+  "criteria_source": "Wikipedia — recordes de velocidade terrestre",
+  "items": [
+    {
+      "label": "Carro de Le Mans",
+      "value": 340
+    },
+    {
+      "label": "Moto de MotoGP",
+      "value": 356
+    },
+    {
+      "label": "Carro de F1",
+      "value": 370
+    },
+    {
+      "label": "Carro de Top Fuel",
+      "value": 530
+    },
+    {
+      "label": "HTP Rocketcar",
+      "value": 1013
+    },
+    {
+      "label": "Thrust SSC (recorde)",
+      "value": 1228
+    }
+  ]
+}

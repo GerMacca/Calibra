@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-12",
+  "mode": "calibra",
+  "criteria": "temperatura em °C",
+  "criteria_source": "Wikipedia — temperaturas extremas registradas na Terra",
+  "items": [
+    {
+      "label": "Antártica (mínima)",
+      "value": -89
+    },
+    {
+      "label": "Polo Norte (mínima)",
+      "value": -68
+    },
+    {
+      "label": "Europa (máxima)",
+      "value": 48
+    },
+    {
+      "label": "Death Valley (máxima)",
+      "value": 57
+    }
+  ]
+}

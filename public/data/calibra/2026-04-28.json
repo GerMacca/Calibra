@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-28",
+  "mode": "calibra",
+  "criteria": "peso médio em kg",
+  "criteria_source": "Wikipedia — aves do mundo",
+  "items": [
+    {
+      "label": "Beija-flor",
+      "value": 0.003
+    },
+    {
+      "label": "Pombo",
+      "value": 0.35
+    },
+    {
+      "label": "Águia-real",
+      "value": 6.5
+    },
+    {
+      "label": "Avestruz",
+      "value": 120
+    }
+  ]
+}

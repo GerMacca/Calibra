@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-03",
+  "mode": "excalibra",
+  "criteria": "temperatura de ebulição em °C",
+  "criteria_source": "Wikipedia — elementos da tabela periódica",
+  "items": [
+    {
+      "label": "Hélio",
+      "value": -269
+    },
+    {
+      "label": "Nitrogênio",
+      "value": -196
+    },
+    {
+      "label": "Oxigênio",
+      "value": -183
+    },
+    {
+      "label": "Água",
+      "value": 100
+    },
+    {
+      "label": "Mercúrio",
+      "value": 357
+    },
+    {
+      "label": "Tungstênio",
+      "value": 5555
+    }
+  ]
+}

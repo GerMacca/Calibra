@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-24",
+  "mode": "excalibra",
+  "criteria": "tempo de meia-vida em anos",
+  "criteria_source": "Wikipedia — elementos radioativos",
+  "items": [
+    {
+      "label": "Iodo-131",
+      "value": 0.022
+    },
+    {
+      "label": "Rádio-226",
+      "value": 1600
+    },
+    {
+      "label": "Carbono-14",
+      "value": 5730
+    },
+    {
+      "label": "Cloro-36",
+      "value": 301000
+    },
+    {
+      "label": "Urânio-235",
+      "value": 703900000
+    },
+    {
+      "label": "Urânio-238",
+      "value": 4470000000
+    }
+  ]
+}

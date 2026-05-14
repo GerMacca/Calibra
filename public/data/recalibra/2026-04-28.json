@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-28",
+  "mode": "recalibra",
+  "criteria": "massa em 10²⁴ kg",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Marte",
+      "value": 0.642
+    },
+    {
+      "label": "Vênus",
+      "value": 4.87
+    },
+    {
+      "label": "Terra",
+      "value": 5.97
+    },
+    {
+      "label": "Urano",
+      "value": 86.8
+    },
+    {
+      "label": "Júpiter",
+      "value": 1898
+    }
+  ]
+}

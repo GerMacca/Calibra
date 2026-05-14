@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-01",
+  "mode": "excalibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — fronteiras terrestres mais longas",
+  "items": [
+    {
+      "label": "Brasil-Argentina",
+      "value": 1263
+    },
+    {
+      "label": "Brasil-Peru",
+      "value": 2995
+    },
+    {
+      "label": "EUA-México",
+      "value": 3145
+    },
+    {
+      "label": "Brasil-Bolívia",
+      "value": 3423
+    },
+    {
+      "label": "China-Rússia",
+      "value": 4209
+    },
+    {
+      "label": "Canadá-EUA",
+      "value": 8891
+    }
+  ]
+}

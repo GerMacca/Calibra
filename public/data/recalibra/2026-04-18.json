@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-18",
+  "mode": "recalibra",
+  "criteria": "PIB em trilhões USD",
+  "criteria_source": "Wikipedia — maiores economias do mundo 2024",
+  "items": [
+    {
+      "label": "Alemanha",
+      "value": 4.1
+    },
+    {
+      "label": "Japão",
+      "value": 4.2
+    },
+    {
+      "label": "China",
+      "value": 17.9
+    },
+    {
+      "label": "Estados Unidos",
+      "value": 27.4
+    },
+    {
+      "label": "Mundo",
+      "value": 105
+    }
+  ]
+}

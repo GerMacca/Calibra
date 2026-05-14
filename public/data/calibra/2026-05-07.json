@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-07",
+  "mode": "calibra",
+  "criteria": "pH aproximado",
+  "criteria_source": "Wikipedia — pH de substâncias comuns",
+  "items": [
+    {
+      "label": "Suco de limão",
+      "value": 2.0
+    },
+    {
+      "label": "Café",
+      "value": 5.0
+    },
+    {
+      "label": "Água pura",
+      "value": 7.0
+    },
+    {
+      "label": "Bicarbonato de sódio",
+      "value": 8.3
+    }
+  ]
+}

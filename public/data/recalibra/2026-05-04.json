@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-04",
+  "mode": "recalibra",
+  "criteria": "produção de petróleo em mil barris/dia",
+  "criteria_source": "Wikipedia — maiores produtores de petróleo 2023",
+  "items": [
+    {
+      "label": "Emirados Árabes",
+      "value": 4100
+    },
+    {
+      "label": "Iraque",
+      "value": 4400
+    },
+    {
+      "label": "Canadá",
+      "value": 5800
+    },
+    {
+      "label": "Arábia Saudita",
+      "value": 12000
+    },
+    {
+      "label": "Estados Unidos",
+      "value": 12900
+    }
+  ]
+}

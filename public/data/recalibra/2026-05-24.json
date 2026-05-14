@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-24",
+  "mode": "recalibra",
+  "criteria": "extensão em km²",
+  "criteria_source": "Wikipedia — maiores reservas da biosfera",
+  "items": [
+    {
+      "label": "Reserva Great Bear Rainforest",
+      "value": 64000
+    },
+    {
+      "label": "Reserva do Pantanal",
+      "value": 150355
+    },
+    {
+      "label": "Reserva Mata Atlântica",
+      "value": 470000
+    },
+    {
+      "label": "Taiga Siberiana",
+      "value": 3145000
+    },
+    {
+      "label": "Reserva Amazônia Central",
+      "value": 6200000
+    }
+  ]
+}

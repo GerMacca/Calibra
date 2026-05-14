@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-22",
+  "mode": "recalibra",
+  "criteria": "altitude em m",
+  "criteria_source": "Wikipedia — capitais mais altas do mundo",
+  "items": [
+    {
+      "label": "Nairóbi",
+      "value": 1661
+    },
+    {
+      "label": "Adis Abeba",
+      "value": 2355
+    },
+    {
+      "label": "Quito",
+      "value": 2850
+    },
+    {
+      "label": "La Paz (Sede do Governo)",
+      "value": 3640
+    },
+    {
+      "label": "Lhasa",
+      "value": 3656
+    }
+  ]
+}

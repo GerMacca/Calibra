@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-22",
+  "mode": "calibra",
+  "criteria": "velocidade de rotação equatorial em km/h",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Vênus",
+      "value": 6.5
+    },
+    {
+      "label": "Mercúrio",
+      "value": 10.8
+    },
+    {
+      "label": "Terra",
+      "value": 1670
+    },
+    {
+      "label": "Júpiter",
+      "value": 45583
+    }
+  ]
+}

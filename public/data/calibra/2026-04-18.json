@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-18",
+  "mode": "calibra",
+  "criteria": "diâmetro em km",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Mercúrio",
+      "value": 4879
+    },
+    {
+      "label": "Marte",
+      "value": 6779
+    },
+    {
+      "label": "Vênus",
+      "value": 12104
+    },
+    {
+      "label": "Terra",
+      "value": 12742
+    }
+  ]
+}

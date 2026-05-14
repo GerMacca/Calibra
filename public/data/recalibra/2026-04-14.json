@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-14",
+  "mode": "recalibra",
+  "criteria": "área territorial em mil km²",
+  "criteria_source": "Wikipedia — países da América do Sul",
+  "items": [
+    {
+      "label": "Equador",
+      "value": 284
+    },
+    {
+      "label": "Venezuela",
+      "value": 916
+    },
+    {
+      "label": "Argentina",
+      "value": 2780
+    },
+    {
+      "label": "Brasil",
+      "value": 8519
+    },
+    {
+      "label": "Rússia",
+      "value": 17098
+    }
+  ]
+}

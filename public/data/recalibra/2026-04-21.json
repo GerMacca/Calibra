@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-21",
+  "mode": "recalibra",
+  "criteria": "extensão costeira em km",
+  "criteria_source": "Wikipedia — países com maior litoral",
+  "items": [
+    {
+      "label": "Brasil",
+      "value": 7491
+    },
+    {
+      "label": "Noruega",
+      "value": 25148
+    },
+    {
+      "label": "Austrália",
+      "value": 35876
+    },
+    {
+      "label": "Filipinas",
+      "value": 36289
+    },
+    {
+      "label": "Canadá",
+      "value": 202080
+    }
+  ]
+}

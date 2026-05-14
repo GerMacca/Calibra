@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-25",
+  "mode": "excalibra",
+  "criteria": "produção em milhões de toneladas/ano",
+  "criteria_source": "Wikipedia — maiores culturas agrícolas do mundo",
+  "items": [
+    {
+      "label": "Banana",
+      "value": 116
+    },
+    {
+      "label": "Mandioca",
+      "value": 308
+    },
+    {
+      "label": "Arroz",
+      "value": 757
+    },
+    {
+      "label": "Trigo",
+      "value": 785
+    },
+    {
+      "label": "Milho",
+      "value": 1162
+    },
+    {
+      "label": "Cana-de-açúcar",
+      "value": 1900
+    }
+  ]
+}

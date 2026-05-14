@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-18",
+  "mode": "excalibra",
+  "criteria": "velocidade máxima em km/h",
+  "criteria_source": "Wikipedia — meios de transporte mais rápidos",
+  "items": [
+    {
+      "label": "Carro de F1",
+      "value": 370
+    },
+    {
+      "label": "Trem-bala (recorde)",
+      "value": 603
+    },
+    {
+      "label": "Avião comercial",
+      "value": 900
+    },
+    {
+      "label": "SR-71 Blackbird",
+      "value": 3540
+    },
+    {
+      "label": "Foguete Falcon 9",
+      "value": 7200
+    },
+    {
+      "label": "Ônibus espacial",
+      "value": 28000
+    }
+  ]
+}

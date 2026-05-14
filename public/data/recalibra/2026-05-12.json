@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-12",
+  "mode": "recalibra",
+  "criteria": "profundidade em metros",
+  "criteria_source": "Wikipedia — maiores cavernas do mundo",
+  "items": [
+    {
+      "label": "Sistema Cupp-Couturier",
+      "value": 1602
+    },
+    {
+      "label": "Lamprechtsofen",
+      "value": 1632
+    },
+    {
+      "label": "Caverna Sarma",
+      "value": 1830
+    },
+    {
+      "label": "Caverna Krubera",
+      "value": 2197
+    },
+    {
+      "label": "Caverna Veryovkina",
+      "value": 2212
+    }
+  ]
+}

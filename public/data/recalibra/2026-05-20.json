@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-20",
+  "mode": "recalibra",
+  "criteria": "população em milhões",
+  "criteria_source": "Wikipedia — megacidades do mundo 2024",
+  "items": [
+    {
+      "label": "Osaka",
+      "value": 19.2
+    },
+    {
+      "label": "Mumbai",
+      "value": 21.7
+    },
+    {
+      "label": "São Paulo",
+      "value": 22.4
+    },
+    {
+      "label": "Delhi",
+      "value": 33.8
+    },
+    {
+      "label": "Tóquio",
+      "value": 37.4
+    }
+  ]
+}

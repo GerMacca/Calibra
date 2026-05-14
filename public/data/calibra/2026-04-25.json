@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-25",
+  "mode": "calibra",
+  "criteria": "massa em 10²⁴ kg",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Marte",
+      "value": 0.642
+    },
+    {
+      "label": "Vênus",
+      "value": 4.87
+    },
+    {
+      "label": "Terra",
+      "value": 5.97
+    },
+    {
+      "label": "Netuno",
+      "value": 102
+    }
+  ]
+}

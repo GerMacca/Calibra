@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-23",
+  "mode": "calibra",
+  "criteria": "comprimento em m",
+  "criteria_source": "Wikipedia — cobras mais longas do mundo",
+  "items": [
+    {
+      "label": "Cascavel",
+      "value": 1.5
+    },
+    {
+      "label": "Jiboia",
+      "value": 4.0
+    },
+    {
+      "label": "Píton-de-reticulada",
+      "value": 6.25
+    },
+    {
+      "label": "Anaconda",
+      "value": 8.8
+    }
+  ]
+}

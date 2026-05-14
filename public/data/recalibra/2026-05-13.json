@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-13",
+  "mode": "recalibra",
+  "criteria": "extensão em km",
+  "criteria_source": "Wikipedia — maiores sistemas de cavernas",
+  "items": [
+    {
+      "label": "Sistema Optimistychna (Ucrânia)",
+      "value": 261
+    },
+    {
+      "label": "Jewel Cave (EUA)",
+      "value": 338
+    },
+    {
+      "label": "Sistema Ox Bel Ha (México)",
+      "value": 368
+    },
+    {
+      "label": "Fisher Ridge (EUA)",
+      "value": 386
+    },
+    {
+      "label": "Mammoth Cave (EUA)",
+      "value": 676
+    }
+  ]
+}

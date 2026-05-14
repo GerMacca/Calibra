@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-19",
+  "mode": "calibra",
+  "criteria": "frequência em Hz",
+  "criteria_source": "Wikipedia — frequências sonoras",
+  "items": [
+    {
+      "label": "Baixo humano (voz)",
+      "value": 85
+    },
+    {
+      "label": "Fala média",
+      "value": 500
+    },
+    {
+      "label": "Soprano",
+      "value": 1100
+    },
+    {
+      "label": "Apito de cão",
+      "value": 23000
+    }
+  ]
+}

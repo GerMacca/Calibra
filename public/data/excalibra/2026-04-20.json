@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-20",
+  "mode": "excalibra",
+  "criteria": "temperatura de fusão em °C",
+  "criteria_source": "Wikipedia — elementos da tabela periódica",
+  "items": [
+    {
+      "label": "Mercúrio",
+      "value": -39
+    },
+    {
+      "label": "Gálio",
+      "value": 30
+    },
+    {
+      "label": "Alumínio",
+      "value": 660
+    },
+    {
+      "label": "Ouro",
+      "value": 1064
+    },
+    {
+      "label": "Ferro",
+      "value": 1538
+    },
+    {
+      "label": "Tungstênio",
+      "value": 3422
+    }
+  ]
+}

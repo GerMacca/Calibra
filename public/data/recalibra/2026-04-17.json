@@ -1,0 +1,28 @@
+{
+  "date": "2026-04-17",
+  "mode": "recalibra",
+  "criteria": "altitude em metros",
+  "criteria_source": "Wikipedia — vulcões mais altos do mundo",
+  "items": [
+    {
+      "label": "Monte Etna",
+      "value": 3357
+    },
+    {
+      "label": "Monte Fuji",
+      "value": 3776
+    },
+    {
+      "label": "Cotopaxi",
+      "value": 5897
+    },
+    {
+      "label": "Ojos del Salado",
+      "value": 6893
+    },
+    {
+      "label": "Monte Everest",
+      "value": 8849
+    }
+  ]
+}

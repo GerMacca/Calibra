@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-27",
+  "mode": "calibra",
+  "criteria": "temperatura superficial em °C",
+  "criteria_source": "Wikipedia — planetas do sistema solar",
+  "items": [
+    {
+      "label": "Plutão",
+      "value": -229
+    },
+    {
+      "label": "Netuno",
+      "value": -214
+    },
+    {
+      "label": "Marte",
+      "value": -63
+    },
+    {
+      "label": "Vênus",
+      "value": 465
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-16",
+  "mode": "calibra",
+  "criteria": "altitude em metros",
+  "criteria_source": "Wikipedia — picos mais altos do Brasil",
+  "items": [
+    {
+      "label": "Pico do Cristal",
+      "value": 2770
+    },
+    {
+      "label": "Pico das Agulhas Negras",
+      "value": 2791
+    },
+    {
+      "label": "Pico da Bandeira",
+      "value": 2891
+    },
+    {
+      "label": "Pico da Neblina",
+      "value": 2994
+    }
+  ]
+}

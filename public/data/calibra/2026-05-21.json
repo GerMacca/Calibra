@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-21",
+  "mode": "calibra",
+  "criteria": "peso em kg",
+  "criteria_source": "Wikipedia — peixes mais pesados",
+  "items": [
+    {
+      "label": "Tubarão-branco",
+      "value": 1100
+    },
+    {
+      "label": "Peixe-lua",
+      "value": 2300
+    },
+    {
+      "label": "Raia-manta gigante",
+      "value": 2721
+    },
+    {
+      "label": "Tubarão-baleia",
+      "value": 18700
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-20",
+  "mode": "calibra",
+  "criteria": "comprimento em km",
+  "criteria_source": "Wikipedia — maiores pontes do mundo",
+  "items": [
+    {
+      "label": "Ponte de Chesapeake Bay",
+      "value": 7.3
+    },
+    {
+      "label": "Ponte Rio-Niterói",
+      "value": 13.3
+    },
+    {
+      "label": "Ponte de Qingdao Haiwan",
+      "value": 42.5
+    },
+    {
+      "label": "Danyang–Kunshan Grand Bridge",
+      "value": 164.8
+    }
+  ]
+}

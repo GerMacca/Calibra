@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-01",
+  "mode": "calibra",
+  "criteria": "altitude em m",
+  "criteria_source": "Wikipedia — capitais sul-americanas",
+  "items": [
+    {
+      "label": "Buenos Aires",
+      "value": 25
+    },
+    {
+      "label": "Lima",
+      "value": 154
+    },
+    {
+      "label": "Santiago",
+      "value": 520
+    },
+    {
+      "label": "Quito",
+      "value": 2850
+    }
+  ]
+}

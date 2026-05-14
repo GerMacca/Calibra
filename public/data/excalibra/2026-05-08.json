@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-08",
+  "mode": "excalibra",
+  "criteria": "diâmetro em mil km",
+  "criteria_source": "Wikipedia — estrelas conhecidas vs o Sol",
+  "items": [
+    {
+      "label": "Sol",
+      "value": 1.39
+    },
+    {
+      "label": "Sirius",
+      "value": 2.38
+    },
+    {
+      "label": "Polux",
+      "value": 11.2
+    },
+    {
+      "label": "Rigel",
+      "value": 97
+    },
+    {
+      "label": "Betelgeuse",
+      "value": 1540
+    },
+    {
+      "label": "VY Canis Majoris",
+      "value": 2800
+    }
+  ]
+}

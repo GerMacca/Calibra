@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-15",
+  "mode": "calibra",
+  "criteria": "temperatura de ebulição em °C",
+  "criteria_source": "Wikipedia — pontos de ebulição de líquidos comuns",
+  "items": [
+    {
+      "label": "Nitrogênio líquido",
+      "value": -196
+    },
+    {
+      "label": "Oxigênio líquido",
+      "value": -183
+    },
+    {
+      "label": "Etanol",
+      "value": 78
+    },
+    {
+      "label": "Água",
+      "value": 100
+    }
+  ]
+}

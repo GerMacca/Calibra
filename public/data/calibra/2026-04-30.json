@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-30",
+  "mode": "calibra",
+  "criteria": "consumo em litros por 100 km",
+  "criteria_source": "Wikipedia — consumo médio de veículos",
+  "items": [
+    {
+      "label": "Carro híbrido",
+      "value": 4.5
+    },
+    {
+      "label": "Carro popular",
+      "value": 7.8
+    },
+    {
+      "label": "SUV",
+      "value": 12
+    },
+    {
+      "label": "Caminhão",
+      "value": 30
+    }
+  ]
+}

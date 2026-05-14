@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-02",
+  "mode": "excalibra",
+  "criteria": "área em mil km²",
+  "criteria_source": "Wikipedia — maiores países do mundo",
+  "items": [
+    {
+      "label": "Índia",
+      "value": 3287
+    },
+    {
+      "label": "Austrália",
+      "value": 7692
+    },
+    {
+      "label": "Brasil",
+      "value": 8515
+    },
+    {
+      "label": "China",
+      "value": 9597
+    },
+    {
+      "label": "Canadá",
+      "value": 9985
+    },
+    {
+      "label": "Rússia",
+      "value": 17098
+    }
+  ]
+}

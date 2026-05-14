@@ -1,0 +1,24 @@
+{
+  "date": "2026-04-19",
+  "mode": "calibra",
+  "criteria": "densidade em g/cm³",
+  "criteria_source": "Wikipedia — densidade de materiais comuns",
+  "items": [
+    {
+      "label": "Madeira de balsa",
+      "value": 0.12
+    },
+    {
+      "label": "Gelo",
+      "value": 0.92
+    },
+    {
+      "label": "Alumínio",
+      "value": 2.7
+    },
+    {
+      "label": "Ferro",
+      "value": 7.87
+    }
+  ]
+}

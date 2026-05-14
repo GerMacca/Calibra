@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-12",
+  "mode": "excalibra",
+  "criteria": "altitude em metros",
+  "criteria_source": "Wikipedia — cidades mais altas do mundo",
+  "items": [
+    {
+      "label": "Adis Abeba",
+      "value": 2355
+    },
+    {
+      "label": "Quito",
+      "value": 2850
+    },
+    {
+      "label": "La Paz",
+      "value": 3640
+    },
+    {
+      "label": "Lhasa",
+      "value": 3656
+    },
+    {
+      "label": "Oruro",
+      "value": 3706
+    },
+    {
+      "label": "Potosí",
+      "value": 4090
+    }
+  ]
+}

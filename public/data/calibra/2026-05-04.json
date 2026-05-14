@@ -1,0 +1,24 @@
+{
+  "date": "2026-05-04",
+  "mode": "calibra",
+  "criteria": "índice de refração",
+  "criteria_source": "Wikipedia — índice de refração de materiais",
+  "items": [
+    {
+      "label": "Ar",
+      "value": 1.0003
+    },
+    {
+      "label": "Água",
+      "value": 1.33
+    },
+    {
+      "label": "Vidro",
+      "value": 1.52
+    },
+    {
+      "label": "Diamante",
+      "value": 2.42
+    }
+  ]
+}

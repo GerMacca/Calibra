@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-04",
+  "mode": "excalibra",
+  "criteria": "distância em anos-luz",
+  "criteria_source": "Wikipedia — objetos celestes famosos",
+  "items": [
+    {
+      "label": "Próxima Centauri",
+      "value": 4.24
+    },
+    {
+      "label": "Sirius",
+      "value": 8.6
+    },
+    {
+      "label": "Vega",
+      "value": 25
+    },
+    {
+      "label": "Polaris",
+      "value": 433
+    },
+    {
+      "label": "Betelgeuse",
+      "value": 700
+    },
+    {
+      "label": "Centro da Via Láctea",
+      "value": 26000
+    }
+  ]
+}

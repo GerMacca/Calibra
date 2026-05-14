@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-02",
+  "mode": "recalibra",
+  "criteria": "altitude em m",
+  "criteria_source": "Wikipedia — montanhas mais altas por continente",
+  "items": [
+    {
+      "label": "Pico da Neblina (Brasil)",
+      "value": 2994
+    },
+    {
+      "label": "Puncak Jaya (Oceania)",
+      "value": 4884
+    },
+    {
+      "label": "Monte Kilimanjaro (África)",
+      "value": 5895
+    },
+    {
+      "label": "Monte McKinley (América do Norte)",
+      "value": 6190
+    },
+    {
+      "label": "Monte Everest (Ásia)",
+      "value": 8849
+    }
+  ]
+}

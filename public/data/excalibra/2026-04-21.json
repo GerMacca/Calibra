@@ -1,0 +1,32 @@
+{
+  "date": "2026-04-21",
+  "mode": "excalibra",
+  "criteria": "número de espécies endêmicas",
+  "criteria_source": "Wikipedia — países megadiversos (fauna endêmica)",
+  "items": [
+    {
+      "label": "Congo",
+      "value": 450
+    },
+    {
+      "label": "México",
+      "value": 707
+    },
+    {
+      "label": "Indonésia",
+      "value": 1531
+    },
+    {
+      "label": "Colômbia",
+      "value": 1567
+    },
+    {
+      "label": "Austrália",
+      "value": 1592
+    },
+    {
+      "label": "Brasil",
+      "value": 1773
+    }
+  ]
+}

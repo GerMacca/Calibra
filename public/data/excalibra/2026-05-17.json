@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-17",
+  "mode": "excalibra",
+  "criteria": "produção em milhões de toneladas",
+  "criteria_source": "Wikipedia — maiores produtores minerais do mundo",
+  "items": [
+    {
+      "label": "Ouro (toneladas)",
+      "value": 3300
+    },
+    {
+      "label": "Cobre (mil ton.)",
+      "value": 21000
+    },
+    {
+      "label": "Alumínio (mil ton.)",
+      "value": 65000
+    },
+    {
+      "label": "Ferro (mil ton.)",
+      "value": 2500000
+    },
+    {
+      "label": "Petróleo (mil ton.)",
+      "value": 4000000
+    },
+    {
+      "label": "Carvão (mil ton.)",
+      "value": 8000000
+    }
+  ]
+}
